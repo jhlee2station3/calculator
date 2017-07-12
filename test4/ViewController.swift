@@ -16,6 +16,10 @@ class ViewController: UIViewController {
 //  var pressedNotifier = false
 //    var stackArray = [String]()
     
+    func test() {
+        print("hahahah")
+    }
+    
     @IBOutlet weak var calculatedValue: UILabel!
 
     override func viewDidLoad() {

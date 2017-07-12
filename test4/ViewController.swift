@@ -6,6 +6,7 @@
 //  Copyright © 2017 Mika. All rights reserved.
 //
 
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -15,10 +16,6 @@ class ViewController: UIViewController {
     var result = Double()
 //  var pressedNotifier = false
 //    var stackArray = [String]()
-    
-    func test() {
-        print("hahahah")
-    }
     
     @IBOutlet weak var calculatedValue: UILabel!
 

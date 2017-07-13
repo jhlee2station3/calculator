@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Notes!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ahi-3Q-Xru">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ahi-3Q-Xru">
                                 <rect key="frame" x="16" y="77" width="343" height="533"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,8 +42,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" id="nrO-Kn-Ug6"/>
+                    <tabBarItem key="tabBarItem" title="Notes" id="nrO-Kn-Ug6"/>
                     <connections>
+                        <outlet property="Label" destination="ahi-3Q-Xru" id="IHe-ED-yrX"/>
                         <outlet property="addItem" destination="nl9-oN-5kp" id="6X6-qP-7ZE"/>
                         <outlet property="input" destination="ahi-3Q-Xru" id="5wW-74-as6"/>
                     </connections>
@@ -91,7 +92,7 @@
                             <constraint firstAttribute="trailing" secondItem="Yez-TY-RgA" secondAttribute="trailing" id="ccn-Fh-Gv3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" id="rbP-Yn-Qf0"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="rbP-Yn-Qf0"/>
                     <connections>
                         <outlet property="myTableView" destination="Yez-TY-RgA" id="SP0-48-Hka"/>
                     </connections>

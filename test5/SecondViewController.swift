@@ -18,6 +18,8 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
     {
         list.append(input.text)
         input.text = ""
+        tabBarController?.selectedIndex = 0
+
     }
 
         /*
@@ -44,7 +46,6 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
         alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         self.present(alert1, animated: true, completion: nil)
 }
-    
     
 
     /*

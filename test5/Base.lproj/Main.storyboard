@@ -44,7 +44,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Notes" id="nrO-Kn-Ug6"/>
                     <connections>
-                        <outlet property="Label" destination="ahi-3Q-Xru" id="IHe-ED-yrX"/>
                         <outlet property="addItem" destination="nl9-oN-5kp" id="6X6-qP-7ZE"/>
                         <outlet property="input" destination="ahi-3Q-Xru" id="5wW-74-as6"/>
                     </connections>

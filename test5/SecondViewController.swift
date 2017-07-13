@@ -14,12 +14,15 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var addItem: UIButton!
     
+    var valueToPass : String? = nil
+    
+ //   var LabelText = String()
+    
     func addItems (action: UIAlertAction)
     {
         list.append(input.text)
         input.text = ""
         tabBarController?.selectedIndex = 0
-
     }
 
         /*
@@ -34,6 +37,8 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
     */
 
     @IBAction func alertNotified(_ sender: AnyObject) {
+        if input.text! != ""
+        {
 //        if addItem.isTouchInside && input.text != ""
 //        {
 //        let alert1 = UIAlertController (title: "Warning", message: "Do you really want to save this note?", preferredStyle: UIAlertControllerStyle.alert)
@@ -45,10 +50,23 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
         alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: addItems))
         alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         self.present(alert1, animated: true, completion: nil)
+        }
+}
+
 }
     
-
     /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier = "catView"
+        {
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let controller = segue.destinationViewController as! YourViewController
+            let value = values[indexPath.row]
+            controller.catTitleRe = value ["NAME"] as! String
+        }
+        }
+
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -56,10 +74,10 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
         
         override func viewDidLoad() {
             super.viewDidLoad()
+//            input.text = LabelText
             
             // Do any additional setup after loading the view.
         }
@@ -68,5 +86,7 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
         }
+ 
+  /*
 
-}
+}*/*/

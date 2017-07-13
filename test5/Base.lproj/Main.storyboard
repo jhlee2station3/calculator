@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Second-->
+        <!--SecondViewController-->
         <scene sceneID="iQR-9A-sb9">
             <objects>
-                <viewController title="Second" id="6xr-fJ-5hr" customClass="SecondViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SecondViewController" id="6xr-fJ-5hr" customClass="SecondViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H2B-Oo-DMZ"/>
                         <viewControllerLayoutGuide type="bottom" id="BbU-L1-jgp"/>
@@ -20,18 +20,42 @@
                     <view key="view" contentMode="scaleToFill" id="6aY-r7-f1Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Notes!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ahi-3Q-Xru">
+                                <rect key="frame" x="16" y="77" width="343" height="533"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl9-oN-5kp">
+                                <rect key="frame" x="298" y="39" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Add Item">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="alertNotified:" destination="6xr-fJ-5hr" eventType="touchUpInside" id="zzV-6M-qeq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" id="nrO-Kn-Ug6"/>
+                    <connections>
+                        <outlet property="addItem" destination="nl9-oN-5kp" id="6X6-qP-7ZE"/>
+                        <outlet property="input" destination="ahi-3Q-Xru" id="5wW-74-as6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eos-jR-kri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="465"/>
+            <point key="canvasLocation" x="164" y="464.6176911544228"/>
         </scene>
-        <!--First-->
+        <!--FirstViewController-->
         <scene sceneID="xhk-ZT-4vk">
             <objects>
-                <viewController title="First" id="rJ0-HI-yhq" customClass="FirstViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FirstViewController" id="rJ0-HI-yhq" customClass="FirstViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YpI-9g-hKH"/>
                         <viewControllerLayoutGuide type="bottom" id="Hac-rX-K4R"/>

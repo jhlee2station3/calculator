@@ -8,18 +8,43 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class SecondViewController: UIViewController, UIAlertViewDelegate {
+    
+    @IBOutlet weak var input: UITextView!
+    
+    @IBOutlet weak var addItem: UIButton!
+    
+    func addItems (action: UIAlertAction)
+    {
+        list.append(input.text)
+        input.text = ""
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        /*
+        @IBAction func addItem(_ sender: AnyObject) {
+        if (input.text != "")
+        {
+            list.append(input.text)
+            input.text = ""
+        }
+     
     }
+    */
+
+    @IBAction func alertNotified(_ sender: AnyObject) {
+//        if addItem.isTouchInside && input.text != ""
+//        {
+//        let alert1 = UIAlertController (title: "Warning", message: "Do you really want to save this note?", preferredStyle: UIAlertControllerStyle.alert)
+//            alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: addItems))
+//            alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+//            self.present(alert1, animated: true, completion: nil)
+//        }
+        let alert1 = UIAlertController (title: "Warning", message: "Do you really want to save this note?", preferredStyle: UIAlertControllerStyle.alert)
+        alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: addItems))
+        alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert1, animated: true, completion: nil)
+}
+    
     
 
     /*
@@ -31,5 +56,16 @@ class SecondViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            // Do any additional setup after loading the view.
+        }
+        
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+            // Dispose of any resources that can be recreated.
+        }
 
 }

@@ -8,9 +8,9 @@
 
 import UIKit
 
+var list = ["Wake Up", "Get to Work" , "Work Out", "Dinner"]
+
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var list = ["Wake Up", "Get to Work" , "Work Out", "Dinner"]
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -21,11 +21,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
  
     */
     
+    //Determine the number of rows
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return list.count
     }
     
+    //Populate the table view with text
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -33,15 +35,20 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    //Remove an item or delete an item simply by swiping left 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
-            self.list.remove(at: indexPath.row)
+            list.remove(at: indexPath.row)
             myTableView.reloadData()
         }
     }
     
+    //Each time our view appears, data refreshes
+    override func viewDidAppear(_ animated: Bool) {
+        myTableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

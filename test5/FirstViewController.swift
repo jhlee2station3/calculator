@@ -22,12 +22,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
  
     */
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        valueTopass = cell?.textLabel?.text
-    }
-    
+
     //Determine the number of rows
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -53,19 +48,25 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        valueTopass = cell?.textLabel?.text
+    }
+
+    
     @IBAction func writeANote(_ sender: UIButton)
     {
         tabBarController?.selectedIndex = 1
     }
     
+    
     override func prepare (for segue: UIStoryboardSegue, sender: Any?)
     {
         if (segue.identifier == "cell")
         {
-            let destController = segue.destination as! SecondViewController
-            destController.valueToPass = valueTopass
-            tabBarController?.selectedIndex = 1
-            
+        let destController = segue.destination as! SecondViewController
+        destController.valueToPass = valueTopass
+        tabBarController?.selectedIndex = 1
         }
     }
     

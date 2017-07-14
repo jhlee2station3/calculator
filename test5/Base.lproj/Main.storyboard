@@ -64,8 +64,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yez-TY-RgA">
-                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yez-TY-RgA">
+                                <rect key="frame" x="0.0" y="99" width="375" height="486"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hXd-8k-GCr">
@@ -83,8 +84,9 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsv-mt-Qe9">
-                                <rect key="frame" x="321" y="20" width="30" height="30"/>
+                                <rect key="frame" x="323" y="64" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Add">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -92,14 +94,15 @@
                                     <action selector="writeANote:" destination="rJ0-HI-yhq" eventType="touchUpInside" id="zGT-KK-AJd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mika's Things to Do" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R4N-iy-qrU">
+                                <rect key="frame" x="0.0" y="27" width="375" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Yez-TY-RgA" firstAttribute="leading" secondItem="Ptt-pb-hxC" secondAttribute="leading" id="1km-Y2-i1s"/>
-                            <constraint firstItem="Yez-TY-RgA" firstAttribute="top" secondItem="YpI-9g-hKH" secondAttribute="bottom" constant="8" id="8uf-oz-Y5X"/>
-                            <constraint firstItem="Hac-rX-K4R" firstAttribute="top" secondItem="Yez-TY-RgA" secondAttribute="bottom" id="IeY-FB-XCT"/>
-                            <constraint firstAttribute="trailing" secondItem="Yez-TY-RgA" secondAttribute="trailing" id="ccn-Fh-Gv3"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="rbP-Yn-Qf0"/>
                     <connections>

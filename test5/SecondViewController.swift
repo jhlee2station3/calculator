@@ -12,13 +12,17 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var input: UITextView!
     
+    @IBOutlet weak var titleTitle: UITextField!
+    
     @IBOutlet weak var addItem: UIButton!
         
  //   var LabelText = String()
     
     func addItems (action: UIAlertAction)
     {
-        list.append(input.text)
+        keys.append(titleTitle.text!)
+        values.append(input.text)
+        titleTitle.text = ""
         input.text = ""
         tabBarController?.selectedIndex = 0
     }

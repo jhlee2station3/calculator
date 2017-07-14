@@ -8,15 +8,19 @@
 
 import UIKit
 
+var dictionary = [
+    "Favorite Artists": "Pablo Picasso, Andy Warhol, The Beatles, Queen, The Chainsmokers",
+    "Favorite Drinks": "Water, Cola, Sprite, Orange Juice, Ginger Ale",
+    "Favorite Cities": "New York, London, Paris, Seoul, Cape Town",
+    "Favorite Beers": "Tiger Beer, Cass, Kloud, Hite"
+]
+
+var values = Array(dictionary.values)
+
+var keys = Array(dictionary.keys)
+
+
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var dict = [
-        "Favorite Artists": "Pablo Picasso, Andy Warhol, The Beatles, Queen, The Chainsmokers",
-        "Favorite Drinks": "Water, Cola, Sprite, Orange Juice, Ginger Ale",
-        "Favorite Cities": "New York, London, Paris, Seoul, Cape Town",
-        "Favorite Beers": "Tiger Beer, Cass, Kloud, Hite"
-    ]
-    
     
     var valueTopass: String!
     
@@ -32,26 +36,24 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Determine the number of rows
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return dict.keys.count
+        return dictionary.count
     }
     
     //Populate the table view with text
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "passData", for: indexPath)
-        let values = Array(self.dict.values)
-        cell.textLabel?.text = values[indexPath.row]
+        cell.textLabel?.text = keys[indexPath.row]
         return cell
     }
     
     //Remove an item or delete an item simply by swiping left
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        let values = Array(self.dict.keys)
         if editingStyle == UITableViewCellEditingStyle.delete
         {
-            dict.remove(at: indexPath.row)
+            keys.remove(at: indexPath.row)
             myTableView.reloadData()
         }
     }
@@ -75,7 +77,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if (segue.identifier == "passData")
         {
         let destController = segue.destination as! ThirdViewController
-        destController.valueToPass = valueTopass
+        destController.valueToPass2 = valueTopass
         }
     }
     

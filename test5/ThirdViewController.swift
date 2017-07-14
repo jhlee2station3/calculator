@@ -10,14 +10,18 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     
-    var valueToPass : String!
+    var valueToPass1 : String!
+    var valueToPass2 : String!
     
     @IBOutlet weak var labelTextt: UITextView!
+    
+    @IBOutlet weak var finalTitleText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        labelTextt.text = valueToPass
+        labelTextt.text = valueToPass1
+        finalTitleText.text = valueToPass2
     }
 
     override func didReceiveMemoryWarning() {

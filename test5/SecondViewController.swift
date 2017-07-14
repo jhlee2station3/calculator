@@ -13,9 +13,7 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
     @IBOutlet weak var input: UITextView!
     
     @IBOutlet weak var addItem: UIButton!
-    
-    var valueToPass : String? = nil
-    
+        
  //   var LabelText = String()
     
     func addItems (action: UIAlertAction)
@@ -51,11 +49,6 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
             self.present(alert2, animated: true, completion: nil)
         }
 }
-    
-    func receiveText (_ sender: Any?)
-    {
-        
-    }
 }
 
 //        if addItem.isTouchInside && input.text != ""

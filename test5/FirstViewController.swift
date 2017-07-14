@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FirstViewController.swift
 //  test5
 //
 //  Created by station3 on 13/07/2017.
@@ -8,11 +8,17 @@
 
 import UIKit
 
-var list = ["Wake Up", "Get to Work" , "Work Out", "Dinner"]
-
-var valueTopass: String!
-
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var dict = [
+        "Favorite Artists": "Pablo Picasso, Andy Warhol, The Beatles, Queen, The Chainsmokers",
+        "Favorite Drinks": "Water, Cola, Sprite, Orange Juice, Ginger Ale",
+        "Favorite Cities": "New York, London, Paris, Seoul, Cape Town",
+        "Favorite Beers": "Tiger Beer, Cass, Kloud, Hite"
+    ]
+    
+    
+    var valueTopass: String!
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -26,23 +32,26 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Determine the number of rows
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return list.count
+        return dict.keys.count
     }
     
     //Populate the table view with text
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = list[indexPath.row]
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "passData", for: indexPath)
+        let values = Array(self.dict.values)
+        cell.textLabel?.text = values[indexPath.row]
         return cell
     }
     
     //Remove an item or delete an item simply by swiping left
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
+        let values = Array(self.dict.keys)
         if editingStyle == UITableViewCellEditingStyle.delete
         {
-            list.remove(at: indexPath.row)
+            dict.remove(at: indexPath.row)
             myTableView.reloadData()
         }
     }
@@ -51,6 +60,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         valueTopass = cell?.textLabel?.text
+        self.performSegue(withIdentifier: "passData", sender: cell)
     }
 
     
@@ -62,13 +72,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func prepare (for segue: UIStoryboardSegue, sender: Any?)
     {
-        if (segue.identifier == "cell")
+        if (segue.identifier == "passData")
         {
-        let destController = segue.destination as! SecondViewController
+        let destController = segue.destination as! ThirdViewController
         destController.valueToPass = valueTopass
-        tabBarController?.selectedIndex = 1
         }
     }
+    
+    //tabBarController?.selectedIndex = 1
     
 //    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
 //        var DestViewController: SecondViewController = segue.destination as! SecondViewController

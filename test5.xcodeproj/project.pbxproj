@@ -14,6 +14,7 @@
 		CE5AB6C31F16FF2100D7312B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5AB6C11F16FF2100D7312B /* LaunchScreen.storyboard */; };
 		CE5AB6CE1F16FF2100D7312B /* test5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6CD1F16FF2100D7312B /* test5Tests.swift */; };
 		CE5AB6D91F16FF2200D7312B /* test5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6D81F16FF2200D7312B /* test5UITests.swift */; };
+		CEDABC771F185CDA001ABFE5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */; };
 		CEFB7B831F1703000078E68C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFB7B821F1703000078E68C /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		CE5AB6D41F16FF2200D7312B /* test5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5AB6D81F16FF2200D7312B /* test5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test5UITests.swift; sourceTree = "<group>"; };
 		CE5AB6DA1F16FF2200D7312B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		CEFB7B821F1703000078E68C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 			children = (
 				CE5AB6B81F16FF2100D7312B /* AppDelegate.swift */,
 				CE5AB6BA1F16FF2100D7312B /* FirstViewController.swift */,
+				CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */,
 				CEFB7B821F1703000078E68C /* SecondViewController.swift */,
 				CE5AB6BC1F16FF2100D7312B /* Main.storyboard */,
 				CE5AB6BF1F16FF2100D7312B /* Assets.xcassets */,
@@ -264,6 +267,7 @@
 			files = (
 				CEFB7B831F1703000078E68C /* SecondViewController.swift in Sources */,
 				CE5AB6BB1F16FF2100D7312B /* FirstViewController.swift in Sources */,
+				CEDABC771F185CDA001ABFE5 /* ThirdViewController.swift in Sources */,
 				CE5AB6B91F16FF2100D7312B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

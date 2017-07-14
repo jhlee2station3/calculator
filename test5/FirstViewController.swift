@@ -45,21 +45,28 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Remove an item or delete an item simply by swiping left
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        let indexPath = tableView.indexPathForSelectedRow!
-        let currentCell = tableView.cellForRow(at: indexPath) as UITableViewCell!;
-
-        valueTopass = currentCell?.textLabel?.text
-        performSegue(withIdentifier: "cell", sender: self)
+        if editingStyle == UITableViewCellEditingStyle.delete
+        {
+            list.remove(at: indexPath.row)
+            myTableView.reloadData()
+        }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if (segue.identifier == "cell")
-        {
-        let destController = segue.destination as! SecondViewController
-        destController.valueToPass = valueTopass
+    
+    @IBAction func writeANote(_ sender: UIButton)
+    {
         tabBarController?.selectedIndex = 1
     }
+    
+    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if (segue.identifier == "cell")
+        {
+            let destController = segue.destination as! SecondViewController
+            destController.valueToPass = valueTopass
+            tabBarController?.selectedIndex = 1
+            
+        }
     }
     
 //    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -73,8 +80,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
  //   }
+    /*
+    let indexPath = tableView.indexPathForSelectedRow!
+    let currentCell = tableView.cellForRow(at: indexPath) as UITableViewCell!;
+    
+    valueTopass = currentCell?.textLabel?.text
+    performSegue(withIdentifier: "cell", sender: self)
+ */
     
     //Each time our view appears, data refreshes
+    
     override func viewDidAppear(_ animated: Bool) {
         myTableView.reloadData()
     }

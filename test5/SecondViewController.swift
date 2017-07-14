@@ -39,6 +39,20 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
     @IBAction func alertNotified(_ sender: AnyObject) {
         if input.text! != ""
         {
+        let alert1 = UIAlertController (title: "Warning", message: "Do you really want to save this note?", preferredStyle: UIAlertControllerStyle.alert)
+        alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: addItems))
+        alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert1, animated: true, completion: nil)
+        }
+        else if input.text == ""
+        {
+            let alert2 = UIAlertController (title: "Warning", message: "You have not entered anything", preferredStyle: UIAlertControllerStyle.alert)
+            alert2.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert2, animated: true, completion: nil)
+        }
+}
+}
+
 //        if addItem.isTouchInside && input.text != ""
 //        {
 //        let alert1 = UIAlertController (title: "Warning", message: "Do you really want to save this note?", preferredStyle: UIAlertControllerStyle.alert)
@@ -46,14 +60,6 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
 //            alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
 //            self.present(alert1, animated: true, completion: nil)
 //        }
-        let alert1 = UIAlertController (title: "Warning", message: "Do you really want to save this note?", preferredStyle: UIAlertControllerStyle.alert)
-        alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: addItems))
-        alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-        self.present(alert1, animated: true, completion: nil)
-        }
-}
-
-}
     
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

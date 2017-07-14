@@ -36,7 +36,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Determine the number of rows
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return dictionary.count
+        return keys.count
     }
     
     //Populate the table view with text
@@ -48,7 +48,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     //Remove an item or delete an item simply by swiping left
-
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
         if editingStyle == UITableViewCellEditingStyle.delete

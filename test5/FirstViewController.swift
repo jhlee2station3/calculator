@@ -22,6 +22,9 @@ var keys = Array(dictionary.keys)
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var receivedData1: String!
+    var receivedData2: String!
+    
     var valueTopass: String!
     var valueTopass1: String!
     
@@ -70,8 +73,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if (segue.identifier == "passData")
         {
         let destController = segue.destination as! ThirdViewController
-        destController.valueToPass2 = valueTopass
-        destController.valueToPass1 = valueTopass1
+        destController.valueToPass1 = valueTopass
+        destController.valueToPass = valueTopass1
         }
     }
     
@@ -84,12 +87,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        let cell = tableView.cellForRow(at: indexPath)
+ //       receivedData1 = cell?.textLabel?.text
+ //       receivedData2 = values[indexPath.row]
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func unwindToPrevious (segue: UIStoryboardSegue){}
     
     //tabBarController?.selectedIndex = 1
     

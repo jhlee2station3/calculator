@@ -17,11 +17,22 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet weak var finalTitleText: UITextField!
     
+    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if (segue.identifier == "passData")
+        {
+            let destinController = segue.destination as! FirstViewController
+            destinController.valueTopass = valueToPass1
+            destinController.valueTopass1 = valueToPass2
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        labelTextt.text = valueToPass1
-        finalTitleText.text = valueToPass2
+        let finalValueToPass2 = valueToPass2.replacingOccurrences(of: "\"", with: "")
+        labelTextt.text = valueToPass1.replacingOccurrences(of: "\"", with: "")
+        finalTitleText.text = finalValueToPass2
     }
 
     override func didReceiveMemoryWarning() {

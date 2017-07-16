@@ -9,10 +9,10 @@
 import UIKit
 
 var dictionary = [
-    "Favorite Artists": "Pablo Picasso, Andy Warhol, The Beatles, Queen, The Chainsmokers",
-    "Favorite Drinks": "Water, Cola, Sprite, Orange Juice, Ginger Ale",
-    "Favorite Cities": "New York, London, Paris, Seoul, Cape Town",
-    "Favorite Beers": "Tiger Beer, Cass, Kloud, Hite"
+    "Favorite Artists": "Pablo Picasso, Andy Warhol, The Beatles",
+    "Favorite Drinks": "Water, Cola, Orange Juice",
+    "Favorite Cities": "New York, London, Paris",
+    "Favorite Brands": "Apple, Samsung, LG"
 ]
 
 var values = Array(dictionary.values)
@@ -23,15 +23,9 @@ var keys = Array(dictionary.keys)
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var valueTopass: String!
+    var valueTopass1: String!
     
     @IBOutlet weak var myTableView: UITableView!
-    
-    /*
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
- 
-    */
 
     //Determine the number of rows
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -57,10 +51,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         valueTopass = cell?.textLabel?.text
+        valueTopass1 = values[indexPath.row]
         self.performSegue(withIdentifier: "passData", sender: cell)
     }
 
@@ -77,7 +71,24 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         {
         let destController = segue.destination as! ThirdViewController
         destController.valueToPass2 = valueTopass
+        destController.valueToPass1 = valueTopass1
         }
+    }
+    
+    //Each time our view appears, data refreshes
+    
+    override func viewDidAppear(_ animated: Bool) {
+        myTableView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     //tabBarController?.selectedIndex = 1
@@ -100,22 +111,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     valueTopass = currentCell?.textLabel?.text
     performSegue(withIdentifier: "cell", sender: self)
  */
-    
-    //Each time our view appears, data refreshes
-    
-    override func viewDidAppear(_ animated: Bool) {
-        myTableView.reloadData()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 }
 

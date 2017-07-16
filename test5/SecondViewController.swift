@@ -16,6 +16,8 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var addItem: UIButton!
         
+    @IBOutlet weak var backButton: UIButton!
+    
  //   var LabelText = String()
     
     func addItems (action: UIAlertAction)
@@ -25,6 +27,23 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
         titleTitle.text = ""
         input.text = ""
         tabBarController?.selectedIndex = 0
+    }
+    
+    func backButton (_ sender: UIAlertAction)
+    {
+        if input.text == ""
+        {
+            if titleTitle.text == ""
+            {
+            tabBarController?.selectedIndex = 0
+            }
+        }
+        else
+        {
+        titleTitle.text = ""
+        input.text = ""
+        tabBarController?.selectedIndex = 0
+        }
     }
 
         /*
@@ -38,6 +57,13 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
     }
     */
 
+    @IBAction func alertNotified1 (_ sender: AnyObject)
+    {
+        let alert2 = UIAlertController (title: "Warning", message: "Do you want to go back? All changes will be discarded", preferredStyle: UIAlertControllerStyle.alert)
+        alert2.addAction(UIAlertAction(title: "Yes", style: .default, handler: backButton))
+        alert2.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert2, animated: true, completion: nil)
+    }
     @IBAction func alertNotified(_ sender: AnyObject) {
         if input.text! != ""
         {

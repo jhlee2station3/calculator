@@ -21,7 +21,9 @@ class ThirdViewController: UIViewController {
     func OKAction (_ sender: UIAlertAction)
     {
         keys.append((finalTitleText.text)!)
+        keys.insert(finalTitleText.text!, at: 0)
         values.append(labelText.text)
+        values.insert(labelText.text!, at: 0)
         self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
     }
     

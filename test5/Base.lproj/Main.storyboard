@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -135,13 +136,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="passData" id="hXd-8k-GCr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="passData" id="hXd-8k-GCr" customClass="FristTableCell" customModule="test5" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hXd-8k-GCr" id="2Xc-s4-UT0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-C0-pMk">
+                                                    <rect key="frame" x="303" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-HG-tST">
+                                                    <rect key="frame" x="36" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EEd-C0-pMk" secondAttribute="bottom" constant="4" id="5Gx-9b-Ekm"/>
+                                                <constraint firstItem="BfP-HG-tST" firstAttribute="top" secondItem="2Xc-s4-UT0" secondAttribute="topMargin" constant="4" id="D3u-rN-LTY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BfP-HG-tST" secondAttribute="bottom" constant="3" id="Gzu-Ps-kLy"/>
+                                                <constraint firstItem="EEd-C0-pMk" firstAttribute="top" secondItem="2Xc-s4-UT0" secondAttribute="topMargin" constant="3" id="kEL-Ue-JFm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="EEd-C0-pMk" secondAttribute="trailing" constant="22" id="pOd-vR-yDy"/>
+                                                <constraint firstItem="BfP-HG-tST" firstAttribute="leading" secondItem="2Xc-s4-UT0" secondAttribute="leadingMargin" constant="28" id="yBh-Al-lNV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timeLabel" destination="EEd-C0-pMk" id="cbv-kZ-fsF"/>
+                                            <outlet property="titleLabel" destination="BfP-HG-tST" id="CD6-Ke-eO7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -41,9 +41,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Populate the table view with text
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "passData", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "passData", for: indexPath) as! FristTableCell
         indexToPass = indexPath
-        cell.textLabel?.text = keys[indexToPass.row]
+        cell.titleLabel?.text = keys[indexToPass.row]
         return cell
     }
     
@@ -124,5 +124,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     performSegue(withIdentifier: "cell", sender: self)
  */
     
+}
+
+class FristTableCell : UITableViewCell {
+    @IBOutlet var titleLabel : UILabel?
+    @IBOutlet var timeLabel  : UILabel?
+    
+    func configure() {
+        
+    }
 }
 

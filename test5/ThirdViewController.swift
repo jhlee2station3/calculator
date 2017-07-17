@@ -18,16 +18,15 @@ class ThirdViewController: UIViewController {
     
     func OKAction (_ sender: UIAlertAction)
     {
-        navigationItem.title = keys[indexToPass.row]
-        labelText.text = values[indexToPass.row]
-        /*
-        keys.append((navigationItem.title)!)
-        keys.insert(navigationItem.title!, at: 0)
-        keys.remove(at: keys.count-1)
-        values.append(labelText.text)
-        values.insert(labelText.text!, at: 0)
-        values.remove(at: keys.count-1)
- */
+  //      navigationItem.title = keys[indexToPass.row]
+   //     labelText.text = values[indexToPass.row]
+//
+  //      keys.append((navigationItem.title)!)
+        keys.insert(navigationItem.title!, at: indexToPass.row)
+        keys.remove(at: indexToPass.row + 1)
+ //       values.append(labelText.text)
+        values.insert(labelText.text!, at: indexToPass.row)
+        values.remove(at: indexToPass.row + 1)
         self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
     }
     

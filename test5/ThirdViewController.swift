@@ -16,14 +16,18 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet weak var labelText: UITextView!
     
-    @IBOutlet weak var finalTitleText: UITextField!
-    
     func OKAction (_ sender: UIAlertAction)
     {
-        keys.append((finalTitleText.text)!)
-        keys.insert(finalTitleText.text!, at: 0)
+        navigationItem.title = keys[indexToPass.row]
+        labelText.text = values[indexToPass.row]
+        /*
+        keys.append((navigationItem.title)!)
+        keys.insert(navigationItem.title!, at: 0)
+        keys.remove(at: keys.count-1)
         values.append(labelText.text)
         values.insert(labelText.text!, at: 0)
+        values.remove(at: keys.count-1)
+ */
         self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
     }
     
@@ -32,12 +36,26 @@ class ThirdViewController: UIViewController {
         self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
     }
     
-    @IBAction func buttonTapped (_ sender: UIButton)
+    @IBAction func buttonTapped (_ sender: UIBarButtonItem)
     {
         let alert3 = UIAlertController (title: "Save new version of the note?", message: "", preferredStyle: UIAlertControllerStyle.alert)
         alert3.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: self.OKAction))
         alert3.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: self.NotOKAction))
         self.present(alert3, animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        self.navigationItem.title = "Title"
+        navigationItem.title = valueToPass1
+        labelText.text = valueToPass
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     /*
@@ -102,21 +120,14 @@ class ThirdViewController: UIViewController {
     }
  */
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        finalTitleText.text = valueToPass1
-        labelText.text = valueToPass
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
+     
+     //let navigationBar = UINavigationBar()
+     let navigationItem = UINavigationItem()
+     navigationItem.title = "Title"
+     navigationBar.items = [navigationItem]
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

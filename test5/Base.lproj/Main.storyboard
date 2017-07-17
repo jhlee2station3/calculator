@@ -84,36 +84,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTq-o3-5S4">
-                                <rect key="frame" x="304" y="64" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="wOD-9D-YFB" eventType="touchUpInside" id="7XO-Me-6N6"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SSd-nn-cBa">
-                                <rect key="frame" x="16" y="138" width="359" height="472"/>
+                                <rect key="frame" x="16" y="72" width="359" height="472"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OzG-Ja-f2H">
-                                <rect key="frame" x="19" y="104" width="337" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jhe-rS-Lod">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="87v-pM-Yxy">
+                            <connections>
+                                <action selector="buttonTapped:" destination="wOD-9D-YFB" id="aVq-it-wvk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="finalTitleText" destination="OzG-Ja-f2H" id="tak-Ne-GDc"/>
                         <outlet property="labelText" destination="SSd-nn-cBa" id="yOl-TH-tWc"/>
                         <segue destination="P8g-w7-icK" kind="unwind" identifier="unwindToPrevious" unwindAction="unwindToPreviousWithSegue:" id="5rB-hk-TI3"/>
                     </connections>
@@ -151,7 +139,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hXd-8k-GCr" id="2Xc-s4-UT0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -161,8 +149,13 @@
                                     <outlet property="delegate" destination="rJ0-HI-yhq" id="8VB-Gg-j6b"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsv-mt-Qe9">
-                                <rect key="frame" x="286" y="77" width="89" height="30"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LHR-PL-Bak">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="hr5-aX-5W5">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nsv-mt-Qe9">
+                                <rect key="frame" x="270" y="7" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
                                 <state key="normal" title="Add">
@@ -172,10 +165,8 @@
                                     <action selector="writeANote:" destination="rJ0-HI-yhq" eventType="touchUpInside" id="zGT-KK-AJd"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="LHR-PL-Bak"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="Yez-TY-RgA" id="SP0-48-Hka"/>
                         <segue destination="wOD-9D-YFB" kind="show" identifier="passData" id="Xab-0A-oD3"/>

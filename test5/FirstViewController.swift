@@ -19,6 +19,8 @@ var values = Array(dictionary.values)
 
 var keys = Array(dictionary.keys)
 
+var indexToPass: IndexPath = []
+
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -40,7 +42,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "passData", for: indexPath)
-        cell.textLabel?.text = keys[indexPath.row]
+        indexToPass = indexPath
+        cell.textLabel?.text = keys[indexToPass.row]
         return cell
     }
     
@@ -57,7 +60,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         valueTopass = cell?.textLabel?.text
-        valueTopass1 = values[indexPath.row]
+        indexToPass = indexPath
+        valueTopass1 = values[indexToPass.row]
         self.performSegue(withIdentifier: "passData", sender: cell)
     }
 

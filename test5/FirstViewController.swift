@@ -15,6 +15,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var indexToPass: IndexPath = []
     
+    var dicKey: String = ""
+
+    var dicValue: String = ""
+    
     var dictionary = [
         "Favorite Artists": ["Pablo Picasso, Andy Warhol", "\(Date())"],
         "Favorite Drinks": ["Water, Cola", "\(Date())"],
@@ -28,14 +32,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if segue.identifier == "passData" {
             let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
                 thirdViewController.delegate = self
-            //            thirdViewController.indexPath = indexToPass
-            //            thirdViewController.dicValue = dicValue
-            //            thirdViewerController.dicKey = dicKey
+                thirdViewController.indexPath = indexToPass
+                thirdViewController.dicValue = dicValue
+                thirdViewController.dicKey = dicKey
         }
     }
     
     func userDidEnterData(data: String) {
-      //receivinglabel.text = data
+      // = data
+        
     }
     
     //Reload data everytime the page refreshes
@@ -88,48 +93,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    /*
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     let cell = tableView.cellForRow(at: indexPath) as! FirstTableCell
-     valueTopass = keys[indexPath.row]
-     indexToPass = indexPath
-     valueTopass1 = values[indexPath.row]
-     self.performSegue(withIdentifier: "passData", sender: cell)
-     }
-     
-     func userDidEnterDataThreeToOne(data: String){
-     //UITableView.dequeueReusableCell(UITableView).text  = data
-     }
-     
-     
-     
-     //var values = Array(dictionary.values)
-     
-     
-     //var receivedData1: String!
-     //var receivedData2: String!
-     //var valueTopass: String!
-     //var valueTopass1: [String]!
-     
-     
-     }
-     
-     
-     
-     /*
-     override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
-     if (segue.identifier == "passData")
-     {
-     let destController = segue.destination as! ThirdViewController
-     destController.valueToPass = valueTopass
-     destController.valueToPass1 = valueTopass1
-     }
-     }
-     
-     */
-     
-     }
-     */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let keys = Array(dictionary.keys)
+        let values = Array(dictionary.keys)
+        let cell = tableView.cellForRow(at: indexPath) as! FirstTableCell
+        dicKey = keys[indexPath.row]
+        indexToPass = indexPath
+        dicValue = values[indexPath.row]
+        self.performSegue(withIdentifier: "passData", sender: cell)
+    }
 }
 
 class FirstTableCell : UITableViewCell {

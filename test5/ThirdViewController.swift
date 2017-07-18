@@ -13,6 +13,12 @@ protocol DataSentDelegate : class {
 }
 
 class ThirdViewController: UIViewController {
+    
+    var indexPath: IndexPath = []
+    
+    var dicKey: String = ""
+    
+    var dicValue: String = ""
 
     var delegate: DataSentDelegate? = nil
     
@@ -20,11 +26,21 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet weak var dateButton: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
-        let valueThreeToOne = labelText.text
-        delegate?.userDidEnterData(data: valueThreeToOne!)
+        let data = labelText.text
+        delegate?.userDidEnterData(data: data!)
         dismiss (animated: true, completion: nil)
     }
+    
+    
 /*
     let date2 = Date()
 

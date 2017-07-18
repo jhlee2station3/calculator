@@ -8,130 +8,128 @@
 
 import UIKit
 
-var dictionary = [
-    "Favorite Artists": "Pablo Picasso, Andy Warhol, The Beatles",
-    "Favorite Drinks": "Water, Cola, Orange Juice",
-    "Favorite Cities": "New York, London, Paris",
-    "Favorite Brands": "Apple, Samsung, LG"
-]
-
-var values = Array(dictionary.values)
-
-var keys = Array(dictionary.keys)
-
 var indexToPass: IndexPath = []
 
-
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DataSentDelegate {
     
-    var receivedData1: String!
-    var receivedData2: String!
-    
-    var valueTopass: String!
-    var valueTopass1: String!
+    var dictionary = [
+        "Favorite Artists": ["Pablo Picasso, Andy Warhol", "\(Date())"],
+        "Favorite Drinks": ["Water, Cola", "\(Date())"],
+        "Favorite Cities": ["New York, London", "\(Date())"],
+        "Favorite Brands": ["Apple, Samsung" , "\(Date())"]
+    ]
     
     @IBOutlet weak var myTableView: UITableView!
-
+    
     //Determine the number of rows
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return keys.count
-    }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
+        -> Int {
+            let keys = Array(dictionary.keys)
+            return keys.count
     
     //Populate the table view with text
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "passData", for: indexPath) as! FristTableCell
-        indexToPass = indexPath
-        cell.titleLabel?.text = keys[indexToPass.row]
-        return cell
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "passData", for: indexPath) as! FristTableCell
+    cell.configure()
+    indexToPass = indexPath
+    cell.titleLabel?.text = keys[indexToPass.row]
+    return cell
+    }
+            
+    //var values = Array(dictionary.values)
+
+    
+    //var receivedData1: String!
+    //var receivedData2: String!
+    //var valueTopass: String!
+    //var valueTopass1: [String]!
+    
+ 
     }
     
-    //Remove an item or delete an item simply by swiping left
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-    {
-        if editingStyle == UITableViewCellEditingStyle.delete
-        {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
+    forRowAt indexPath: IndexPath) {
+        //Remove an item or delete an item simply by swiping left
+        if editingStyle == UITableViewCellEditingStyle.delete {
             keys.remove(at: indexPath.row)
             myTableView.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        valueTopass = cell?.textLabel?.text
+        let cell = tableView.cellForRow(at: indexPath) as! FristTableCell
+        valueTopass = keys[indexPath.row]
         indexToPass = indexPath
-        valueTopass1 = values[indexToPass.row]
+        valueTopass1 = values[indexPath.row]
         self.performSegue(withIdentifier: "passData", sender: cell)
     }
 
-    
-    @IBAction func writeANote(_ sender: UIButton)
-    {
+    @IBAction func writeANote(_ sender: UIButton) {
         tabBarController?.selectedIndex = 1
     }
     
     
-    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if (segue.identifier == "passData")
-        {
-        let destController = segue.destination as! ThirdViewController
-        destController.valueToPass1 = valueTopass
-        destController.valueToPass = valueTopass1
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "passData" {
+            let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
+            thirdViewController.delegate = self
         }
     }
     
-    //Each time our view appears, data refreshes
-    
     override func viewDidAppear(_ animated: Bool) {
+        //Each time our view appears, data refreshes
         myTableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        let cell = tableView.cellForRow(at: indexPath)
- //       receivedData1 = cell?.textLabel?.text
- //       receivedData2 = values[indexPath.row]
     }
     
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning()
     }
     
-    @IBAction func unwindToPrevious (segue: UIStoryboardSegue){}
+    func userDidEnterData(data: String){
+        //UITableView.dequeueReusableCell(UITableView).text  = data
+    }
     
-    //tabBarController?.selectedIndex = 1
     
-//    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-//        var DestViewController: SecondViewController = segue.destination as! SecondViewController
-//        
-//        let cell = self.myTableView.cellForRow(at: <#T##IndexPath#>)
-//        
-//        DestViewController.input.text = cell.textLabel?.text
-//    }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
- //   }
     /*
-    let indexPath = tableView.indexPathForSelectedRow!
-    let currentCell = tableView.cellForRow(at: indexPath) as UITableViewCell!;
-    
-    valueTopass = currentCell?.textLabel?.text
-    performSegue(withIdentifier: "cell", sender: self)
- */
+     override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
+     if (segue.identifier == "passData")
+     {
+     let destController = segue.destination as! ThirdViewController
+     destController.valueToPass = valueTopass
+     destController.valueToPass1 = valueTopass1
+     }
+     }
+     
+     */
     
 }
 
 class FristTableCell : UITableViewCell {
+    
     @IBOutlet var titleLabel : UILabel?
     @IBOutlet var timeLabel  : UILabel?
     
     func configure() {
-        
-    }
-}
+        timeLabel?.text = String(describing: date)
 
+        /*
+        var keyList: [String] {
+            get{
+                return [String](dictionary.keys)
+            }
+        }
+        
+        let myRowKey = keyList[indexToPass.row]
+        let myRowData = dictionary[myRowKey]
+        */
+    }
+    
+    
+    
+}

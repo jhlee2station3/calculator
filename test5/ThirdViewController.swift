@@ -7,132 +7,71 @@
 //
 
 import UIKit
-import os.log
+
+protocol DataSentDelegate : class {
+    func userDidEnterData(data: String) 
+}
 
 class ThirdViewController: UIViewController {
     
-    var valueToPass : String!
-    var valueToPass1 : String!
+    var delegate: DataSentDelegate? = nil
     
+    
+    @IBOutlet weak var dataEntryTextView: UITextView!
+    
+    @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
+            let data = dataEntryTextView.text
+            delegate?.userDidEnterData(data: data!)
+            dismiss (animated: true, completion: nil)
+    }
+    
+/*
+    let date2 = Date()
+
+    var valueToPass1 : [String]!
+    var valueToPass : String!
+    
+    @IBOutlet weak var dateButton: UILabel!
     @IBOutlet weak var labelText: UITextView!
     
-    func OKAction (_ sender: UIAlertAction)
-    {
-  //      navigationItem.title = keys[indexToPass.row]
-   //     labelText.text = values[indexToPass.row]
-//
-  //      keys.append((navigationItem.title)!)
+    func OKAction (_ sender: UIAlertAction) {
         keys.insert(navigationItem.title!, at: indexToPass.row)
         keys.remove(at: indexToPass.row + 1)
- //       values.append(labelText.text)
-        values.insert(labelText.text!, at: indexToPass.row)
+    //    values
+        
+        valueToPass1[0] = labelText.text
+        
+        //valueToPass1[0].insert([labelText.text!], at: indexToPass.row)
         values.remove(at: indexToPass.row + 1)
+ //       values[indexToPass.row][1] = String(describing: date2)
+        self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
+        print(valueToPass1)
+    }
+    
+    func NotOKAction (_ sender: UIAlertAction) {
         self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
     }
     
-    func NotOKAction (_ sender: UIAlertAction)
-    {
-        self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
-    }
-    
-    @IBAction func buttonTapped (_ sender: UIBarButtonItem)
-    {
-        let alert3 = UIAlertController (title: "Save new version of the note?", message: "", preferredStyle: UIAlertControllerStyle.alert)
-        alert3.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: self.OKAction))
-        alert3.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: self.NotOKAction))
+    @IBAction func buttonTapped (_ sender: UIBarButtonItem) {
+        let alert3 = UIAlertController (title: "Save new version of the note?",
+        message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alert3.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default,
+        handler: self.OKAction))
+        alert3.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default,
+        handler: self.NotOKAction))
         self.present(alert3, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.navigationItem.title = "Title"
-        navigationItem.title = valueToPass1
-        labelText.text = valueToPass
-        
+        self.navigationItem.title = valueToPass
+ //       labelText.text = valueToPass1[0]
+        dateButton.text = valueToPass1[1]
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    /*
-    @IBAction func goToFirstVC(_ sender: AnyObject) {
-        
-        savedData1 = finalTitleText.text
-        //savedData2 = labelText.text
-        self.performSegue(withIdentifier: "goToFirstVC", sender: savedData1)
-
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "goToFirstVC"
-        {
-            if let destination = segue.destination as? FirstViewController
-            {
-                destination.receivedData1 = savedData1
-                destination.receivedData1 = savedData2
-            }
-        }
-    }
-    
- 
-    @IBAction func saveItem (_ sender: UIButton)
-    {
-        finalTitleText.text = finalValueToPass2
-        labelText.text =
-    }
-    
- */
-    
-    /*
-    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if (segue.identifier == "passDataBack")
-        {
-            let destinController = segue.destination as! FirstViewController
-            destinController.valueTopass = keys[indexPath.row]
-            destinController.valueTopass1 = valueToPass1
-        }
     }
  
  */
-    
-    //MARK: Navigaation
-    //This method lets you configure a view controller before it's presented
-    /*
-    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
-    {
-        super.prepare(for: segue, sender: sender)
-        //Configure the destination view controller only when the save button is pressed. 
-        guard let button = sender as? UIBarButtonItem, button === saveButton else { os_log("The save button was not pressed, cnacelling", log: OSLog.default, type: .debug)
-            return
-        }
-        
-        let savedTitle = finalTitleText.text ?? ""
-        let savedContent = labelText.text ?? ""
-        
-        
-    }
- */
-    
-
-    /*
-    // MARK: - Navigation
-     
-     //let navigationBar = UINavigationBar()
-     let navigationItem = UINavigationItem()
-     navigationItem.title = "Title"
-     navigationBar.items = [navigationItem]
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

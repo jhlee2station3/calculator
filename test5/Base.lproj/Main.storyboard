@@ -40,9 +40,8 @@
                                     <action selector="alertNotified:" destination="6xr-fJ-5hr" eventType="touchUpInside" id="zzV-6M-qeq"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjd-6G-tz0">
-                                <rect key="frame" x="16" y="97" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjd-6G-tz0">
+                                <rect key="frame" x="16" y="107.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -58,14 +57,28 @@
                                     <action selector="alertNotified1:" destination="6xr-fJ-5hr" eventType="touchUpInside" id="RR8-hP-CTB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 17th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovQ-Y2-yGl">
+                                <rect key="frame" x="321.5" y="550.5" width="36.5" height="10.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="9"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ovQ-Y2-yGl" secondAttribute="trailing" constant="1" id="MiK-R0-v1n"/>
+                            <constraint firstItem="ovQ-Y2-yGl" firstAttribute="top" secondItem="tjd-6G-tz0" secondAttribute="bottom" constant="413" id="dIP-IK-exp"/>
+                            <constraint firstItem="BbU-L1-jgp" firstAttribute="top" secondItem="ovQ-Y2-yGl" secondAttribute="bottom" constant="57" id="ehf-PI-JfQ"/>
+                            <constraint firstItem="tjd-6G-tz0" firstAttribute="leading" secondItem="6aY-r7-f1Q" secondAttribute="leadingMargin" id="oGF-jW-6Rf"/>
+                            <constraint firstItem="tjd-6G-tz0" firstAttribute="trailing" secondItem="6aY-r7-f1Q" secondAttribute="trailingMargin" id="zBn-Wm-GZ3"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Notes" id="nrO-Kn-Ug6"/>
                     <connections>
                         <outlet property="addItem" destination="nl9-oN-5kp" id="6X6-qP-7ZE"/>
                         <outlet property="backButton" destination="if7-7F-3Rj" id="asa-s2-qCH"/>
                         <outlet property="input" destination="ahi-3Q-Xru" id="5wW-74-as6"/>
+                        <outlet property="labelText2" destination="ovQ-Y2-yGl" id="XFX-VT-PVn"/>
                         <outlet property="titleTitle" destination="tjd-6G-tz0" id="VjL-kO-peB"/>
                     </connections>
                 </viewController>
@@ -73,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="164" y="464.6176911544228"/>
         </scene>
-        <!--Third View Controller-->
+        <!--Title-->
         <scene sceneID="cdw-xq-Aik">
             <objects>
                 <viewController id="wOD-9D-YFB" customClass="ThirdViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,23 +99,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SSd-nn-cBa">
-                                <rect key="frame" x="16" y="72" width="359" height="472"/>
+                                <rect key="frame" x="15" y="72" width="359" height="472"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="July 17th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGM-3C-oUs">
+                                <rect key="frame" x="336" y="270" width="36.5" height="21"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="9"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jGM-3C-oUs" firstAttribute="top" secondItem="tVL-6k-9or" secondAttribute="bottom" constant="97" id="5fU-G8-fxU"/>
+                            <constraint firstItem="tnr-Pa-DTh" firstAttribute="top" secondItem="jGM-3C-oUs" secondAttribute="bottom" constant="436" id="74a-wv-eBe"/>
+                            <constraint firstItem="jGM-3C-oUs" firstAttribute="trailing" secondItem="P6L-M3-YeX" secondAttribute="trailingMargin" id="NWD-4h-BJB"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Jhe-rS-Lod">
+                    <navigationItem key="navigationItem" title="Title" id="Jhe-rS-Lod">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="87v-pM-Yxy">
                             <connections>
-                                <action selector="buttonTapped:" destination="wOD-9D-YFB" id="aVq-it-wvk"/>
+                                <action selector="saveBtnWasPressed:" destination="wOD-9D-YFB" id="77b-7Y-BZp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dataEntryTextView" destination="SSd-nn-cBa" id="Ikx-Dw-6rK"/>
+                        <outlet property="dateButton" destination="jGM-3C-oUs" id="6Nu-YL-AWC"/>
                         <outlet property="labelText" destination="SSd-nn-cBa" id="yOl-TH-tWc"/>
                         <segue destination="P8g-w7-icK" kind="unwind" identifier="unwindToPrevious" unwindAction="unwindToPreviousWithSegue:" id="5rB-hk-TI3"/>
                     </connections>
@@ -110,7 +136,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk3-FY-V8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="P8g-w7-icK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2038" y="-233"/>
+            <point key="canvasLocation" x="2037.5999999999999" y="-233.43328335832086"/>
         </scene>
         <!--FirstViewController-->
         <scene sceneID="xhk-ZT-4vk">
@@ -143,9 +169,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-C0-pMk">
-                                                    <rect key="frame" x="303" y="11" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 17th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-C0-pMk">
+                                                    <rect key="frame" x="308.5" y="11" width="36.5" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="9"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -158,16 +184,19 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="EEd-C0-pMk" secondAttribute="bottom" constant="4" id="5Gx-9b-Ekm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="EEd-C0-pMk" secondAttribute="trailing" constant="22" id="CcN-DC-Ycu"/>
                                                 <constraint firstItem="BfP-HG-tST" firstAttribute="top" secondItem="2Xc-s4-UT0" secondAttribute="topMargin" constant="4" id="D3u-rN-LTY"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="BfP-HG-tST" secondAttribute="bottom" constant="3" id="Gzu-Ps-kLy"/>
+                                                <constraint firstItem="EEd-C0-pMk" firstAttribute="top" secondItem="2Xc-s4-UT0" secondAttribute="topMargin" constant="3" id="JZt-wi-yxa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EEd-C0-pMk" secondAttribute="bottom" constant="4" id="jwj-78-V4C"/>
                                                 <constraint firstItem="EEd-C0-pMk" firstAttribute="top" secondItem="2Xc-s4-UT0" secondAttribute="topMargin" constant="3" id="kEL-Ue-JFm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EEd-C0-pMk" secondAttribute="trailing" constant="22" id="pOd-vR-yDy"/>
                                                 <constraint firstItem="BfP-HG-tST" firstAttribute="leading" secondItem="2Xc-s4-UT0" secondAttribute="leadingMargin" constant="28" id="yBh-Al-lNV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="timeLabel" destination="EEd-C0-pMk" id="cbv-kZ-fsF"/>
-                                            <outlet property="titleLabel" destination="BfP-HG-tST" id="CD6-Ke-eO7"/>
+                                            <outlet property="timeLabel" destination="EEd-C0-pMk" id="xkQ-yb-avW"/>
+                                            <outlet property="titleLabel" destination="BfP-HG-tST" id="oQz-Y7-BHY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -195,7 +224,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="myTableView" destination="Yez-TY-RgA" id="SP0-48-Hka"/>
+                        <outlet property="myTableView" destination="Yez-TY-RgA" id="ThI-AI-ERN"/>
                         <segue destination="wOD-9D-YFB" kind="show" identifier="passData" id="Xab-0A-oD3"/>
                     </connections>
                 </viewController>

@@ -18,7 +18,9 @@ class ThirdViewController: UIViewController {
     
     var dicKey: String = ""
     
-    var dicValue: String = ""
+    var dicContent: String = ""
+    
+    var dicDate: String = ""
 
     var delegate: DataSentDelegate? = nil
     
@@ -28,6 +30,9 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = dicKey
+        labelText.text = dicContent
+        dateButton.text = dicDate
         
     }
     override func didReceiveMemoryWarning() {
@@ -39,6 +44,7 @@ class ThirdViewController: UIViewController {
         delegate?.userDidEnterData(data: data!)
         dismiss (animated: true, completion: nil)
     }
+    
     
     
 /*
@@ -63,16 +69,6 @@ class ThirdViewController: UIViewController {
     
     func NotOKAction (_ sender: UIAlertAction) {
         self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
-    }
-    
-    @IBAction func buttonTapped (_ sender: UIBarButtonItem) {
-        let alert3 = UIAlertController (title: "Save new version of the note?",
-        message: "", preferredStyle: UIAlertControllerStyle.alert)
-        alert3.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default,
-        handler: self.OKAction))
-        alert3.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default,
-        handler: self.NotOKAction))
-        self.present(alert3, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

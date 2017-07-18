@@ -17,7 +17,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var dicKey: String = ""
 
-    var dicValue: String = ""
+    var dicContent: String = ""
+    
+    var dicDate: String = ""
     
     var dictionary = [
         "Favorite Artists": ["Pablo Picasso, Andy Warhol", "\(Date())"],
@@ -33,13 +35,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
                 thirdViewController.delegate = self
                 thirdViewController.indexPath = indexToPass
-                thirdViewController.dicValue = dicValue
+                thirdViewController.dicContent = dicContent
                 thirdViewController.dicKey = dicKey
+                thirdViewController.dicDate = dicDate
         }
     }
     
     func userDidEnterData(data: String) {
-      // = data
+         = data
         
     }
     
@@ -95,11 +98,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let keys = Array(dictionary.keys)
-        let values = Array(dictionary.keys)
+        let values = Array(dictionary.values)
         let cell = tableView.cellForRow(at: indexPath) as! FirstTableCell
         dicKey = keys[indexPath.row]
         indexToPass = indexPath
-        dicValue = values[indexPath.row]
+        dicContent = values[indexPath.row][0]
+        dicDate = values[indexPath.row][1]
         self.performSegue(withIdentifier: "passData", sender: cell)
     }
 }

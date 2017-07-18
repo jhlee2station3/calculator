@@ -122,7 +122,7 @@
                     <navigationItem key="navigationItem" title="Title" id="Jhe-rS-Lod">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="87v-pM-Yxy">
                             <connections>
-                                <action selector="saveBtnWasPressed:" destination="wOD-9D-YFB" id="77b-7Y-BZp"/>
+                                <action selector="saveBtnWasPressed:" destination="wOD-9D-YFB" id="i1b-ie-1uY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

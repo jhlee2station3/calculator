@@ -127,7 +127,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="dataEntryTextView" destination="SSd-nn-cBa" id="Ikx-Dw-6rK"/>
                         <outlet property="dateButton" destination="jGM-3C-oUs" id="6Nu-YL-AWC"/>
                         <outlet property="labelText" destination="SSd-nn-cBa" id="yOl-TH-tWc"/>
                         <segue destination="P8g-w7-icK" kind="unwind" identifier="unwindToPrevious" unwindAction="unwindToPreviousWithSegue:" id="5rB-hk-TI3"/>
@@ -162,7 +161,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="passData" id="hXd-8k-GCr" customClass="FristTableCell" customModule="test5" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="passData" id="hXd-8k-GCr" customClass="FirstTableCell" customModule="test5" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hXd-8k-GCr" id="2Xc-s4-UT0">
@@ -195,8 +194,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="timeLabel" destination="EEd-C0-pMk" id="xkQ-yb-avW"/>
-                                            <outlet property="titleLabel" destination="BfP-HG-tST" id="oQz-Y7-BHY"/>
+                                            <outlet property="timeLabel" destination="EEd-C0-pMk" id="OvY-tr-wyc"/>
+                                            <outlet property="titleLabel" destination="BfP-HG-tST" id="sNN-AJ-ou0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -224,7 +223,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="myTableView" destination="Yez-TY-RgA" id="ThI-AI-ERN"/>
+                        <outlet property="myTableView" destination="Yez-TY-RgA" id="SP0-48-Hka"/>
                         <segue destination="wOD-9D-YFB" kind="show" identifier="passData" id="Xab-0A-oD3"/>
                     </connections>
                 </viewController>

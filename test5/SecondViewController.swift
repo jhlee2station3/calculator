@@ -19,8 +19,8 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
     @IBOutlet weak var backButton: UIButton!
     
     func addItems (action: UIAlertAction) {
-        keys.append(titleTitle.text!)
-        values.append([input.text])
+//        keys.append(titleTitle.text!)
+  //      values.append([input.text])
         titleTitle.text = ""
         input.text = ""
         tabBarController?.selectedIndex = 0

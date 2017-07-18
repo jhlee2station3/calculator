@@ -9,30 +9,27 @@
 import UIKit
 
 protocol DataSentDelegate : class {
-    func userDidEnterData(data: String) 
+    func userDidEnterData(data: String)
 }
 
 class ThirdViewController: UIViewController {
-    
+
     var delegate: DataSentDelegate? = nil
     
+    @IBOutlet weak var labelText: UITextView!
     
-    @IBOutlet weak var dataEntryTextView: UITextView!
+    @IBOutlet weak var dateButton: UILabel!
     
     @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
-            let data = dataEntryTextView.text
-            delegate?.userDidEnterData(data: data!)
-            dismiss (animated: true, completion: nil)
+        let valueThreeToOne = labelText.text
+        delegate?.userDidEnterData(data: valueThreeToOne!)
+        dismiss (animated: true, completion: nil)
     }
-    
 /*
     let date2 = Date()
 
     var valueToPass1 : [String]!
     var valueToPass : String!
-    
-    @IBOutlet weak var dateButton: UILabel!
-    @IBOutlet weak var labelText: UITextView!
     
     func OKAction (_ sender: UIAlertAction) {
         keys.insert(navigationItem.title!, at: indexToPass.row)

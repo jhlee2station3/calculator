@@ -14,13 +14,13 @@ protocol DataSentDelegate : class {
 
 class ThirdViewController: UIViewController {
     
-    var indexPath: IndexPath = []
+    var indexToPass3: IndexPath = []
     
-    var dicKey: String = ""
+    var dicKey3: String = ""
     
-    var dicContent: String = ""
+    var dicContent3: String = ""
     
-    var dicDate: String = ""
+    var dicDate3: String = ""
 
     var delegate: DataSentDelegate? = nil
     
@@ -30,19 +30,28 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = dicKey
-        labelText.text = dicContent
-        dateButton.text = dicDate
+        self.navigationItem.title = dicKey3
+       // labelText.text = MyData.title
+        dateButton.text = dicDate3
         
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    func OKAction (_ sender: UIAlertAction) {
+        
+    }
+    
+  //  func notOKAction (_ sender: UIAlertAction)
+    
     @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
-        let data = labelText.text
-        delegate?.userDidEnterData(data: data!)
-        dismiss (animated: true, completion: nil)
+        if delegate != nil {
+            let data = labelText.text
+            delegate?.userDidEnterData(data: data!)
+            dismiss (animated: true, completion: nil)
+        }
+
     }
     
     

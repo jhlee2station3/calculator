@@ -31,6 +31,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var myTableView: UITableView!
     
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
     var indexToPass1: IndexPath = []
     
     var dicTitle1: String = ""
@@ -72,12 +74,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             thirdViewController.receivedContent = self.dataArray[indexToPass1.row].content
             thirdViewController.receivedDate = self.dataArray[indexToPass1.row].dateString
             thirdViewController.receivedTitle = self.dataArray[indexToPass1.row].title
-            thirdViewController.indexToPass3 = indexToPass1
         }
-    }
-
-    @IBAction func writeANote(_ sender: UIButton) {
-        tabBarController?.selectedIndex = 1
+        
+        else if segue.identifier == "passNewData" {
+            let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
+            thirdViewController.delegate = self
+        }
     }
     
     //Delete selected row
@@ -114,15 +116,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func userDidEnterData(_ thirdViewController: ThirdViewController) {
-        print("userDidEnterdata")
         if let indexPath = thirdViewController.indexToPass3 {
-            print("inside")
             self.dataArray[indexPath.row].content = thirdViewController.labelText.text
             print("\(thirdViewController.labelText.text)")
             self.dataArray[indexPath.row].dateString = thirdViewController.dateButton.text!
             self.myTableView.reloadData()
-        } else {
-            print("else")
+        }
+        else {
+            let four = MyData(title: thirdViewController.newTitle.text!, content: thirdViewController.labelText.text, dateString: thirdViewController.dateButton.text!)
+            self.dataArray.append(four)
         }
     }
 }

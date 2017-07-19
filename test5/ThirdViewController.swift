@@ -15,93 +15,69 @@ protocol DataSentDelegate : class {
 class ThirdViewController: UIViewController {
     
     var dataArray3 : [MyData] = []
-    
     var indexToPass3: IndexPath? = []
-    
     var receivedTitle: String = ""
-    
     var receivedContent: String = ""
-    
     var receivedDate: String = ""
-
     var delegate: DataSentDelegate? = nil
 
+    @IBOutlet weak var newTitle: UITextField!
     @IBOutlet weak var labelText: UITextView!
-    
     @IBOutlet weak var dateButton: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = receivedTitle
-        labelText.text = receivedContent
-        dateButton.text = receivedDate
+        if receivedContent != "" {
+            newTitle.isHidden = true
+            self.navigationItem.title = receivedTitle
+            labelText.text = receivedContent
+            dateButton.text = receivedDate
+    }
+        else {
+            newTitle.isHidden = false
+//            labelText.text = receivedContent
+            dateButton.text = ""
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-//  func notOKAction (_ sender: UIAlertAction)
-    
+
     @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
-        print("btn pressed")
         if delegate != nil {
             if labelText.text != nil {
                 delegate?.userDidEnterData(self)
-                print("save")
                 self.navigationController?.popViewController(animated: true)
             }
         }
+    }
 }
-        
-    
-    
 
-    }
-    
-    
-    
+
+
 /*
-    let date2 = Date()
+func addItems (action: UIAlertAction) {
+    //        keys.append(titleTitle.text!)
+    //      values.append([input.text])
+    titleTitle.text = ""
+    input.text = ""
+    //   tabBarController?.selectedIndex = 0
+}
 
-    var valueToPass1 : [String]!
-    var valueToPass : String!
-    
-    func OKAction (_ sender: UIAlertAction) {
-        keys.insert(navigationItem.title!, at: indexToPass.row)
-        keys.remove(at: indexToPass.row + 1)
-    //    values
-        
-        valueToPass1[0] = labelText.text
-        
-        //valueToPass1[0].insert([labelText.text!], at: indexToPass.row)
-        values.remove(at: indexToPass.row + 1)
- //       values[indexToPass.row][1] = String(describing: date2)
-        self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
-        print(valueToPass1)
+@IBAction func alertNotified(_ sender: AnyObject) {
+    if input.text! != "" {
+        let alert1 = UIAlertController (title: "Warning", message:
+            "Do you want to save this note?", preferredStyle: UIAlertControllerStyle.alert)
+        alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: addItems))
+        alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert1, animated: true, completion: nil)
     }
-    
-    func NotOKAction (_ sender: UIAlertAction) {
-        self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
+    else if input.text == "" {
+        let alert2 = UIAlertController (title: "Warning", message:
+            "You have not entered anything", preferredStyle: UIAlertControllerStyle.alert)
+        alert2.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        self.present(alert2, animated: true, completion: nil)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title = valueToPass
- //       labelText.text = valueToPass1[0]
-        dateButton.text = valueToPass1[1]
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
- 
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- if segue.identifier == "unwindToPreiouvs" {
- let firstViewController: FirstViewController = segue.destination as! FirstViewController
- }
- 
- }
-
- 
- */
+}
+*/

@@ -11,6 +11,7 @@ import UIKit
 let date2 = Date()
 
 class SecondViewController: UIViewController, UIAlertViewDelegate {
+    
 
     @IBOutlet weak var input: UITextView!
     @IBOutlet weak var titleTitle: UITextField!
@@ -23,19 +24,19 @@ class SecondViewController: UIViewController, UIAlertViewDelegate {
   //      values.append([input.text])
         titleTitle.text = ""
         input.text = ""
-        tabBarController?.selectedIndex = 0
+     //   tabBarController?.selectedIndex = 0
     }
     
     func backButton (_ sender: UIAlertAction) {
         if input.text == "" {
             if titleTitle.text == "" {
-            tabBarController?.selectedIndex = 0
+    //        tabBarController?.selectedIndex = 0
             }
         }
         else {
             titleTitle.text = ""
             input.text = ""
-            tabBarController?.selectedIndex = 0
+     //       tabBarController?.selectedIndex = 0
         }
     }
 

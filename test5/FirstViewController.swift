@@ -35,25 +35,19 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var dicDateString1: String = ""
     
-    var dictionary = [
-        "Favorite Artists": ["Pablo Picasso, Andy Warhol", "\(Date())"],
-        "Favorite Drinks": ["Water, Cola", "\(Date())"],
-        "Favorite Cities": ["New York, London", "\(Date())"],
-        "Favorite Brands": ["Apple, Samsung" , "\(Date())"]
-    ]
-    
     var dataDelegate : DataSentDelegate?
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "passData" {
-            let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
-            thirdViewController.delegate = self
-            thirdViewController.indexToPass3 = indexToPass1
-            thirdViewController.dicContent3 = dicContent1
-            thirdViewController.dicKey3 = dicTitle1
-            thirdViewController.dicDate3 = dicDateString1
-        }
-    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "passData" {
+//            let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
+////            thirdViewController.receivedTitle =
+//
+//            //thirdViewController.delegate = self
+//            
+//        }
+//    }
+    
     
     //Reload data everytime the page refreshes
     override func viewDidAppear(_ animated: Bool) {
@@ -69,31 +63,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let one = MyData(title: "How", content: "Wow", dateString: "")
         let two = MyData(title: "What", content: "Not", dateString: "")
         let three = MyData(title:"Why", content: "Lie", dateString: "")
+        
         self.dataArray.append(one)
         self.dataArray.append(two)
         self.dataArray.append(three)
         self.myTableView.reloadData()
-        
-        print("\(self.dataArray)")
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    /*
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-     {
-     if editingStyle == UITableViewCellEditingStyle.delete {
-     var keys = Array(dictionary.keys)
-     keys.remove(at: 1)
-     self.myTableView.reloadData()
-     print("Delete")
-     
-     }
-     */
-    
+
     @IBAction func writeANote(_ sender: UIButton) {
         tabBarController?.selectedIndex = 1
     }
@@ -126,20 +106,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let keys = Array(dictionary.keys)
-        let values = Array(dictionary.values)
         let cell = tableView.cellForRow(at: indexPath) as! FirstTableCell
-        dicTitle1 = keys[indexPath.row]
         indexToPass1 = indexPath
-        dicContent1 = values[indexPath.row][0]
-        dicDateString1 = values[indexPath.row][1]
+   //     dicTitle1 = title!
+    //    dicContent1 = content!
+     //   dicDateString1 =
         self.performSegue(withIdentifier: "passData", sender: cell)
     }
     
     public func userDidEnterData(data: String) {
-        var values = Array(dictionary.values)
-        dicContent1 = values[indexToPass1.row][1]
-        dicContent1 = data
     }
 }
 

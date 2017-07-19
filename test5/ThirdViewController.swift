@@ -14,26 +14,23 @@ protocol DataSentDelegate : class {
 
 class ThirdViewController: UIViewController {
     
+    var dataArray3 : [MyData] = []
+    
     var indexToPass3: IndexPath = []
     
-    var dicKey3: String = ""
-    
-    var dicContent3: String = ""
-    
-    var dicDate3: String = ""
+    var receivedTitle: String = ""
 
     var delegate: DataSentDelegate? = nil
-    
+
     @IBOutlet weak var labelText: UITextView!
     
     @IBOutlet weak var dateButton: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = dicKey3
-       // labelText.text = MyData.title
-        dateButton.text = dicDate3
-        
+   //     self.navigationItem.title = title
+        labelText.text = dataArray3.title
+   //     dateButton.text = content
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,6 +48,8 @@ class ThirdViewController: UIViewController {
             delegate?.userDidEnterData(data: data!)
             dismiss (animated: true, completion: nil)
         }
+        
+    
 
     }
     

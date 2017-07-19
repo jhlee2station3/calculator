@@ -127,8 +127,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="dateButton" destination="jGM-3C-oUs" id="6Nu-YL-AWC"/>
-                        <outlet property="labelText" destination="SSd-nn-cBa" id="yOl-TH-tWc"/>
+                        <outlet property="dateButton" destination="jGM-3C-oUs" id="nCy-Dm-Ozm"/>
+                        <outlet property="labelText" destination="SSd-nn-cBa" id="t13-Kj-sR5"/>
                         <segue destination="P8g-w7-icK" kind="unwind" identifier="unwindToPrevious" unwindAction="unwindToPreviousWithSegue:" id="5rB-hk-TI3"/>
                     </connections>
                 </viewController>
@@ -165,7 +165,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hXd-8k-GCr" id="2Xc-s4-UT0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 17th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-C0-pMk">
@@ -234,6 +234,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="lCu-hN-DM3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJn-Vo-qRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="Tze-cp-VBG" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="KMf-LK-kmM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -245,7 +246,6 @@
                         <segue destination="6xr-fJ-5hr" kind="relationship" relationship="viewControllers" id="scK-00-wi0"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mJn-Vo-qRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-789" y="137"/>
         </scene>

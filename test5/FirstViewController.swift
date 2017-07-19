@@ -25,6 +25,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var dataArray : [MyData] = []
     
+    var passingData : MyData? = nil
+    
+    var delegate : DataSentDelegate?
+    
     @IBOutlet var myTableView: UITableView!
     
     var indexToPass1: IndexPath = []
@@ -35,20 +39,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var dicDateString1: String = ""
     
-    var dataDelegate : DataSentDelegate?
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "passData" {
-//            let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
-////            thirdViewController.receivedTitle =
-//
-//            //thirdViewController.delegate = self
-//            
-//        }
-//    }
-    
-    
     //Reload data everytime the page refreshes
     override func viewDidAppear(_ animated: Bool) {
         myTableView.reloadData()
@@ -56,13 +46,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dataDelegate = self
         self.myTableView.dataSource = self
         self.myTableView.delegate = self
+        self.delegate = self
         
-        let one = MyData(title: "How", content: "Wow", dateString: "")
-        let two = MyData(title: "What", content: "Not", dateString: "")
-        let three = MyData(title:"Why", content: "Lie", dateString: "")
+        let one = MyData(title: "How", content: "Wow", dateString: "07/11")
+        let two = MyData(title: "What", content: "Not", dateString: "07/11")
+        let three = MyData(title:"Why", content: "Lie", dateString: "07/11")
         
         self.dataArray.append(one)
         self.dataArray.append(two)
@@ -72,6 +62,18 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "passData" {
+            let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
+            thirdViewController.delegate = self
+            thirdViewController.receivedContent = self.dataArray[indexToPass1.row].content
+            thirdViewController.receivedDate = self.dataArray[indexToPass1.row].dateString
+            thirdViewController.receivedTitle = self.dataArray[indexToPass1.row].title
+            thirdViewController.indexToPass3 = indexToPass1
+        }
     }
 
     @IBAction func writeANote(_ sender: UIButton) {
@@ -98,7 +100,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //Populate the table view with text
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "passData", for: indexPath) as?FirstTableCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "passData", for: indexPath) as? FirstTableCell {
             cell.configure(data: self.dataArray[indexPath.row])
             return cell
         }
@@ -108,13 +110,20 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! FirstTableCell
         indexToPass1 = indexPath
-   //     dicTitle1 = title!
-    //    dicContent1 = content!
-     //   dicDateString1 =
         self.performSegue(withIdentifier: "passData", sender: cell)
     }
     
-    public func userDidEnterData(data: String) {
+    func userDidEnterData(_ thirdViewController: ThirdViewController) {
+        print("userDidEnterdata")
+        if let indexPath = thirdViewController.indexToPass3 {
+            print("inside")
+            self.dataArray[indexPath.row].content = thirdViewController.labelText.text
+            print("\(thirdViewController.labelText.text)")
+            self.dataArray[indexPath.row].dateString = thirdViewController.dateButton.text!
+            self.myTableView.reloadData()
+        } else {
+            print("else")
+        }
     }
 }
 

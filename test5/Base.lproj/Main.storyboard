@@ -120,20 +120,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Jhe-rS-Lod">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="87v-pM-Yxy">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="tX9-KP-78G">
                             <connections>
-                                <action selector="saveBtnWasPressed:" destination="wOD-9D-YFB" id="i1b-ie-1uY"/>
+                                <action selector="saveBtnWasPressed:" destination="wOD-9D-YFB" id="tvw-iw-6wr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateButton" destination="jGM-3C-oUs" id="nCy-Dm-Ozm"/>
                         <outlet property="labelText" destination="SSd-nn-cBa" id="t13-Kj-sR5"/>
-                        <segue destination="P8g-w7-icK" kind="unwind" identifier="unwindToPrevious" unwindAction="unwindToPreviousWithSegue:" id="5rB-hk-TI3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk3-FY-V8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="P8g-w7-icK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2037.5999999999999" y="-233.43328335832086"/>
         </scene>

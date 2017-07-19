@@ -9,16 +9,20 @@
 import UIKit
 
 protocol DataSentDelegate : class {
-    func userDidEnterData(data: String)
+    func userDidEnterData(_ thirdViewController: ThirdViewController)
 }
 
 class ThirdViewController: UIViewController {
     
     var dataArray3 : [MyData] = []
     
-    var indexToPass3: IndexPath = []
+    var indexToPass3: IndexPath? = []
     
     var receivedTitle: String = ""
+    
+    var receivedContent: String = ""
+    
+    var receivedDate: String = ""
 
     var delegate: DataSentDelegate? = nil
 
@@ -28,27 +32,29 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   //     self.navigationItem.title = title
-        labelText.text = dataArray3.title
-   //     dateButton.text = content
+        self.navigationItem.title = receivedTitle
+        labelText.text = receivedContent
+        dateButton.text = receivedDate
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func OKAction (_ sender: UIAlertAction) {
-        
-    }
-    
-  //  func notOKAction (_ sender: UIAlertAction)
+//  func notOKAction (_ sender: UIAlertAction)
     
     @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
+        print("btn pressed")
         if delegate != nil {
-            let data = labelText.text
-            delegate?.userDidEnterData(data: data!)
-            dismiss (animated: true, completion: nil)
+            if labelText.text != nil {
+                delegate?.userDidEnterData(self)
+                print("save")
+                self.navigationController?.popViewController(animated: true)
+            }
         }
+}
         
+    
     
 
     }
@@ -90,5 +96,12 @@ class ThirdViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
  
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ if segue.identifier == "unwindToPreiouvs" {
+ let firstViewController: FirstViewController = segue.destination as! FirstViewController
+ }
+ 
+ }
+
+ 
  */
-}

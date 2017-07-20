@@ -53,13 +53,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.myTableView.delegate = self
         self.delegate = self
         
-        let one = MyData(title: "How", content: "Wow", dateString: String(describing: Date()))
-        let two = MyData(title: "What", content: "Not", dateString: String(describing: Date()))
-        let three = MyData(title:"Why", content: "Lie", dateString: String(describing: Date()))
+        let one = MyData(title: "방을 찾고 싶어요~", content: "그럼 다방으로 고고~!", dateString: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium))
+        let two = MyData(title: "저 알바 할래요~", content: "그럼 '알바천국'에서 알아봐라 알아봐~!", dateString: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium))
         
         self.dataArray.append(one)
         self.dataArray.append(two)
-        self.dataArray.append(three)
         self.myTableView.reloadData()
     }
     
@@ -120,13 +118,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func userDidEnterData(_ thirdViewController: ThirdViewController) {
         if thirdViewController.newTitle.isHidden == true {
             let indexPath = thirdViewController.indexToPass3
-            self.dataArray[(indexPath?.row)!].content = thirdViewController.labelText.text
+            self.dataArray[(indexPath?.row)!].content = thirdViewController.labelText.text!
             print("\(thirdViewController.labelText.text)")
             self.dataArray[(indexPath?.row)!].dateString = thirdViewController.dateButton.text!
             self.myTableView.reloadData()
         }
         else {
-            let four = MyData(title: thirdViewController.newTitle.text!, content: thirdViewController.labelText.text, dateString: thirdViewController.dateButton.text!)
+            let four = MyData(title: thirdViewController.newTitle.text!, content: thirdViewController.labelText.text!, dateString: thirdViewController.dateButton.text!)
             self.dataArray.append(four)
         }
     }

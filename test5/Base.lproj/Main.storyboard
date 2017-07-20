@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="chM-DO-Ksa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KdC-Nl-kBK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,26 +22,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="July 17th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGM-3C-oUs">
-                                <rect key="frame" x="336" y="270" width="36.5" height="21"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="9"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-Fu-LeY">
+                                <rect key="frame" x="15" y="79" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter memo" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9VR-bd-76y">
+                                <rect key="frame" x="16" y="117" width="342" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGM-3C-oUs">
+                                <rect key="frame" x="322" y="626" width="36.5" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-Fu-LeY">
-                                <rect key="frame" x="16" y="72" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SSd-nn-cBa">
-                                <rect key="frame" x="8" y="110" width="359" height="472"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -59,7 +59,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateButton" destination="jGM-3C-oUs" id="nCy-Dm-Ozm"/>
-                        <outlet property="labelText" destination="SSd-nn-cBa" id="t13-Kj-sR5"/>
+                        <outlet property="labelText" destination="9VR-bd-76y" id="ycw-NU-bMe"/>
                         <outlet property="newTitle" destination="u1c-Fu-LeY" id="tDv-wI-c9J"/>
                     </connections>
                 </viewController>
@@ -87,7 +87,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yez-TY-RgA">
-                                <rect key="frame" x="0.0" y="110" width="375" height="486"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -99,14 +99,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 17th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-C0-pMk">
-                                                    <rect key="frame" x="308.5" y="11" width="36.5" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="9"/>
+                                                    <rect key="frame" x="307.5" y="11" width="37.5" height="21"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="9"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-HG-tST">
-                                                    <rect key="frame" x="36" y="12" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="36" y="12" width="38" height="21"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -137,15 +137,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LHR-PL-Bak">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="hr5-aX-5W5">
+                    <tabBarItem key="tabBarItem" title="Memo" id="5Sf-aa-9Gp">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="My Memos" id="Kga-H8-vkk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q1P-VP-wiF">
                             <connections>
-                                <segue destination="wOD-9D-YFB" kind="show" identifier="passNewData" id="1kp-mY-6Kn"/>
+                                <segue destination="wOD-9D-YFB" kind="show" identifier="passNewData" id="ZVy-er-E5F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="hr5-aX-5W5" id="MBF-XP-8Xa"/>
+                        <outlet property="addButton" destination="Q1P-VP-wiF" id="EZZ-Ma-adF"/>
                         <outlet property="myTableView" destination="Yez-TY-RgA" id="SP0-48-Hka"/>
                         <segue destination="wOD-9D-YFB" kind="show" identifier="passData" id="Xab-0A-oD3"/>
                     </connections>
@@ -153,6 +156,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsu-ag-qha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1103.2" y="-233.43328335832086"/>
+        </scene>
+        <!--Calculator-->
+        <scene sceneID="7m4-xn-YsA">
+            <objects>
+                <viewController id="JOZ-Gu-cHY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BSo-MH-QoZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="1pE-C1-wDf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a04-5X-HxY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calculator" id="9N0-JX-ZUv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9w-zi-Rfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088" y="1190"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mU9-Sv-ggu">
+            <objects>
+                <tabBarController id="KdC-Nl-kBK" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="tQY-ON-uI9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="rJ0-HI-yhq" kind="relationship" relationship="viewControllers" id="UkR-7T-svS"/>
+                        <segue destination="JOZ-Gu-cHY" kind="relationship" relationship="viewControllers" id="cwb-3i-EEK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOW-oh-DPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="516"/>
         </scene>
         <!--Home-->
         <scene sceneID="OJz-oQ-hOa">
@@ -175,6 +215,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1kp-mY-6Kn"/>
+        <segue reference="ZVy-er-E5F"/>
+        <segue reference="UkR-7T-svS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,22 +23,23 @@ class ThirdViewController: UIViewController {
     var delegate: DataSentDelegate? = nil
 
     @IBOutlet weak var newTitle: UITextField!
-    @IBOutlet weak var labelText: UITextView!
+    @IBOutlet weak var labelText: UITextField!
     @IBOutlet weak var dateButton: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if receivedContent != "" {
+            let dateEditNew = Date()
             newTitle.isHidden = true
             self.navigationItem.title = receivedTitle
             labelText.text = receivedContent
-            dateButton.text = receivedDate
+            dateButton.text = DateFormatter.localizedString(from: dateEditNew, dateStyle: .medium, timeStyle: .medium)
     }
         else {
-            let dateAddNew = String(describing: Date())
+            let dateAddNew = Date()
+            dateButton.text = DateFormatter.localizedString(from: dateAddNew, dateStyle: .medium, timeStyle: .medium)
             self.navigationItem.title = ""
             newTitle.isHidden = false
-            dateButton.text = dateAddNew
         }
     }
     

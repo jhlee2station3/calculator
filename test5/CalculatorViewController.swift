@@ -14,14 +14,11 @@ class CalculatorViewController: UIViewController {
     var currentNum = Double()
     var currentAr = String()
     var result = Double()
-    //  var pressedNotifier = false
-    //    var stackArray = [String]()
-    
+
     @IBOutlet weak var calculatedValue: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         currentAr = "="
         calculatedValue.text = ("\(result)")
     }
@@ -39,17 +36,6 @@ class CalculatorViewController: UIViewController {
         calculatedValue.text = ("\(currentNum)")
         //pressedNotifier = false
     }
-    
-    /*
-     @IBAction func decimalPoint (_ sender: UIButton)
-     {
-     let digit = sender.currentTitle!
-     if digit == "."{
-     if
-     calculatedValue.text = ("\(currentNum)")
-     }
-     
-     */
     
     @IBAction func btnOperation(_ sender: UIButton){
         switch currentAr{
@@ -73,24 +59,6 @@ class CalculatorViewController: UIViewController {
         currentAr = sender.titleLabel!.text! as String
         //pressedNotifier = true
     }
-    
-    /*
-     
-     @IBAction func percentageChange (_ sender: UIButton)
-     {
-     if pressedNotifier == false
-     {
-     currentNum = 0.01 * currentNum
-     }
-     else
-     {
-     currentNum = 0.01 * currentNum
-     
-     }
-     calculatedValue.text = ("\(currentNum)")
-     }
-     
-     */
     
     @IBAction func btnClear (_ sender: UIButton)
     {

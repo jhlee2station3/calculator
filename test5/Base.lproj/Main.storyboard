@@ -426,7 +426,7 @@
         <!--Draw-->
         <scene sceneID="6eK-q4-HIH">
             <objects>
-                <viewController id="3T4-MT-L3d" sceneMemberID="viewController">
+                <viewController id="3T4-MT-L3d" customClass="DrawingViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xs8-6I-33q"/>
                         <viewControllerLayoutGuide type="bottom" id="2Bs-Z3-PJJ"/>
@@ -434,13 +434,30 @@
                     <view key="view" contentMode="scaleToFill" id="mk5-yU-mmO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adZ-w0-oXL">
+                                <rect key="frame" x="21" y="28" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearTapped:" destination="3T4-MT-L3d" eventType="touchUpInside" id="NUM-eP-k2S"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tx5-VJ-F0L">
+                                <rect key="frame" x="16" y="85" width="343" height="513"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Draw" id="8o9-Rn-Nb5"/>
+                    <connections>
+                        <outlet property="imageView" destination="tx5-VJ-F0L" id="f6t-Hd-HSP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8C-yA-o9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="501"/>
+            <point key="canvasLocation" x="964" y="500.59970014992507"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mU9-Sv-ggu">

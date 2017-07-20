@@ -10,10 +10,10 @@ import UIKit
 
 class DrawingViewController: UIViewController {
     
-    
     @IBOutlet weak var imageView: UIImageView!
     
     var lastPoint = CGPoint.zero
+    var swiped = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,8 @@ class DrawingViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        swiped = false
+        
         if let touch = touches.first {
             lastPoint = touch.location(in: self.view)
         }
@@ -33,6 +35,7 @@ class DrawingViewController: UIViewController {
         UIGraphicsBeginImageContext(self.view.frame.size)
         imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.view.frame.width
             , height: self.view.frame.height))
+        
         let context = UIGraphicsGetCurrentContext()
         
         context?.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
@@ -50,6 +53,8 @@ class DrawingViewController: UIViewController {
         }
         
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        swiped = true
+        
         if let touch = touches.first {
                 let currentPoint = touch.location(in: self.view)
                 drawLines(fromPoint: lastPoint, toPoint: currentPoint)
@@ -57,8 +62,20 @@ class DrawingViewController: UIViewController {
                 lastPoint = currentPoint
         }
     }
-
-    @IBAction func clearTapped(_ sender: Any) {
-        
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !swiped {
+            drawLines(fromPoint: lastPoint, toPoint: lastPoint)
+        }
     }
+    
+    @IBAction func clearButton(_ sender: Any) {
+        self.imageView.image = nil
+    }
+        
+
+//    @IBAction func clearTapped(_ sender: Any) {
+//        
+//    }
+
 }

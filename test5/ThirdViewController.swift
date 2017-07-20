@@ -15,6 +15,7 @@ protocol DataSentDelegate : class {
 class ThirdViewController: UIViewController {
     
     var dataArray3 : [MyData] = []
+    var indexToPass2: IndexPath? = []
     var indexToPass3: IndexPath? = []
     var receivedTitle: String = ""
     var receivedContent: String = ""
@@ -34,9 +35,10 @@ class ThirdViewController: UIViewController {
             dateButton.text = receivedDate
     }
         else {
+            let dateAddNew = String(describing: Date())
+            self.navigationItem.title = ""
             newTitle.isHidden = false
-//            labelText.text = receivedContent
-            dateButton.text = ""
+            dateButton.text = dateAddNew
         }
     }
     

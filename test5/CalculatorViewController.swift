@@ -30,15 +30,13 @@ class CalculatorViewController: UIViewController {
         //pressedNotifier = false
     }
     
-    @IBAction func plusMinus (_ sender: UIButton)
-    {
+    @IBAction func plusMinus (_ sender: UIButton) {
         currentNum = -1 * currentNum
         calculatedValue.text = ("\(currentNum)")
-        //pressedNotifier = false
     }
     
-    @IBAction func btnOperation(_ sender: UIButton){
-        switch currentAr{
+    @IBAction func btnOperation(_ sender: UIButton) {
+        switch currentAr {
         case "=":
             result = result + currentNum
         case "+":
@@ -57,11 +55,9 @@ class CalculatorViewController: UIViewController {
         currentNum = 0
         calculatedValue.text = ("\(result)")
         currentAr = sender.titleLabel!.text! as String
-        //pressedNotifier = true
     }
     
-    @IBAction func btnClear (_ sender: UIButton)
-    {
+    @IBAction func btnClear (_ sender: UIButton) {
         currentNum = 0
         currentAr = "="
         result = 0
@@ -73,7 +69,5 @@ class CalculatorViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
 

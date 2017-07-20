@@ -28,13 +28,13 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if receivedContent != "" {
+        if !receivedContent.isEmpty {
             let dateEditNew = Date()
             newTitle.isHidden = true
             self.navigationItem.title = receivedTitle
             labelText.text = receivedContent
             dateButton.text = DateFormatter.localizedString(from: dateEditNew, dateStyle: .medium, timeStyle: .medium)
-    }
+        }
         else {
             let dateAddNew = Date()
             dateButton.text = DateFormatter.localizedString(from: dateAddNew, dateStyle: .medium, timeStyle: .medium)

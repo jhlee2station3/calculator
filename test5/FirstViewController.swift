@@ -16,7 +16,6 @@ struct MyData {
         self.content = content
         self.dateString = dateString
     }
-    
 }
 
 import UIKit
@@ -24,23 +23,12 @@ import UIKit
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DataSentDelegate {
     
     var dataArray : [MyData] = []
-    
     var passingData : MyData? = nil
-    
     var delegate : DataSentDelegate?
-    
-    @IBOutlet var myTableView: UITableView!
-    
-    @IBOutlet weak var addButton: UIBarButtonItem!
-    
     var indexToPass1: IndexPath = []
     
-    var dicTitle1: String = ""
-    
-    var dicContent1: String = ""
-    
-    var dicDateString1: String = ""
-    
+    @IBOutlet var myTableView: UITableView!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     //Reload data everytime the page refreshes
     override func viewDidAppear(_ animated: Bool) {
@@ -65,7 +53,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.didReceiveMemoryWarning()
     }
     
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "passData" {
             let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
@@ -138,5 +125,4 @@ class FirstTableCell : UITableViewCell {
         self.titleLabel?.text = data.title
         self.timeLabel?.text = data.dateString
     }
-    
 }

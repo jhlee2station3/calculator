@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2F335F1F204C1100F58534 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F335E1F204C1100F58534 /* CalculatorViewController.swift */; };
 		CE5AB6B91F16FF2100D7312B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6B81F16FF2100D7312B /* AppDelegate.swift */; };
 		CE5AB6BB1F16FF2100D7312B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6BA1F16FF2100D7312B /* FirstViewController.swift */; };
 		CE5AB6BE1F16FF2100D7312B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5AB6BC1F16FF2100D7312B /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE2F335E1F204C1100F58534 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		CE5AB6B51F16FF2100D7312B /* test5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5AB6B81F16FF2100D7312B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5AB6BA1F16FF2100D7312B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */,
 				CEFB7B821F1703000078E68C /* SecondViewController.swift */,
 				CE5AB6BC1F16FF2100D7312B /* Main.storyboard */,
+				CE2F335E1F204C1100F58534 /* CalculatorViewController.swift */,
 				CE5AB6BF1F16FF2100D7312B /* Assets.xcassets */,
 				CE5AB6C11F16FF2100D7312B /* LaunchScreen.storyboard */,
 				CE5AB6C41F16FF2100D7312B /* Info.plist */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2F335F1F204C1100F58534 /* CalculatorViewController.swift in Sources */,
 				CEFB7B831F1703000078E68C /* SecondViewController.swift in Sources */,
 				CE5AB6BB1F16FF2100D7312B /* FirstViewController.swift in Sources */,
 				CEDABC771F185CDA001ABFE5 /* ThirdViewController.swift in Sources */,

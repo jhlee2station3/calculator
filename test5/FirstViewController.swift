@@ -119,7 +119,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if thirdViewController.newTitle.isHidden == true {
             let indexPath = thirdViewController.indexToPass3
             self.dataArray[(indexPath?.row)!].content = thirdViewController.labelText.text!
-            print("\(thirdViewController.labelText.text)")
             self.dataArray[(indexPath?.row)!].dateString = thirdViewController.dateButton.text!
             self.myTableView.reloadData()
         }

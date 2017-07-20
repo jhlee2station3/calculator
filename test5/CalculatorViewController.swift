@@ -9,16 +9,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
     
     var currentNum = Double()
     var currentAr = String()
     var result = Double()
-//  var pressedNotifier = false
-//    var stackArray = [String]()
+    //  var pressedNotifier = false
+    //    var stackArray = [String]()
     
     @IBOutlet weak var calculatedValue: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,30 +41,30 @@ class ViewController: UIViewController {
     }
     
     /*
-    @IBAction func decimalPoint (_ sender: UIButton)
-    {
-        let digit = sender.currentTitle!
-        if digit == "."{
-            if
-        calculatedValue.text = ("\(currentNum)")
-    }
- 
-    */
+     @IBAction func decimalPoint (_ sender: UIButton)
+     {
+     let digit = sender.currentTitle!
+     if digit == "."{
+     if
+     calculatedValue.text = ("\(currentNum)")
+     }
+     
+     */
     
     @IBAction func btnOperation(_ sender: UIButton){
         switch currentAr{
-            case "=":
-                result = result + currentNum
-            case "+":
-                result = result + currentNum
-            case "-":
-                result = result - currentNum
-            case "*":
-                result = result * currentNum
-            case "/":
-                result = result / currentNum
-            case "+/-":
-                result = -1 * currentNum
+        case "=":
+            result = result + currentNum
+        case "+":
+            result = result + currentNum
+        case "-":
+            result = result - currentNum
+        case "*":
+            result = result * currentNum
+        case "/":
+            result = result / currentNum
+        case "+/-":
+            result = -1 * currentNum
         default:
             print("Error")
         }
@@ -75,22 +75,22 @@ class ViewController: UIViewController {
     }
     
     /*
- 
-    @IBAction func percentageChange (_ sender: UIButton)
-    {
-        if pressedNotifier == false
-        {
-            currentNum = 0.01 * currentNum
-        }
-        else
-        {
-            currentNum = 0.01 * currentNum
-
-        }
-        calculatedValue.text = ("\(currentNum)")
-    }
- 
-    */
+     
+     @IBAction func percentageChange (_ sender: UIButton)
+     {
+     if pressedNotifier == false
+     {
+     currentNum = 0.01 * currentNum
+     }
+     else
+     {
+     currentNum = 0.01 * currentNum
+     
+     }
+     calculatedValue.text = ("\(currentNum)")
+     }
+     
+     */
     
     @IBAction func btnClear (_ sender: UIButton)
     {
@@ -99,13 +99,13 @@ class ViewController: UIViewController {
         result = 0
         calculatedValue.text = ("\(result)")
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

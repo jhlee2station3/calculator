@@ -90,4 +90,10 @@ class DrawingViewController: UIViewController, ColorSentDelegate {
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
     }
+    
+    @IBAction func saveBtn(_ sender: Any) {
+        if let image = imageView.image  {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+    }
 }

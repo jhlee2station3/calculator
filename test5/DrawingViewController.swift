@@ -14,7 +14,7 @@ class DrawingViewController: UIViewController {
     
     var lastPoint = CGPoint.zero
     var swiped = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -72,7 +72,8 @@ class DrawingViewController: UIViewController {
     @IBAction func clearButton(_ sender: Any) {
         self.imageView.image = nil
     }
-        
+    
+
 
 //    @IBAction func clearTapped(_ sender: Any) {
 //        

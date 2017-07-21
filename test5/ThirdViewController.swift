@@ -46,13 +46,33 @@ class ThirdViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
+    
+    func goBack (_ sender: UIAlertAction)
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func save (_ sender: UIAlertAction)
+    {
         if delegate != nil {
             if labelText.text != nil {
                 delegate?.userDidEnterData(self)
                 self.navigationController?.popViewController(animated: true)
             }
         }
+    }
+    
+    @IBAction func cancelBtnWasPressed(_ sender: AnyObject) {
+        let alert1 = UIAlertController (title: "Warning", message: "All changes will be discarded", preferredStyle: UIAlertControllerStyle.alert)
+        alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: goBack))
+        alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert1, animated: true, completion: nil)
+    }
+
+    @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
+        let alert2 = UIAlertController(title: "Warning", message: "Do you want to save ths memo?", preferredStyle: UIAlertControllerStyle.alert)
+        alert2.addAction(UIAlertAction(title: "Yes", style: .default, handler: save))
+        alert2.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert2, animated: true, completion: nil)
     }
 }

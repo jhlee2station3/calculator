@@ -8,12 +8,15 @@
 
 import UIKit
 
-class DrawingViewController: UIViewController {
+class DrawingViewController: UIViewController, ColorSentDelegate {
+    
+    var red: CGFloat = 0
+    var green: CGFloat = 0
+    var blue: CGFloat = 0
     
     @IBOutlet weak var imageView: UIImageView!
     
     var lastPoint = CGPoint.zero
-    var swiped = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +27,6 @@ class DrawingViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        swiped = false
-        
         if let touch = touches.first {
             lastPoint = touch.location(in: self.view)
         }
@@ -44,39 +45,49 @@ class DrawingViewController: UIViewController {
         context?.setBlendMode(CGBlendMode.normal)
         context?.setLineCap(CGLineCap.round)
         context?.setLineWidth(5)
-        context?.setStrokeColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor)
+        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: 1.0).cgColor)
             
         context?.strokePath()
         
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         }
-        
+    
+    func userDidEnterColor(_ colorviewcontroller: ColorViewController) {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        let context = UIGraphicsGetCurrentContext()
+        if colorviewcontroller.displayColor.backgroundColor == UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0) {
+            context?.setStrokeColor(UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor)
+            print("Completed2")
+        } else if colorviewcontroller.displayColor.backgroundColor == UIColor(red: 255/255, green: 153/255, blue: 0/255, alpha: 1.0) {
+            (red, green, blue) = (1, 153/255, 0)
+        }
+        context?.strokePath()
+        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+    }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        swiped = true
-        
         if let touch = touches.first {
                 let currentPoint = touch.location(in: self.view)
                 drawLines(fromPoint: lastPoint, toPoint: currentPoint)
-            
                 lastPoint = currentPoint
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !swiped {
             drawLines(fromPoint: lastPoint, toPoint: lastPoint)
-        }
     }
     
     @IBAction func clearButton(_ sender: Any) {
         self.imageView.image = nil
     }
     
-
-
-//    @IBAction func clearTapped(_ sender: Any) {
-//        
-//    }
-
+    @IBAction func showPopUp(_ sender: AnyObject) {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! ColorViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+    }
 }

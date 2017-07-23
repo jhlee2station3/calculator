@@ -23,7 +23,7 @@ class ThirdViewController: UIViewController {
     var delegate: DataSentDelegate? = nil
 
     @IBOutlet weak var newTitle: UITextField!
-    @IBOutlet weak var labelText: UITextField!
+    @IBOutlet weak var labelText: UITextView!
     @IBOutlet weak var dateButton: UILabel!
     
     override func viewDidLoad() {
@@ -36,10 +36,17 @@ class ThirdViewController: UIViewController {
             dateButton.text = DateFormatter.localizedString(from: dateEditNew, dateStyle: .medium, timeStyle: .medium)
         }
         else {
+            labelText.text = "Enter text"
+            print("completed")
+            labelText.textColor = UIColor.lightGray
             let dateAddNew = Date()
             dateButton.text = DateFormatter.localizedString(from: dateAddNew, dateStyle: .medium, timeStyle: .medium)
             self.navigationItem.title = ""
             newTitle.isHidden = false
+//            if labelText.textColor == UIColor.lightGray {
+//                labelText.text = nil
+//                labelText.textColor = UIColor.black
+//            }
         }
     }
     
@@ -59,6 +66,20 @@ class ThirdViewController: UIViewController {
                 delegate?.userDidEnterData(self)
                 self.navigationController?.popViewController(animated: true)
             }
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if labelText.textColor == UIColor.lightGray {
+            labelText.text = nil
+            labelText.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if labelText.text.isEmpty {
+            labelText.text = "Enter text"
+            labelText.textColor = UIColor.lightGray
         }
     }
     

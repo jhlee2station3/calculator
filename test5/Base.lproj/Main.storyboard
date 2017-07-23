@@ -22,24 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGM-3C-oUs">
-                                <rect key="frame" x="322" y="626" width="36.5" height="21"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-Fu-LeY">
                                 <rect key="frame" x="15" y="79" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter memo" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9VR-bd-76y">
-                                <rect key="frame" x="16" y="117" width="342" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T1Y-fB-Xsd">
@@ -49,13 +36,26 @@
                                     <navigationItem title="Title" id="pBL-yH-AMQ"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGM-3C-oUs">
+                                <rect key="frame" x="322" y="547" width="36.5" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k0f-h5-2Za">
+                                <rect key="frame" x="15" y="117" width="344" height="493"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wOD-9D-YFB" id="bG3-JN-Zg6"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jGM-3C-oUs" firstAttribute="top" secondItem="tVL-6k-9or" secondAttribute="bottom" constant="97" id="5fU-G8-fxU"/>
-                            <constraint firstItem="tnr-Pa-DTh" firstAttribute="top" secondItem="jGM-3C-oUs" secondAttribute="bottom" constant="436" id="74a-wv-eBe"/>
-                            <constraint firstItem="jGM-3C-oUs" firstAttribute="trailing" secondItem="P6L-M3-YeX" secondAttribute="trailingMargin" id="NWD-4h-BJB"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Jhe-rS-Lod">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4Nd-WE-m9U">
@@ -71,7 +71,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateButton" destination="jGM-3C-oUs" id="nCy-Dm-Ozm"/>
-                        <outlet property="labelText" destination="9VR-bd-76y" id="ycw-NU-bMe"/>
+                        <outlet property="labelText" destination="k0f-h5-2Za" id="i1B-Tm-Ik2"/>
                         <outlet property="newTitle" destination="u1c-Fu-LeY" id="tDv-wI-c9J"/>
                     </connections>
                 </viewController>
@@ -99,7 +99,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hXd-8k-GCr" id="2Xc-s4-UT0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 17th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-C0-pMk">
@@ -445,7 +445,7 @@
                                 <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-r3-NWm">
-                                <rect key="frame" x="269" y="25" width="36" height="30"/>
+                                <rect key="frame" x="274" y="25" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
@@ -453,11 +453,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60V-9g-yTZ">
-                                <rect key="frame" x="209" y="25" width="39" height="30"/>
+                                <rect key="frame" x="217" y="25" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Erase"/>
                                 <connections>
-                                    <action selector="clearButton:" destination="3T4-MT-L3d" eventType="touchUpInside" id="IF9-1R-DUd"/>
+                                    <action selector="eraseBtn:" destination="3T4-MT-L3d" eventType="touchUpInside" id="GMj-LU-RV0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNw-Gc-SGB">
@@ -465,10 +465,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Undo"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jab-oM-jdy">
-                                <rect key="frame" x="125" y="25" width="70" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyF-VN-0fb">
+                                <rect key="frame" x="68" y="25" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Thickness"/>
+                                <state key="normal" title="Colors"/>
+                                <connections>
+                                    <action selector="showPopUp:" destination="3T4-MT-L3d" eventType="touchUpInside" id="6iY-Iv-xpk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dr0-RH-2Y5">
                                 <rect key="frame" x="325" y="25" width="34" height="30"/>
@@ -478,13 +481,10 @@
                                     <action selector="saveBtn:" destination="3T4-MT-L3d" eventType="touchUpInside" id="Lv2-9C-FdK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyF-VN-0fb">
-                                <rect key="frame" x="68" y="25" width="45" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jab-oM-jdy">
+                                <rect key="frame" x="133" y="25" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Colors"/>
-                                <connections>
-                                    <action selector="showPopUp:" destination="3T4-MT-L3d" eventType="touchUpInside" id="6iY-Iv-xpk"/>
-                                </connections>
+                                <state key="normal" title="Thickness"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -496,6 +496,7 @@
                     <tabBarItem key="tabBarItem" title="Draw" id="8o9-Rn-Nb5"/>
                     <connections>
                         <outlet property="imageView" destination="rZF-1E-5la" id="8fN-K0-kxB"/>
+                        <outlet property="toolIcon" destination="60V-9g-yTZ" id="6vR-61-sW0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8C-yA-o9t" userLabel="First Responder" sceneMemberID="firstResponder"/>

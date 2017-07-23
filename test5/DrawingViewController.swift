@@ -14,12 +14,21 @@ class DrawingViewController: UIViewController, ColorSentDelegate {
     var green: CGFloat = 0
     var blue: CGFloat = 0
     
+    var tool: UIImageView!
+    var isDrawing = true
+    
+    @IBOutlet weak var toolIcon: UIButton!
+    
     @IBOutlet weak var imageView: UIImageView!
     
     var lastPoint = CGPoint.zero
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tool = UIImageView()
+        tool.frame = CGRect(x: self.view.bounds.size.width, y: self.view.bounds.size.height, width: 15, height: 15)
+        tool.image = #imageLiteral(resourceName: "paint-brush-md")
+        self.view.addSubview(tool)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +50,7 @@ class DrawingViewController: UIViewController, ColorSentDelegate {
         
         context?.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
         context?.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y) )
+        tool.center = toPoint
             
         context?.setBlendMode(CGBlendMode.normal)
         context?.setLineCap(CGLineCap.round)
@@ -94,6 +104,18 @@ class DrawingViewController: UIViewController, ColorSentDelegate {
     @IBAction func saveBtn(_ sender: Any) {
         if let image = imageView.image  {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+    }
+    
+    @IBAction func eraseBtn(_ sender: Any) {
+        if (isDrawing) {
+//            (red,green,blue) = (0,0,0)
+//            tool.image = #imageLiteral(resourceName: "paint-brush-md")
+              toolIcon.setImage(#imageLiteral(resourceName: "eraser-hi"), for: .normal)
+        } else {
+//            (red,green,blue) = (1,1,1)
+            tool.image = #imageLiteral(resourceName: "eraser-hi")
+//            toolIcon.setImage(#imageLiteral(resourceName: "paint-brush-md"), for: .normal)
         }
     }
 }

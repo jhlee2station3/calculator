@@ -39,6 +39,7 @@ class ColorViewController: UIViewController {
         print("Completed")
     }
     
+    
     @IBAction func colorsPicked (_ sender: AnyObject) {
         if sender.tag == 0 { //red
             (redColor,greenColor,blueColor) = (255,0,0)

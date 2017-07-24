@@ -8,25 +8,28 @@
 
 import UIKit
 
-class DrawingViewController: UIViewController, ColorSentDelegate {
+class DrawingViewController: UIViewController{
     
     var red: CGFloat = 0
     var green: CGFloat = 0
     var blue: CGFloat = 0
     
     var tool: UIImageView!
-    var isDrawing = true
+    var isDrawing = false
     
     @IBOutlet weak var toolIcon: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var displayColor: UILabel!
+    
     var lastPoint = CGPoint.zero
+    var selectedImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tool = UIImageView()
-        tool.frame = CGRect(x: self.view.bounds.size.width, y: self.view.bounds.size.height, width: 15, height: 15)
+        tool.frame = CGRect(x: self.view.bounds.size.width, y: self.view.bounds.size.height, width: 20, height: 20)
         tool.image = #imageLiteral(resourceName: "paint-brush-md")
         self.view.addSubview(tool)
     }
@@ -39,6 +42,18 @@ class DrawingViewController: UIViewController, ColorSentDelegate {
         if let touch = touches.first {
             lastPoint = touch.location(in: self.view)
         }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let currentPoint = touch.location(in: self.view)
+            drawLines(fromPoint: lastPoint, toPoint: currentPoint)
+            lastPoint = currentPoint
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        drawLines(fromPoint: lastPoint, toPoint: lastPoint)
     }
     
     func drawLines (fromPoint: CGPoint, toPoint: CGPoint) {
@@ -63,31 +78,48 @@ class DrawingViewController: UIViewController, ColorSentDelegate {
         UIGraphicsEndImageContext()
         }
     
-    func userDidEnterColor(_ colorviewcontroller: ColorViewController) {
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        let context = UIGraphicsGetCurrentContext()
-        if colorviewcontroller.displayColor.backgroundColor == UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0) {
-            context?.setStrokeColor(UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor)
-            print("Completed2")
-        } else if colorviewcontroller.displayColor.backgroundColor == UIColor(red: 255/255, green: 153/255, blue: 0/255, alpha: 1.0) {
-            (red, green, blue) = (1, 153/255, 0)
-        }
-        context?.strokePath()
-        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+//    func userDidEnterColor(_ colorviewcontroller: ColorViewController) {
+//        UIGraphicsBeginImageContext(self.view.frame.size)
+//        let context = UIGraphicsGetCurrentContext()
+//        if colorviewcontroller.displayColor.backgroundColor == UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0) {
+//            context?.setStrokeColor(UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor)
+//            print("Completed2")
+//        } else if colorviewcontroller.displayColor.backgroundColor == UIColor(red: 255/255, green: 153/255, blue: 0/255, alpha: 1.0) {
+//            (red, green, blue) = (1, 153/255, 0)
+//        }
+//        context?.strokePath()
+//        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//    }
+    
+    @IBAction func colorsPicked(_ sender: AnyObject) {
+        if sender.tag == 0 { //red
+            (red,green,blue) = (255/255,0/255,0/255)
+            displayColor.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0)
+            } else if sender.tag == 1 { //orange
+                (red,green,blue) = (255/255,153/255,0/255)
+                displayColor.backgroundColor = UIColor(red: 255/255, green: 153/255, blue: 0/255, alpha: 1.0)
+            } else if sender.tag == 2 { //yellow
+                (red,green,blue) = (255/255,255/255,0/255)
+                displayColor.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 0/255, alpha: 1.0)
+            } else if sender.tag == 3 { //green
+                (red,green,blue) = (128/255,255/255,0/255)
+                displayColor.backgroundColor = UIColor(red: 128/255, green: 255/255, blue: 0/255, alpha: 1.0)
+            } else if sender.tag == 4 { //blue
+                (red,green,blue) = (0/255,0/255,255/255)
+                displayColor.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 1.0)
+            } else if sender.tag == 5 { //purple
+                (red,green,blue) = (127/255,0/255,255/255)
+                displayColor.backgroundColor = UIColor(red: 127/255, green: 0/255, blue: 255/255, alpha: 1.0)
+            } else if sender.tag == 6 { //brown
+                (red,green,blue) = (204/255,102/255,0/255)
+                displayColor.backgroundColor = UIColor(red: 204/255, green: 102/255, blue: 0/255, alpha: 1.0)
+            } else if sender.tag == 7 { //black
+                (red,green,blue) = (0/255,0/255,0/255)
+                displayColor.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+            }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-                let currentPoint = touch.location(in: self.view)
-                drawLines(fromPoint: lastPoint, toPoint: currentPoint)
-                lastPoint = currentPoint
-        }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-            drawLines(fromPoint: lastPoint, toPoint: lastPoint)
-    }
     
     @IBAction func clearButton(_ sender: Any) {
         self.imageView.image = nil
@@ -102,20 +134,50 @@ class DrawingViewController: UIViewController, ColorSentDelegate {
     }
     
     @IBAction func saveBtn(_ sender: Any) {
-        if let image = imageView.image  {
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        }
+        let actionSheet = UIAlertController(title: "Pick your option", message: "", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Open an image", style: .default, handler: {(_) in
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = false
+            imagePicker.delegate = self
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Save my image", style: .default, handler: {(_) in
+            if let image = self.imageView.image  {
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            }
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    @IBAction func undoBtn(_ sender: Any) {
+        
     }
     
     @IBAction func eraseBtn(_ sender: Any) {
-        if (isDrawing) {
-//            (red,green,blue) = (0,0,0)
-//            tool.image = #imageLiteral(resourceName: "paint-brush-md")
-              toolIcon.setImage(#imageLiteral(resourceName: "eraser-hi"), for: .normal)
+        if (isDrawing == true) {
+            (red,green,blue) = (0,0,0)
+            tool.image = #imageLiteral(resourceName: "paint-brush-md")
+            toolIcon.setTitle("Eraser", for: .normal)
+            print("Yay")
         } else {
-//            (red,green,blue) = (1,1,1)
+            (red,green,blue) = (1,1,1)
             tool.image = #imageLiteral(resourceName: "eraser-hi")
-//            toolIcon.setImage(#imageLiteral(resourceName: "paint-brush-md"), for: .normal)
+            toolIcon.setTitle("Pen", for: .normal)
+            print("Nay")
+        }
+        isDrawing = !isDrawing
+    }
+}
+
+extension DrawingViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let imagePicked = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.selectedImage = imagePicked
         }
     }
 }

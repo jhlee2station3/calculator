@@ -43,10 +43,6 @@ class ThirdViewController: UIViewController {
             dateButton.text = DateFormatter.localizedString(from: dateAddNew, dateStyle: .medium, timeStyle: .medium)
             self.navigationItem.title = ""
             newTitle.isHidden = false
-//            if labelText.textColor == UIColor.lightGray {
-//                labelText.text = nil
-//                labelText.textColor = UIColor.black
-//            }
         }
     }
     

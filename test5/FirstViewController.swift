@@ -24,7 +24,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var dataArray : [MyData] = []
     var passingData : MyData? = nil
-    var delegate : DataSentDelegate?
+//    var delegate : DataSentDelegate?
     var indexToPass1: IndexPath = []
     
     @IBOutlet var myTableView: UITableView!
@@ -39,7 +39,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         self.myTableView.dataSource = self
         self.myTableView.delegate = self
-        self.delegate = self
         
         let one = MyData(title: "방을 찾고 싶어요~", content: "그럼 다방으로 고고~!", dateString: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium))
         let two = MyData(title: "저 알바 할래요~", content: "그럼 '알바천국'에서 알아봐라 알아봐~!", dateString: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium))

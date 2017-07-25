@@ -30,6 +30,8 @@ class PropertiesViewController: UIViewController {
     var redColor: CGFloat = 0.0
     var greenColor: CGFloat = 0.0
     var blueColor: CGFloat = 0.0
+    var thicknessLevel: CGFloat = 5.0
+    var opacityLevel: CGFloat = 1.0
     var delegate: SendColorDelegate? = nil
     
     @IBAction func redSliderChanged(_ sender: Any) {
@@ -54,9 +56,15 @@ class PropertiesViewController: UIViewController {
     }
     
     @IBAction func opacityChanged(_ sender: Any) {
+        let slider = sender as! UISlider
+        opacityLevel = CGFloat(slider.value)
+        givePreview(red: redColor, green: greenColor, blue: blueColor)
     }
     
     @IBAction func thicknessChanged(_ sender: Any) {
+        let slider = sender as! UISlider
+        thicknessLevel = CGFloat(slider.value)
+        givePreview(red: redColor, green: greenColor, blue: blueColor)
     }
     
     @IBAction func saveBtn(_ sender: Any) {
@@ -74,7 +82,18 @@ class PropertiesViewController: UIViewController {
     }
     
     func givePreview(red: CGFloat, green: CGFloat, blue: CGFloat) {
-        colorImageView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        UIGraphicsBeginImageContext(colorImageView.frame.size)
+        let context = UIGraphicsGetCurrentContext()
+        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: opacityLevel).cgColor)
+        context?.setLineWidth(thicknessLevel)
+        context?.setLineCap(CGLineCap.round)
+        
+        context?.move(to:CGPoint(x:200, y: 40))
+        context?.addLine(to: CGPoint(x: 200, y: 40))
+        context?.strokePath()
+        
+        colorImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
     }
     
     override func viewDidLoad() {

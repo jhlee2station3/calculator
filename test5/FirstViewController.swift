@@ -24,7 +24,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var dataArray : [MyData] = []
     var passingData : MyData? = nil
-//    var delegate : DataSentDelegate?
     var indexToPass1: IndexPath = []
     
     @IBOutlet var myTableView: UITableView!

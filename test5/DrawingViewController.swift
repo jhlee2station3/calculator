@@ -19,6 +19,9 @@ class DrawingViewController: UIViewController, SendColorDelegate {
     
     var delegate: ColorSentDelegate?
     
+    var thickness: CGFloat = 5.0
+    var opacity: CGFloat = 1.0
+    
     @IBOutlet weak var toolIcon: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
@@ -63,6 +66,8 @@ class DrawingViewController: UIViewController, SendColorDelegate {
             propertiesviewcontroller.redColor = self.red
             propertiesviewcontroller.greenColor = self.green
             propertiesviewcontroller.blueColor = self.blue
+            propertiesviewcontroller.thicknessLevel = self.thickness
+            propertiesviewcontroller.opacityLevel = self.opacity
         }
     }
     
@@ -79,9 +84,8 @@ class DrawingViewController: UIViewController, SendColorDelegate {
             
         context?.setBlendMode(CGBlendMode.normal)
         context?.setLineCap(CGLineCap.round)
-        context?.setLineWidth(5)
-        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: 1.0).cgColor)
-            
+        context?.setLineWidth(thickness)
+        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: opacity).cgColor)
         context?.strokePath()
         
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -92,7 +96,8 @@ class DrawingViewController: UIViewController, SendColorDelegate {
         self.red = propertiesviewcontroller.redColor
         self.green = propertiesviewcontroller.greenColor
         self.blue = propertiesviewcontroller.blueColor
-        print("Completed3")
+        self.thickness = propertiesviewcontroller.thicknessLevel
+        self.opacity = propertiesviewcontroller.opacityLevel
     }
     
     @IBAction func colorsPicked(_ sender: AnyObject) {

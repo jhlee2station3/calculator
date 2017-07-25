@@ -8,10 +8,43 @@
 
 import UIKit
 
-class DiaryThirdViewController: UIViewController {
+protocol DiarySentDelegate : class {
+    func userDidEnterDiary(_ diarythirdviewcontroller: DiaryThirdViewController)
+}
 
+class DiaryThirdViewController: UIViewController {
+    
+    var diaryArray : [MyDiary] = []
+    var indexToPass1: IndexPath = []
+    var receivedTitleDiary: String = ""
+    var receivedContentDiary: String = ""
+    var receivedDateDiary: String = ""
+    var receivedPictureDiary: UIImage? = nil
+    var delegate: DiarySentDelegate? = nil
+    
+    @IBOutlet weak var pictureView: UIImageView!
+    @IBOutlet weak var diaryContent: UITextView!
+    @IBOutlet weak var diaryTitle: UITextField!
+    @IBOutlet weak var dateText: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !receivedContentDiary.isEmpty {
+            let dateNew = Date()
+            diaryTitle.isHidden = true
+            self.navigationItem.title = receivedTitleDiary
+            diaryContent.text = receivedContentDiary
+            dateText.text = DateFormatter.localizedString(from: dateNew, dateStyle: .medium, timeStyle: .medium)
+            pictureView.image = receivedPictureDiary
+        }
+        else {
+            diaryContent.text = "Enter text"
+            diaryContent.textColor = UIColor.lightGray
+            dateButton.text = DateFormatter.localizedString(from: dateAddNew, dateStyle: .medium, timeStyle: .medium)
+            self.navigationItem.title = ""
+            newTitle.isHidden = false
+        
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -21,15 +54,48 @@ class DiaryThirdViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func goBack (_ sender: UIAlertAction)
+    {
+        self.navigationController?.popViewController(animated: true)
     }
-    */
-
+    
+    func save (_ sender: UIAlertAction)
+    {
+        if delegate != nil {
+            if diaryContent.text != nil {
+                delegate?.userDidEnterDiary(self)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if diaryContent.textColor == UIColor.lightGray {
+            diaryContent.text = nil
+            diaryContent.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if diaryContent.text.isEmpty {
+            diaryContent.text = "Enter text"
+            diaryContent.textColor = UIColor.lightGray
+        }
+    }
+    
+    @IBAction func cancelBtnPressed(_ sender: Any) {
+        let alert1 = UIAlertController (title: "Warning", message: "All changes will be discarded", preferredStyle: UIAlertControllerStyle.alert)
+        alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: goBack))
+        alert1.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert1, animated: true, completion: nil)
+    }
+    
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        let alert2 = UIAlertController(title: "Warning", message: "Do you want to save ths memo?", preferredStyle: UIAlertControllerStyle.alert)
+        alert2.addAction(UIAlertAction(title: "Yes", style: .default, handler: save))
+        alert2.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        self.present(alert2, animated: true, completion: nil)
+    }
 }
+
+

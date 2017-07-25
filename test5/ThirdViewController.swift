@@ -37,7 +37,6 @@ class ThirdViewController: UIViewController {
         }
         else {
             labelText.text = "Enter text"
-            print("completed")
             labelText.textColor = UIColor.lightGray
             let dateAddNew = Date()
             dateButton.text = DateFormatter.localizedString(from: dateAddNew, dateStyle: .medium, timeStyle: .medium)

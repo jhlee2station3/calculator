@@ -175,16 +175,16 @@
             </objects>
             <point key="canvasLocation" x="969" y="-221"/>
         </scene>
-        <!--My Diaries-->
+        <!--DiaryFirstViewController-->
         <scene sceneID="gNb-hv-OO1">
             <objects>
-                <tableViewController id="FVE-pD-22h" customClass="DiaryFirstViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="DiaryFirstViewController" id="FVE-pD-22h" customClass="DiaryFirstViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" id="ISo-mu-CsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="81" id="rea-2i-eqD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="81" id="rea-2i-eqD" customClass="DiaryTableCell" customModule="test5" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rea-2i-eqD" id="CCj-eg-fDK">
@@ -211,27 +211,29 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="previewDiaryPicture" destination="vBj-03-QsQ" id="s3g-ND-3wZ"/>
+                                    <outlet property="timeLabel" destination="ClF-G3-hJ3" id="rHk-Cx-G9M"/>
+                                    <outlet property="titleLabel" destination="btb-C0-lSl" id="mog-5K-c5x"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="FVE-pD-22h" id="rXs-40-f1C"/>
-                            <outlet property="delegate" destination="FVE-pD-22h" id="dty-Jd-FjE"/>
+                            <outlet property="dataSource" destination="FVE-pD-22h" id="5oC-8Z-lOe"/>
+                            <outlet property="delegate" destination="FVE-pD-22h" id="1AB-JH-yqU"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Diaries" id="d2x-eC-bia">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wE7-Er-SLI">
                             <connections>
-                                <segue destination="w8n-Hh-FdL" kind="show" id="y06-pk-Myi"/>
+                                <segue destination="w8n-Hh-FdL" kind="show" identifier="passNewDiary" id="8Hp-b2-iD6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addBtn" destination="wE7-Er-SLI" id="tFK-3M-dE5"/>
-                        <outlet property="dateText" destination="ClF-G3-hJ3" id="Ama-MW-3bR"/>
-                        <outlet property="diaryImagePreview" destination="vBj-03-QsQ" id="gUs-w5-OU6"/>
                         <outlet property="diaryTableView" destination="ISo-mu-CsS" id="cYh-HH-19V"/>
-                        <outlet property="titleText" destination="btb-C0-lSl" id="nsU-Ih-OTw"/>
-                        <segue destination="w8n-Hh-FdL" kind="show" identifier="passDiary" id="bYA-PG-EyG"/>
+                        <segue destination="w8n-Hh-FdL" kind="show" identifier="passDiary" id="wLX-g7-2Sz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8v7-xP-m7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,17 +250,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="FVE-pD-22h" kind="relationship" relationship="rootViewController" id="PrI-R1-E5T"/>
+                        <segue destination="FVE-pD-22h" kind="relationship" relationship="rootViewController" id="Rz4-ph-XRF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Epe-a2-cd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-740" y="1207"/>
         </scene>
-        <!--Title-->
+        <!--DiaryThirdViewController-->
         <scene sceneID="FTC-zM-XFu">
             <objects>
-                <viewController id="w8n-Hh-FdL" customClass="DiaryThirdViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="DiaryThirdViewController" id="w8n-Hh-FdL" customClass="DiaryThirdViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rRL-vd-z8l"/>
                         <viewControllerLayoutGuide type="bottom" id="tyF-VP-yeI"/>
@@ -277,27 +279,55 @@
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbn-j9-pf8">
-                                <rect key="frame" x="19" y="97" width="337" height="276"/>
+                                <rect key="frame" x="19" y="135" width="337" height="238"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L2S-Tb-h2V">
-                                <rect key="frame" x="22" y="381" width="337" height="257"/>
+                                <rect key="frame" x="22" y="381" width="337" height="196"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZFl-sg-fUY">
+                                <rect key="frame" x="22" y="84" width="334" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-21-j2b">
+                                <rect key="frame" x="314" y="585" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Kky-zW-gR5">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="YFx-rg-ahX"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="PdJ-kG-Fwm">
+                            <connections>
+                                <action selector="cancelBtnPressed:" destination="w8n-Hh-FdL" id="lPy-YZ-TvN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="YFx-rg-ahX">
+                            <connections>
+                                <action selector="saveBtnPressed:" destination="w8n-Hh-FdL" id="Bro-GF-QY5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateText" destination="X2F-21-j2b" id="Dwa-d9-afa"/>
+                        <outlet property="diaryContent" destination="L2S-Tb-h2V" id="pmx-Pb-UJ8"/>
+                        <outlet property="diaryTitle" destination="ZFl-sg-fUY" id="IGJ-f0-wg8"/>
+                        <outlet property="pictureView" destination="nbn-j9-pf8" id="LFS-5h-T3y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pz8-oi-ju4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="1207"/>
+            <point key="canvasLocation" x="1032.8" y="1206.7466266866568"/>
         </scene>
         <!--Calculator-->
         <scene sceneID="7m4-xn-YsA">
@@ -1135,6 +1165,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w0C-Gb-7Lj"/>
-        <segue reference="bYA-PG-EyG"/>
+        <segue reference="8Hp-b2-iD6"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,7 +17,7 @@ class DrawingViewController: UIViewController, SendColorDelegate {
     var tool: UIImageView!
     var isDrawing = false
     
-    var delegate: ColorSentDelegate?
+    var delegate1: ColorSentDelegate?
     
     var thickness: CGFloat = 5.0
     var opacity: CGFloat = 1.0
@@ -62,7 +62,7 @@ class DrawingViewController: UIViewController, SendColorDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "passColor" {
             let propertiesviewcontroller: PropertiesViewController = segue.destination as! PropertiesViewController
-            propertiesviewcontroller.delegate = self
+            propertiesviewcontroller.delegate1 = self
             propertiesviewcontroller.redColor = self.red
             propertiesviewcontroller.greenColor = self.green
             propertiesviewcontroller.blueColor = self.blue

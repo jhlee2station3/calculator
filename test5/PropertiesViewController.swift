@@ -32,7 +32,7 @@ class PropertiesViewController: UIViewController {
     var blueColor: CGFloat = 0.0
     var thicknessLevel: CGFloat = 5.0
     var opacityLevel: CGFloat = 1.0
-    var delegate: SendColorDelegate? = nil
+    var delegate1: SendColorDelegate? = nil
     
     @IBAction func redSliderChanged(_ sender: Any) {
         let slider = sender as! UISlider
@@ -68,12 +68,14 @@ class PropertiesViewController: UIViewController {
     }
     
     @IBAction func saveBtn(_ sender: Any) {
-        if delegate != nil {
+        print("touch")
+        if delegate1 != nil {
             print("nil????")
-            delegate?.EnterColor(self)
+            delegate1?.EnterColor(self)
         }
         print("Completed1")
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
+        _ = self.navigationController?.popViewController(animated: true)
         print("Completed2")
     }
     

@@ -50,7 +50,7 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-//    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "passDiary" {
             let diarythirdviewcontroller: DiaryThirdViewController = segue.destination as! DiaryThirdViewController
@@ -62,11 +62,10 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
             diarythirdviewcontroller.indexToPass1 = self.indexToPass
         } else if segue.identifier == "passNewDiary" {
             let diarythirdviewcontroller: DiaryThirdViewController = segue.destination as! DiaryThirdViewController
-            thirdViewController.delegate = self
+            diarythirdviewcontroller.delegate = self
         }
     }
     
-        
     // Delete selected row
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
@@ -101,8 +100,18 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
     }
     
     func userDidEnterDiary(_ diarythirdviewcontroller: DiaryThirdViewController) {
-        id 
+        if diarythirdviewcontroller.diaryTitle.isHidden == true {
+            let indexPath = diarythirdviewcontroller.indexToPass1
+            self.diaryDataArray[(indexPath.row)].contentDiary = diarythirdviewcontroller.diaryContent.text
+            self.diaryDataArray[(indexPath.row)].dateStringDiary = diarythirdviewcontroller.dateText.text!
+            self.diaryTableView.reloadData()
+        }
+        else {
+            let three = MyDiary(titleDiary: diarythirdviewcontroller.diaryTitle.text!, contentDiary: diarythirdviewcontroller.diaryContent.text, dateStringDiary: diarythirdviewcontroller.dateText.text!, imageDiary: diarythirdviewcontroller.pictureView.image!)
+            self.diaryDataArray.append(three)
+        }
     }
+    
 }
 
 class DiaryTableCell : UITableViewCell {

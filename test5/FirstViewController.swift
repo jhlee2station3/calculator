@@ -26,6 +26,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var passingData : MyData? = nil
     var indexToPass1: IndexPath = []
     
+    var delegate : DataSentDelegate? = nil
+    
     @IBOutlet var myTableView: UITableView!
     @IBOutlet weak var addButton: UIBarButtonItem!
     

@@ -12,8 +12,21 @@ class HomeViewController: UIViewController {
 
     
     @IBAction func memoBtn(_ sender: Any) {
-        
+        tabBarController?.selectedIndex = 1
     }
+    
+    @IBAction func calcBtn(_ sender: Any) {
+        tabBarController?.selectedIndex = 2
+    }
+    
+    @IBAction func paintBtn(_ sender: Any) {
+        tabBarController?.selectedIndex = 3
+    }
+    
+    @IBAction func diaryBtn(_ sender: Any) {
+        tabBarController?.selectedIndex = 4
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

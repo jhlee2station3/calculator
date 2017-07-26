@@ -22,6 +22,16 @@ class DrawingViewController: UIViewController, SendColorDelegate {
     var thickness: CGFloat = 5.0
     var opacity: CGFloat = 1.0
     
+    @IBOutlet weak var redOption: UIButton!
+    @IBOutlet weak var orangeOption: UIButton!
+    @IBOutlet weak var yellowOption: UIButton!
+    @IBOutlet weak var greenOption: UIButton!
+    @IBOutlet weak var blueOption: UIButton!
+    @IBOutlet weak var purpleOption: UIButton!
+    @IBOutlet weak var brownOption: UIButton!
+    @IBOutlet weak var blackOption: UIButton!
+    
+
     @IBOutlet weak var toolIcon: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
@@ -35,6 +45,7 @@ class DrawingViewController: UIViewController, SendColorDelegate {
         tool.frame = CGRect(x: self.imageView.bounds.size.width, y: self.imageView.bounds.size.height, width: 20, height: 20)
         tool.image = #imageLiteral(resourceName: "paint-brush-md")
         self.view.addSubview(tool)
+        
     }
 
     override func didReceiveMemoryWarning() {

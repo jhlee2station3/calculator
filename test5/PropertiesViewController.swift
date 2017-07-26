@@ -90,8 +90,8 @@ class PropertiesViewController: UIViewController {
         context?.setLineWidth(thicknessLevel)
         context?.setLineCap(CGLineCap.round)
         
-        context?.move(to:CGPoint(x:200, y: 40))
-        context?.addLine(to: CGPoint(x: 200, y: 40))
+        context?.move(to:CGPoint(x:200, y: 100))
+        context?.addLine(to: CGPoint(x: 200, y: 60))
         context?.strokePath()
         
         colorImageView.image = UIGraphicsGetImageFromCurrentImageContext()

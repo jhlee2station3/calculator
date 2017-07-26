@@ -22,10 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-Fu-LeY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-Fu-LeY">
                                 <rect key="frame" x="15" y="79" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -55,7 +54,7 @@
                                 </connections>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.64213436840000004" green="0.42536425589999999" blue="0.86139756440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Jhe-rS-Lod">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4Nd-WE-m9U">
@@ -77,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk3-FY-V8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="-233"/>
+            <point key="canvasLocation" x="1997.5999999999999" y="-233.43328335832086"/>
         </scene>
         <!--FirstViewController-->
         <scene sceneID="xhk-ZT-4vk">
@@ -103,6 +102,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="546"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.64213436840000004" green="0.42536425589999999" blue="0.86139756440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="passData" rowHeight="43" id="hXd-8k-GCr" customClass="FirstTableCell" customModule="test5" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="43"/>
@@ -114,13 +114,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 17th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-C0-pMk">
                                                     <rect key="frame" x="307" y="11" width="38" height="19"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="9"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-HG-tST">
                                                     <rect key="frame" x="39" y="11" width="38" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -136,6 +136,7 @@
                                                 <constraint firstItem="BfP-HG-tST" firstAttribute="leading" secondItem="2Xc-s4-UT0" secondAttribute="leadingMargin" constant="28" id="yBh-Al-lNV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.64213436841964722" green="0.42536425590515137" blue="0.86139756441116333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="timeLabel" destination="EEd-C0-pMk" id="OvY-tr-wyc"/>
                                             <outlet property="titleLabel" destination="BfP-HG-tST" id="sNN-AJ-ou0"/>
@@ -1151,7 +1152,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8y-Ve-9dg">
-                                <rect key="frame" x="78" y="211" width="243" height="213"/>
+                                <rect key="frame" x="75" y="210" width="243" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -1184,6 +1185,9 @@
                                 <state key="normal" title="Camera">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cameraBtn:" destination="sZQ-Th-XcQ" eventType="touchUpInside" id="L65-53-8DV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Woy-lo-e63">
                                 <rect key="frame" x="0.0" y="153" width="188" height="156"/>
@@ -1238,7 +1242,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="188" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.44878143072128296" green="0.17946809530258179" blue="0.71908444166183472" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="About Mika">
+                                <state key="normal" title="Messages">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -1284,7 +1288,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w0C-Gb-7Lj"/>
+        <segue reference="Gxu-zr-NAR"/>
         <segue reference="8Hp-b2-iD6"/>
-        <segue reference="dz0-hV-AyV"/>
     </inferredMetricsTieBreakers>
 </document>

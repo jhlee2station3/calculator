@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
     
     @IBAction func memoBtn(_ sender: Any) {
         tabBarController?.selectedIndex = 1
@@ -25,8 +24,18 @@ class HomeViewController: UIViewController {
     
     @IBAction func diaryBtn(_ sender: Any) {
         tabBarController?.selectedIndex = 4
+
     }
     
+//    @IBAction func cameraBtn(_ sender: Any) {
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+//            let imagePicker = UIImagePickerController()
+//            imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+//            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+//            imagePicker.allowsEditing = false
+//            self.present(imagePicker, animated: true, completion: nil)
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

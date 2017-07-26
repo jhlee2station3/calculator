@@ -18,6 +18,9 @@
 		CE5AB6D91F16FF2200D7312B /* test5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6D81F16FF2200D7312B /* test5UITests.swift */; };
 		CE9836A51F26F1E4008D37A6 /* DiaryFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9836A41F26F1E4008D37A6 /* DiaryFirstViewController.swift */; };
 		CE9836A71F26F1EC008D37A6 /* DiaryThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9836A61F26F1EC008D37A6 /* DiaryThirdViewController.swift */; };
+		CE9836A91F28524B008D37A6 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9836A81F28524B008D37A6 /* FirstScreenViewController.swift */; };
+		CE9836AB1F2858B8008D37A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9836AA1F2858B8008D37A6 /* HomeViewController.swift */; };
+		CE9836B11F285D8A008D37A6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9836B01F285D8A008D37A6 /* TabBarViewController.swift */; };
 		CEC1F89F1F2584A300782CA6 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1F89E1F2584A300782CA6 /* PropertiesViewController.swift */; };
 		CEDABC771F185CDA001ABFE5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */; };
 		CEEFEAF81F219A2F00C7C123 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFEAF71F219A2F00C7C123 /* ColorViewController.swift */; };
@@ -58,6 +61,9 @@
 		CE5AB6DA1F16FF2200D7312B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9836A41F26F1E4008D37A6 /* DiaryFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryFirstViewController.swift; sourceTree = "<group>"; };
 		CE9836A61F26F1EC008D37A6 /* DiaryThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryThirdViewController.swift; sourceTree = "<group>"; };
+		CE9836A81F28524B008D37A6 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
+		CE9836AA1F2858B8008D37A6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE9836B01F285D8A008D37A6 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CEC1F89E1F2584A300782CA6 /* PropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesViewController.swift; sourceTree = "<group>"; };
 		CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		CEEFEAF71F219A2F00C7C123 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +121,9 @@
 				CE5AB6BA1F16FF2100D7312B /* FirstViewController.swift */,
 				CEC1F89E1F2584A300782CA6 /* PropertiesViewController.swift */,
 				CE9836A41F26F1E4008D37A6 /* DiaryFirstViewController.swift */,
+				CE9836B01F285D8A008D37A6 /* TabBarViewController.swift */,
+				CE9836A81F28524B008D37A6 /* FirstScreenViewController.swift */,
+				CE9836AA1F2858B8008D37A6 /* HomeViewController.swift */,
 				CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */,
 				CEEFEAF71F219A2F00C7C123 /* ColorViewController.swift */,
 				CE9836A61F26F1EC008D37A6 /* DiaryThirdViewController.swift */,
@@ -287,8 +296,11 @@
 				CE5AB6BB1F16FF2100D7312B /* FirstViewController.swift in Sources */,
 				CEC1F89F1F2584A300782CA6 /* PropertiesViewController.swift in Sources */,
 				CEDABC771F185CDA001ABFE5 /* ThirdViewController.swift in Sources */,
+				CE9836AB1F2858B8008D37A6 /* HomeViewController.swift in Sources */,
 				CEEFEAF81F219A2F00C7C123 /* ColorViewController.swift in Sources */,
+				CE9836B11F285D8A008D37A6 /* TabBarViewController.swift in Sources */,
 				CE5AB6B91F16FF2100D7312B /* AppDelegate.swift in Sources */,
+				CE9836A91F28524B008D37A6 /* FirstScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

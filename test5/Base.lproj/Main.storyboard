@@ -155,7 +155,7 @@
                             <constraint firstItem="Yez-TY-RgA" firstAttribute="leading" secondItem="Ptt-pb-hxC" secondAttribute="leading" id="dHf-jK-qMp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Memo" id="5Sf-aa-9Gp">
+                    <tabBarItem key="tabBarItem" title="Memo" id="5Sf-aa-9Gp" customClass="TabBarItem" customModule="test5" customModuleProvider="target">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="My Memos" id="Kga-H8-vkk">
@@ -183,6 +183,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.2535037100315094" green="0.11566115170717239" blue="0.53103554248809814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="passDiary" rowHeight="81" id="rea-2i-eqD" customClass="DiaryTableCell" customModule="test5" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="81"/>
@@ -244,7 +245,7 @@
         <scene sceneID="mbR-Rq-aaU">
             <objects>
                 <navigationController id="HN2-0W-EiC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Diary" id="KXS-1i-Ytr"/>
+                    <tabBarItem key="tabBarItem" title="Diary" id="KXS-1i-Ytr" customClass="TabBarItem" customModule="test5" customModuleProvider="target"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="590-fN-ucW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -606,7 +607,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calculator" id="9N0-JX-ZUv"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" id="9N0-JX-ZUv" customClass="TabBarItem" customModule="test5" customModuleProvider="target"/>
                     <connections>
                         <outlet property="calculatedValue" destination="nI6-yc-Fu9" id="vVg-Kk-YVE"/>
                     </connections>
@@ -1054,7 +1055,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="JAv-W7-smM" kind="relationship" relationship="viewControllers" id="g5k-bv-Mke"/>
+                        <segue destination="sZQ-Th-XcQ" kind="relationship" relationship="viewControllers" id="fBy-d8-4E1"/>
                         <segue destination="chM-DO-Ksa" kind="relationship" relationship="viewControllers" id="ei8-MB-G7c"/>
                         <segue destination="JOZ-Gu-cHY" kind="relationship" relationship="viewControllers" id="cwb-3i-EEK"/>
                         <segue destination="rGT-9e-FFo" kind="relationship" relationship="viewControllers" id="T1D-uc-0YA"/>
@@ -1069,7 +1070,7 @@
         <scene sceneID="OJz-oQ-hOa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="chM-DO-Ksa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Memo" id="rbP-Yn-Qf0"/>
+                    <tabBarItem key="tabBarItem" title="Memo" id="rbP-Yn-Qf0" customClass="TabBarItem" customModule="test5" customModuleProvider="target"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QME-xR-5HE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1084,10 +1085,10 @@
             </objects>
             <point key="canvasLocation" x="164" y="-233.43328335832086"/>
         </scene>
-        <!--View Controller-->
+        <!--First Screen View Controller-->
         <scene sceneID="bsk-cO-2vK">
             <objects>
-                <viewController id="cGN-eK-UDZ" sceneMemberID="viewController">
+                <viewController id="cGN-eK-UDZ" customClass="FirstScreenViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Y9-6p-7f1"/>
                         <viewControllerLayoutGuide type="bottom" id="mbW-37-Z4e"/>
@@ -1096,46 +1097,130 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfB-79-QNx">
-                                <rect key="frame" x="195" y="596" width="150" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8y-Ve-9dg">
+                                <rect key="frame" x="66" y="212" width="243" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Continue"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Copyright © MikaWill.co. All rights reserved" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="urG-aH-LCZ">
+                                <rect key="frame" x="61" y="411" width="253" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.49479424953460693" green="0.057044796645641327" blue="0.80829685926437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfB-79-QNx">
+                                <rect key="frame" x="246" y="599" width="163" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="KdC-Nl-kBK" kind="show" id="UAw-GS-Hyk"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.49479424953460693" green="0.057044796645641327" blue="0.80829685926437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="logo" destination="h8y-Ve-9dg" id="Tmr-zr-Crb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnM-F8-Vtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2301.5999999999999" y="493.40329835082463"/>
         </scene>
         <!--Home-->
-        <scene sceneID="FiP-tN-Jht">
+        <scene sceneID="Jm0-ed-k29">
             <objects>
-                <viewController id="JAv-W7-smM" sceneMemberID="viewController">
+                <viewController title="Home" id="sZQ-Th-XcQ" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hDP-wD-nwC"/>
-                        <viewControllerLayoutGuide type="bottom" id="USO-Lu-ztY"/>
+                        <viewControllerLayoutGuide type="top" id="EId-43-fvl"/>
+                        <viewControllerLayoutGuide type="bottom" id="MV3-vB-WQ3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BBb-Ce-gLJ">
+                    <view key="view" contentMode="scaleToFill" id="SBJ-T8-BZe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUk-8d-Q0w">
+                                <rect key="frame" x="188" y="0.0" width="188" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.64183598756790161" green="0.42866584658622742" blue="0.86372488737106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Camera">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Woy-lo-e63">
+                                <rect key="frame" x="0.0" y="153" width="188" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45764803886413574" green="0.30141881108283997" blue="0.61194115877151489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Gallery">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-9L-Y1a">
+                                <rect key="frame" x="188" y="153" width="188" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.31425204873085022" green="0.15918853878974915" blue="0.56661194562911987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Memo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90x-fP-FIp">
+                                <rect key="frame" x="0.0" y="306" width="188" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.64183598756790161" green="0.42866584658622742" blue="0.86372488737106323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Calculator">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYk-hl-rZE">
+                                <rect key="frame" x="188" y="306" width="188" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.44878143072128296" green="0.17946809530258179" blue="0.71908444166183472" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Paint">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87f-EQ-eUE">
+                                <rect key="frame" x="188" y="462" width="188" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.34669214487075806" green="0.22824829816818237" blue="0.45998793840408325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHQ-cT-A4l">
+                                <rect key="frame" x="0.0" y="0.0" width="188" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.44878143072128296" green="0.17946809530258179" blue="0.71908444166183472" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Kakao Talk">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCm-EY-FZJ">
+                                <rect key="frame" x="0.0" y="462" width="188" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.31425204873085022" green="0.15918853878974915" blue="0.56661194562911987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Diary">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="d9n-Lr-zk3"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="a0V-yY-01c"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="66a-6p-oFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i3t-7S-HGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1500" y="497"/>
+            <point key="canvasLocation" x="-1668" y="1207"/>
         </scene>
         <!--Draw-->
         <scene sceneID="IYm-rE-S4T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rGT-9e-FFo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Draw" id="8o9-Rn-Nb5"/>
+                    <tabBarItem key="tabBarItem" title="Draw" id="8o9-Rn-Nb5" customClass="TabBarItem" customModule="test5" customModuleProvider="target"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GKy-df-fDV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

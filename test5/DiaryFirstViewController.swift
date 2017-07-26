@@ -39,8 +39,8 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
         self.diaryTableView.dataSource = self
         self.diaryTableView.delegate = self
         
-        let one = MyDiary(titleDiary: "재밌었던 하루", contentDiary: "어제는 내 생일이었다.", dateStringDiary: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium), imageDiary: #imageLiteral(resourceName: "paint-brush-md"))
-        let two = MyDiary(titleDiary: "피곤했던 하루", contentDiary: "어제 테니스를 너무 열심히 쳐서 다리가 아프다.", dateStringDiary: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium), imageDiary: #imageLiteral(resourceName: "eraser-hi"))
+        let one = MyDiary(titleDiary: "Our Fantastic Four", contentDiary: "This is a photo of my family. They are Mommy, Daddy, Wayne and me!", dateStringDiary: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium), imageDiary: #imageLiteral(resourceName: "Making-Family-Events-Special"))
+        let two = MyDiary(titleDiary: "A Romantic Afternoon", contentDiary: "Nothing feels better than enjoying the breeze with my only one.", dateStringDiary: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium), imageDiary: #imageLiteral(resourceName: "4852189-couple-images"))
     
         self.diaryDataArray.append(one)
         self.diaryDataArray.append(two)
@@ -104,6 +104,7 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
             let indexPath = diarythirdviewcontroller.indexToPass1
             self.diaryDataArray[(indexPath.row)].contentDiary = diarythirdviewcontroller.diaryContent.text
             self.diaryDataArray[(indexPath.row)].dateStringDiary = diarythirdviewcontroller.dateText.text!
+            self.diaryDataArray[(indexPath.row)].imageDiary = diarythirdviewcontroller.pictureView.image!
             self.diaryTableView.reloadData()
         }
         else {

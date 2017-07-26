@@ -80,7 +80,7 @@ class DrawingViewController: UIViewController, SendColorDelegate {
         
         context?.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
         context?.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y) )
-        tool.center = CGPoint(x: toPoint.x, y: toPoint.y + 83)
+        tool.center = CGPoint(x: toPoint.x, y: toPoint.y + 150)
             
         context?.setBlendMode(CGBlendMode.normal)
         context?.setLineCap(CGLineCap.round)
@@ -127,23 +127,31 @@ class DrawingViewController: UIViewController, SendColorDelegate {
     @IBAction func saveBtn(_ sender: Any) {
         let actionSheet = UIAlertController(title: "Pick your option", message: "", preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Open an image", style: .default, handler: { (_) in
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.allowsEditing = false
-            imagePicker.delegate = self
-            self.present(imagePicker, animated: true, completion: nil)
-        }))
-        
+        if self.imageView.image != nil {
         actionSheet.addAction(UIAlertAction(title: "Save my image", style: .default, handler: {(_) in
             if let image = self.imageView.image  {
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             }
-        }))
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+            
+            present(actionSheet, animated: true, completion: nil)
+
+        } else {
+                let alert1 = UIAlertController (title: "Warning", message: "You have not drawn anything", preferredStyle: UIAlertControllerStyle.alert)
+            alert1.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert1, animated: true, completion: nil)
+        }
+    }
+
+    @IBAction func uploadBtn(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        imagePicker.delegate = self
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        
-        present(actionSheet, animated: true, completion: nil)
+        self.present(imagePicker, animated: true, completion: nil)
+
     }
     
     @IBAction func eraseBtn(_ sender: Any) {
@@ -159,8 +167,7 @@ class DrawingViewController: UIViewController, SendColorDelegate {
             print("Nay")
         }
         isDrawing = !isDrawing
-    }
-    
+    }    
 }
 
 extension DrawingViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {

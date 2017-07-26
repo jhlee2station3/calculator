@@ -71,13 +71,6 @@ class ThirdViewController: UIViewController {
         }
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if labelText.text.isEmpty {
-            labelText.text = "Enter text"
-            labelText.textColor = UIColor.lightGray
-        }
-    }
-    
     @IBAction func cancelBtnWasPressed(_ sender: AnyObject) {
         let alert1 = UIAlertController (title: "Warning", message: "All changes will be discarded", preferredStyle: UIAlertControllerStyle.alert)
         alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: goBack))
@@ -86,6 +79,7 @@ class ThirdViewController: UIViewController {
     }
 
     @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
+        
         let alert2 = UIAlertController(title: "Warning", message: "Do you want to save ths memo?", preferredStyle: UIAlertControllerStyle.alert)
         alert2.addAction(UIAlertAction(title: "Yes", style: .default, handler: save))
         alert2.addAction(UIAlertAction(title: "No", style: .default, handler: nil))

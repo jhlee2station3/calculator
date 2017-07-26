@@ -12,7 +12,7 @@ protocol DiarySentDelegate : class {
     func userDidEnterDiary(_ diarythirdviewcontroller: DiaryThirdViewController)
 }
 
-class DiaryThirdViewController: UIViewController, SendColorDelegate {
+class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewDelegate {
     
     var diaryArray : [MyDiary] = []
     var indexToPass1: IndexPath = []
@@ -44,6 +44,7 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.diaryContent.delegate = self
         tool = UIImageView()
         tool.frame = CGRect(x: self.pictureView.bounds.size.width, y: self.pictureView.bounds.size.height, width: 20, height: 20)
         tool.image = #imageLiteral(resourceName: "paint-brush-md")
@@ -101,6 +102,21 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         drawLines(fromPoint: lastPoint, toPoint: lastPoint)
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if diaryContent.textColor == UIColor.lightGray {
+            diaryContent.text = nil
+            diaryContent.textColor = UIColor.black
+            print("okey dokey2")
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if diaryContent.text.isEmpty {
+            diaryContent.text = "Enter text"
+            diaryContent.textColor = UIColor.lightGray
+        }
+    }
 
     func drawLines (fromPoint: CGPoint, toPoint: CGPoint) {
         UIGraphicsBeginImageContext(self.pictureView.frame.size)
@@ -146,21 +162,6 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate {
         }
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if diaryContent.textColor == UIColor.lightGray {
-            diaryContent.text = nil
-            diaryContent.textColor = UIColor.black
-            print("okey dokey2")
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if diaryContent.text.isEmpty {
-            diaryContent.text = "Enter text"
-            diaryContent.textColor = UIColor.lightGray
-        }
-    }
-    
     @IBAction func cancelBtnPressed(_ sender: Any) {
         let alert1 = UIAlertController (title: "Warning", message: "All changes will be discarded", preferredStyle: UIAlertControllerStyle.alert)
         alert1.addAction(UIAlertAction(title: "Yes", style: .default, handler: goBack))
@@ -193,6 +194,30 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate {
     @IBAction func clearBtn(_ sender: Any) {
         self.pictureView.image = nil
     }
+    
+    @IBAction func uploadBtn(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        imagePicker.delegate = self
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
 }
+
+extension DiaryThirdViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let imagePicked = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.selectedImage = imagePicked
+            self.pictureView.image = selectedImage
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 
 

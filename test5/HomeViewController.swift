@@ -10,6 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    
+    @IBAction func memoBtn(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

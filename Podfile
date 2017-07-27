@@ -7,6 +7,7 @@ target 'test5' do
 
   # Pods for test5
   pod 'Alamofire', '~> 4.4'
+  pod ’SwiftyJSON’
 
   target 'test5Tests' do
     inherit! :search_paths
@@ -19,3 +20,8 @@ target 'test5' do
   end
 
 end
+
+
+
+
+

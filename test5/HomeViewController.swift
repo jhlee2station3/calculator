@@ -24,9 +24,11 @@ class HomeViewController: UIViewController {
     
     @IBAction func diaryBtn(_ sender: Any) {
         tabBarController?.selectedIndex = 4
-
     }
     
+    @IBAction func eventsBtn(_ sender: Any) {
+        tabBarController?.selectedIndex = 5
+    }
 //    @IBAction func cameraBtn(_ sender: Any) {
 //        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
 //            let imagePicker = UIImagePickerController()

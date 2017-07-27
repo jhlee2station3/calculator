@@ -39,6 +39,8 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
         self.diaryTableView.dataSource = self
         self.diaryTableView.delegate = self
         
+        self.navigationController?.navigationBar.backgroundColor = UIColor.blue
+        
         let one = MyDiary(titleDiary: "Our Fantastic Four", contentDiary: "This is a photo of my family. They are Mommy, Daddy, Wayne and me!", dateStringDiary: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium), imageDiary: #imageLiteral(resourceName: "Making-Family-Events-Special"))
         let two = MyDiary(titleDiary: "A Romantic Afternoon", contentDiary: "Nothing feels better than enjoying the breeze with my only one.", dateStringDiary: DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium), imageDiary: #imageLiteral(resourceName: "4852189-couple-images"))
     

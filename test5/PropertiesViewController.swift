@@ -38,21 +38,21 @@ class PropertiesViewController: UIViewController {
         let slider = sender as! UISlider
         redColor = CGFloat(slider.value)
         givePreview(red: redColor, green: greenColor, blue: blueColor)
-        redLabel.text = "\(Int(slider.value * 255))"
+        redLabel.text = "Red : \(Int(slider.value * 255))"
     }
     
     @IBAction func greenSliderChanged(_ sender: Any) {
         let slider = sender as! UISlider
         greenColor = CGFloat(slider.value)
         givePreview(red: redColor, green: greenColor, blue: blueColor)
-        greenLabel.text = "\(Int(slider.value * 255))"
+        greenLabel.text = "Green : \(Int(slider.value * 255))"
     }
     
     @IBAction func blueSliderChanged(_ sender: Any) {
         let slider = sender as! UISlider
         blueColor = CGFloat(slider.value)
         givePreview(red: redColor, green: greenColor, blue: blueColor)
-        blueLabel.text = "\(Int(slider.value * 255))"
+        blueLabel.text = "Blue : \(Int(slider.value * 255))"
     }
     
     @IBAction func opacityChanged(_ sender: Any) {

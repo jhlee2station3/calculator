@@ -27,7 +27,6 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
     var blue: CGFloat = 0
     var tool: UIImageView!
     var isDrawing = false
-    var delegateColor: ColorSentDelegate?
     var thickness: CGFloat = 5.0
     var opacity: CGFloat = 1.0
     var lastPoint = CGPoint.zero

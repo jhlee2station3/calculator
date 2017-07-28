@@ -27,6 +27,7 @@
 		CE9836B11F285D8A008D37A6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9836B01F285D8A008D37A6 /* TabBarViewController.swift */; };
 		CEC1F89F1F2584A300782CA6 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1F89E1F2584A300782CA6 /* PropertiesViewController.swift */; };
 		CEDABC771F185CDA001ABFE5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */; };
+		CEEC23F81F2AE6A700BC5EA8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC23F71F2AE6A700BC5EA8 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		CE9836B01F285D8A008D37A6 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CEC1F89E1F2584A300782CA6 /* PropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesViewController.swift; sourceTree = "<group>"; };
 		CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		CEEC23F71F2AE6A700BC5EA8 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		DD4FB7C59A57C9E38D61ED21 /* Pods-test5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test5.release.xcconfig"; path = "Pods/Target Support Files/Pods-test5/Pods-test5.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 				CE9836A81F28524B008D37A6 /* FirstScreenViewController.swift */,
 				CE9836AA1F2858B8008D37A6 /* HomeViewController.swift */,
 				CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */,
+				CEEC23F71F2AE6A700BC5EA8 /* WebViewController.swift */,
 				CE39F6F31F29833D009B4898 /* EventsTableViewController.swift */,
 				CE9836A61F26F1EC008D37A6 /* DiaryThirdViewController.swift */,
 				CE2F33601F20578E00F58534 /* DrawingViewController.swift */,
@@ -487,6 +490,7 @@
 				CE9836AB1F2858B8008D37A6 /* HomeViewController.swift in Sources */,
 				CE9836B11F285D8A008D37A6 /* TabBarViewController.swift in Sources */,
 				CE5AB6B91F16FF2100D7312B /* AppDelegate.swift in Sources */,
+				CEEC23F81F2AE6A700BC5EA8 /* WebViewController.swift in Sources */,
 				CE9836A91F28524B008D37A6 /* FirstScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

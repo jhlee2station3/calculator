@@ -53,6 +53,20 @@ class EventsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "passURL"{
+            let dest = segue.destination as? WebViewController
+            if let cell = sender as? UITableViewCell, let indexPath = self.tableView.indexPath(for: cell) {
+                dest?.urlDisplay = self.dataArray[indexPath.row]["url"].url
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! EventsTableCell
+        self.performSegue(withIdentifier: "passURL", sender: cell)
+    }
 }
 
 class EventsTableCell : UITableViewCell {
@@ -61,12 +75,31 @@ class EventsTableCell : UITableViewCell {
     @IBOutlet weak var dateRangeEvents: UILabel!
     @IBOutlet weak var countdownEvents: UILabel!
     @IBOutlet weak var imageEvents: UIImageView!
-
+    
     func configure (data : JSON)
     {
+        if let url = data["img"].url {
+            self.imageEvents.image = UIImage(data: try! Data(contentsOf: url))
+        }
         self.titleEvents.text = data["title"].string
-        self.dateRangeEvents.text = data["period_from"].string! + "-" + data["period_to"].string!
-        self.countdownEvents.text = data["remaining_days"].string
+        
+        let date1 = data["period_from"].string!
+        
+        let endIndex1 = date1.index(date1.endIndex, offsetBy: -14)
+        let truncated1 = date1.substring(to: endIndex1)
+        
+        let date2 = data["period_to"].string!
+        let endIndex2 = date2.index(date1.endIndex, offsetBy: -14)
+        let truncated2 = date2.substring(to: endIndex2)
+
+        self.dateRangeEvents.text = truncated1.replacingOccurrences(of: "-", with: ".") + " ~ " + truncated2.replacingOccurrences(of: "-", with: ".")
+
+        self.countdownEvents.text = "D - " + "\(data["remaining_days"].int ?? 0)"
+        if data["remaining_days"].int == 0 {
+            self.countdownEvents.isHidden = true
+        } else {
+            self.countdownEvents.isHidden = false
+        }
     }
 }
 

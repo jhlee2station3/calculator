@@ -24,6 +24,7 @@ class EventsTableViewController: UITableViewController {
             case .success(let value):
                 self.dataArray = JSON(value)
                 self.tableView.reloadData()
+                print(value)
             case .failure(let error):
                 print(error)
             }
@@ -59,6 +60,7 @@ class EventsTableViewController: UITableViewController {
             let dest = segue.destination as? WebViewController
             if let cell = sender as? UITableViewCell, let indexPath = self.tableView.indexPath(for: cell) {
                 dest?.urlDisplay = self.dataArray[indexPath.row]["url"].url
+                dest?.titleDisplay = self.dataArray[indexPath.row]["title"].string!
             }
         }
     }

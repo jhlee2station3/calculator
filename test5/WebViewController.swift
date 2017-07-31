@@ -12,6 +12,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var webview: UIWebView!
     @IBOutlet var loadingIcon: UIActivityIndicatorView!
+    var titleDisplay = ""
     
     var urlDisplay: URL?
     
@@ -19,8 +20,8 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         if let url = self.urlDisplay {
             webview.loadRequest(URLRequest(url: url))
-        }
-        // Do any additional setup after loading the view.
+        }        
+        navigationItem.title = titleDisplay
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,17 +29,16 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        loadingIcon.isHidden = false
-        loadingIcon.startAnimating()
-    }
-
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        loadingIcon.stopAnimating()
-        loadingIcon.isHidden = true
-
-    }
-    
+//    func webViewDidStartLoad(_ webView: UIWebView) {
+//        loadingIcon.isHidden = false
+//        loadingIcon.startAnimating()
+//    }
+//
+//    func webViewDidFinishLoad(_ webView: UIWebView) {
+//        loadingIcon.stopAnimating()
+//        loadingIcon.isHidden = true
+//    }
+//    
 
     /*
     // MARK: - Navigation

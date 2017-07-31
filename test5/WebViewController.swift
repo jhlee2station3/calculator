@@ -20,7 +20,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         if let url = self.urlDisplay {
             webview.loadRequest(URLRequest(url: url))
-        }        
+        }
         navigationItem.title = titleDisplay
     }
 
@@ -29,16 +29,17 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-//    func webViewDidStartLoad(_ webView: UIWebView) {
-//        loadingIcon.isHidden = false
-//        loadingIcon.startAnimating()
-//    }
-//
-//    func webViewDidFinishLoad(_ webView: UIWebView) {
-//        loadingIcon.stopAnimating()
-//        loadingIcon.isHidden = true
-//    }
-//    
+    func webViewDidStartLoad(_ : UIWebView) {
+        self.loadingIcon.startAnimating()
+        print("starting to load")
+    }
+
+    func webViewDidFinishLoad(_ : UIWebView) {
+        self.loadingIcon.stopAnimating()
+        self.loadingIcon.isHidden = true
+        print("finished loading")
+    }
+    
 
     /*
     // MARK: - Navigation

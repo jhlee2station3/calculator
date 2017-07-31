@@ -29,6 +29,8 @@ class EventsTableViewController: UITableViewController {
                 print(error)
             }
         }
+        
+        tableView.separatorStyle = .none
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -78,11 +80,14 @@ class EventsTableCell : UITableViewCell {
     @IBOutlet weak var countdownEvents: UILabel!
     @IBOutlet weak var imageEvents: UIImageView!
     
+    @IBOutlet var transparentView: UIView!
+    
     func configure (data : JSON)
     {
         if let url = data["img"].url {
             self.imageEvents.image = UIImage(data: try! Data(contentsOf: url))
         }
+        
         self.titleEvents.text = data["title"].string
         
         let date1 = data["period_from"].string!
@@ -95,12 +100,23 @@ class EventsTableCell : UITableViewCell {
         let truncated2 = date2.substring(to: endIndex2)
 
         self.dateRangeEvents.text = truncated1.replacingOccurrences(of: "-", with: ".") + " ~ " + truncated2.replacingOccurrences(of: "-", with: ".")
-
+        
+        if data["remaining_days"].int! < 8 {
         self.countdownEvents.text = "D - " + "\(data["remaining_days"].int ?? 0)"
+        } else {
+            self.countdownEvents.text = ""
+        }
+        
         if data["remaining_days"].int == 0 {
             self.countdownEvents.isHidden = true
         } else {
             self.countdownEvents.isHidden = false
+        }
+        
+        if data["finished"].int == 0 {
+            transparentView.isHidden = true
+        } else {
+            transparentView.isHidden = false
         }
     }
 }

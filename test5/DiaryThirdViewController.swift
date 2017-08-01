@@ -155,10 +155,8 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
     func save (_ sender: UIAlertAction)
     {
         if delegate != nil {
-            if diaryContent.text != nil {
                 delegate?.userDidEnterDiary(self)
                 self.navigationController?.popViewController(animated: true)
-            }
         }
     }
     
@@ -170,10 +168,17 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
+        
+        if diaryTitle.text != nil && diaryContent.text != nil && dateText.text != nil && pictureView.image != nil {
         let alert2 = UIAlertController(title: "Warning", message: "Do you want to save ths memo?", preferredStyle: UIAlertControllerStyle.alert)
         alert2.addAction(UIAlertAction(title: "Yes", style: .default, handler: save))
         alert2.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         self.present(alert2, animated: true, completion: nil)
+        } else {
+            let alert3 = UIAlertController(title: "Warning", message: "You must enter all three fields.", preferredStyle: UIAlertControllerStyle.alert)
+            alert3.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert3, animated: true, completion: nil)
+        }
     }
     
     @IBAction func eraseBtn(_ sender: Any) {

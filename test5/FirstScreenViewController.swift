@@ -14,7 +14,7 @@ class FirstScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logo.image = #imageLiteral(resourceName: "Screen Shot 2017-07-26 at 1.22.35 PM")
+        logo.image = #imageLiteral(resourceName: "Screen Shot 2017-08-01 at 2.19.48 PM")
         // Do any additional setup after loading the view.
     }
 

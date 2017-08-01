@@ -21,6 +21,7 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
     var receivedDateDiary: String = ""
     var receivedPictureDiary: UIImage? = nil
     var delegate: DiarySentDelegate? = nil
+    var receivedPictureDataDiary: Data?
     
     var red: CGFloat = 0
     var green: CGFloat = 0
@@ -52,9 +53,9 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
             let dateNew = Date()
             diaryTitle.isHidden = true
             self.navigationItem.title = receivedTitleDiary
-            diaryContent.text = receivedContentDiary
-            dateText.text = DateFormatter.localizedString(from: dateNew, dateStyle: .medium, timeStyle: .medium)
-            pictureView.image = receivedPictureDiary
+            self.diaryContent.text = receivedContentDiary
+            self.dateText.text = DateFormatter.localizedString(from: dateNew, dateStyle: .medium, timeStyle: .medium)
+            self.pictureView.image = UIImage(data: receivedPictureDataDiary!)
         }
         else {
             diaryContent.text = "Enter text"
@@ -62,7 +63,7 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
             let dateNew = Date()
             dateText.text = DateFormatter.localizedString(from: dateNew, dateStyle: .medium, timeStyle: .medium)
             self.navigationItem.title = ""
-            diaryTitle.isHidden = false
+            diaryTitle.isHidden = false            
             print("okey dokey")
         
         }

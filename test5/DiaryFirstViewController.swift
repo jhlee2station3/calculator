@@ -65,7 +65,13 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
     // Delete selected row
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            self.diaryDataArray.remove(at: indexPath.row)
+            let objectToDelete = self.realm.objects(MyDiary.self)
+            print(objectToDelete)
+            try! self.realm.write {
+                self.realm.delete(objectToDelete[indexPath.row])
+    
+            }
+            diaryDataArray.remove(at: indexPath.row)
             self.diaryTableView.reloadData()
         }
     }

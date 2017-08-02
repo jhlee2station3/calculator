@@ -11,23 +11,31 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBAction func memoBtn(_ sender: Any) {
-        tabBarController?.selectedIndex = 1
-    }
-    
-    @IBAction func calcBtn(_ sender: Any) {
         tabBarController?.selectedIndex = 2
     }
     
+    @IBAction func calcBtn(_ sender: Any) {
+        tabBarController?.selectedIndex = 1
+    }
+    
     @IBAction func paintBtn(_ sender: Any) {
-        tabBarController?.selectedIndex = 3
+        tabBarController?.selectedIndex = 4
     }
     
     @IBAction func diaryBtn(_ sender: Any) {
-        tabBarController?.selectedIndex = 4
+        tabBarController?.selectedIndex = 3
     }
     
     @IBAction func eventsBtn(_ sender: Any) {
         tabBarController?.selectedIndex = 5
+    }
+    
+    @IBAction func photosBtn(_ sender: Any) {
+        
+    }
+    
+    @IBAction func clockBtn(_ sender: Any) {
+        
     }
     
     override func viewDidLoad() {

@@ -10,17 +10,18 @@ import UIKit
 import RealmSwift
 
 class MyDiary: Object {
-    dynamic var titleDiary = ""
-    dynamic var contentDiary = ""
-    dynamic var dataStringDiary = ""
-    dynamic var imageDataDiary: Data? = nil
+    dynamic var titleDiary      : String = ""
+    dynamic var contentDiary    : String = ""
+    dynamic var dataStringDiary : String = ""
+    dynamic var imageDataDiary  : Data?  = nil
 }
 
 class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
     
     let realm = try! Realm()
+    
     var diaryDataArray : [MyDiary] = []
-    var indexToPass: IndexPath = []
+    var indexToPass    : IndexPath = []
     
     @IBOutlet var diaryTableView: UITableView!
     @IBOutlet weak var addBtn: UIBarButtonItem!
@@ -39,7 +40,6 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
         super.viewDidLoad()
         self.diaryTableView.dataSource = self
         self.diaryTableView.delegate = self
-        
         self.navigationController?.navigationBar.backgroundColor = UIColor.blue
     }
     
@@ -59,7 +59,7 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
         } else if segue.identifier == "passNewDiary" {
             let diarythirdviewcontroller: DiaryThirdViewController = segue.destination as! DiaryThirdViewController
             diarythirdviewcontroller.delegate = self
-        }
+          }
     }
     
     // Delete selected row
@@ -69,7 +69,6 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
             print(objectToDelete)
             try! self.realm.write {
                 self.realm.delete(objectToDelete[indexPath.row])
-    
             }
             diaryDataArray.remove(at: indexPath.row)
             self.diaryTableView.reloadData()
@@ -105,25 +104,23 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
         try! realm.write {
             let addItem = MyDiary()
             if diarythirdviewcontroller.diaryTitle.isHidden == false {
-            if let title = diarythirdviewcontroller.diaryTitle.text, let date = diarythirdviewcontroller.dateText.text, let content = diarythirdviewcontroller.diaryContent.text, let image = diarythirdviewcontroller.pictureView.image {
-                addItem.titleDiary = title
-                addItem.dataStringDiary = date
-                addItem.contentDiary = content
-                let imagetoData = UIImageJPEGRepresentation(image, 1.0)
-                addItem.imageDataDiary = imagetoData
-                realm.add(addItem)
-                self.diaryTableView.reloadData()
+                if let title = diarythirdviewcontroller.diaryTitle.text, let date = diarythirdviewcontroller.dateText.text, let content = diarythirdviewcontroller.diaryContent.text, let image = diarythirdviewcontroller.pictureView.image {
+                    addItem.titleDiary = title
+                    addItem.dataStringDiary = date
+                    addItem.contentDiary = content
+                    let imagetoData = UIImageJPEGRepresentation(image, 1.0)
+                    addItem.imageDataDiary = imagetoData
+                    realm.add(addItem)
+                    self.diaryTableView.reloadData()
                 }
-            }
-            else {
+            } else {
                 let indexPath = diarythirdviewcontroller.indexToPass1
                 self.diaryDataArray[(indexPath.row)].contentDiary = diarythirdviewcontroller.diaryContent.text
                 self.diaryDataArray[(indexPath.row)].dataStringDiary = diarythirdviewcontroller.dateText.text!
                 self.diaryDataArray[(indexPath.row)].imageDataDiary = UIImageJPEGRepresentation(diarythirdviewcontroller.pictureView.image!, 1.0)
-            }
+              }
         }
     }
-    
 }
 
 class DiaryTableCell : UITableViewCell {

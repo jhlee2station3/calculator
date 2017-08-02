@@ -14,48 +14,46 @@ protocol DataSentDelegate : class {
 
 class ThirdViewController: UIViewController {
     
-    var dataArray3 : [MyData] = []
-    var indexToPass2: IndexPath? = []
-    var indexToPass3: IndexPath? = []
-    var receivedTitle: String = ""
-    var receivedContent: String = ""
-    var receivedDate: String = ""
-    var delegate: DataSentDelegate? = nil
+    var dataArray3      : [MyData]          = []
+    var indexToPass2    : IndexPath?        = []
+    var indexToPass3    : IndexPath?        = []
+    var receivedTitle   : String            = ""
+    var receivedContent : String            = ""
+    var receivedDate    : String            = ""
+    var delegate        : DataSentDelegate? = nil
 
-    @IBOutlet weak var newTitle: UITextField!
-    @IBOutlet weak var labelText: UITextView!
-    @IBOutlet weak var dateButton: UILabel!
+    @IBOutlet weak var newTitle   : UITextField!
+    @IBOutlet weak var labelText  : UITextView!
+    @IBOutlet weak var dateButton : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if !receivedContent.isEmpty {
             let dateEditNew = Date()
             newTitle.isHidden = true
             self.navigationItem.title = receivedTitle
             labelText.text = receivedContent
             dateButton.text = DateFormatter.localizedString(from: dateEditNew, dateStyle: .medium, timeStyle: .medium)
-        }
-        else {
+        } else {
             labelText.text = "Enter text"
             labelText.textColor = UIColor.lightGray
             let dateAddNew = Date()
             dateButton.text = DateFormatter.localizedString(from: dateAddNew, dateStyle: .medium, timeStyle: .medium)
             self.navigationItem.title = ""
             newTitle.isHidden = false
-        }
+          }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func goBack (_ sender: UIAlertAction)
-    {
+    func goBack (_ sender: UIAlertAction) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func save (_ sender: UIAlertAction)
-    {
+    func save (_ sender: UIAlertAction) {
         if delegate != nil {
             if labelText.text != nil {
                 delegate?.userDidEnterData(self)
@@ -79,7 +77,6 @@ class ThirdViewController: UIViewController {
     }
 
     @IBAction func saveBtnWasPressed(_ sender: AnyObject) {
-        
         let alert2 = UIAlertController(title: "Warning", message: "Do you want to save ths memo?", preferredStyle: UIAlertControllerStyle.alert)
         alert2.addAction(UIAlertAction(title: "Yes", style: .default, handler: save))
         alert2.addAction(UIAlertAction(title: "No", style: .default, handler: nil))

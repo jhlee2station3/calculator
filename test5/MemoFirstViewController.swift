@@ -7,13 +7,14 @@
 //
 
 struct MyData {
-    var title : String
-    var content : String
+    var title      : String
+    var content    : String
     var dateString : String
     
-    init(title:String, content:String, dateString:String) {
-        self.title = title
-        self.content = content
+    init (title:String, content:String, dateString:String)
+    {
+        self.title      = title
+        self.content    = content
         self.dateString = dateString
     }
 }
@@ -22,11 +23,10 @@ import UIKit
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DataSentDelegate {
     
-    var dataArray : [MyData] = []
-    var passingData : MyData? = nil
-    var indexToPass1: IndexPath = []
-    
-    var delegate : DataSentDelegate? = nil
+    var dataArray    : [MyData]          = []
+    var passingData  : MyData?           = nil
+    var indexToPass1 : IndexPath         = []
+    var delegate     : DataSentDelegate? = nil
     
     @IBOutlet var myTableView: UITableView!
     @IBOutlet weak var addButton: UIBarButtonItem!
@@ -38,6 +38,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.myTableView.dataSource = self
         self.myTableView.delegate = self
         
@@ -54,26 +55,25 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "passData" {
+        if segue.identifier == "passData"
+        {
             let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
             thirdViewController.delegate = self
             thirdViewController.receivedContent = self.dataArray[indexToPass1.row].content
             thirdViewController.receivedDate = self.dataArray[indexToPass1.row].dateString
             thirdViewController.receivedTitle = self.dataArray[indexToPass1.row].title
             thirdViewController.indexToPass3 = self.indexToPass1
-        }
-        
-        else if segue.identifier == "passNewData" {
+        } else if segue.identifier == "passNewData" {
             let thirdViewController: ThirdViewController = segue.destination as! ThirdViewController
             thirdViewController.delegate = self
-        }
+          }
     }
     
     //Delete selected row
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-        self.dataArray.remove(at: indexPath.row)
-        self.myTableView.reloadData()
+            self.dataArray.remove(at: indexPath.row)
+            self.myTableView.reloadData()
         }
     }
     
@@ -108,11 +108,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.dataArray[(indexPath?.row)!].content = thirdViewController.labelText.text!
             self.dataArray[(indexPath?.row)!].dateString = thirdViewController.dateButton.text!
             self.myTableView.reloadData()
-        }
-        else {
+        } else {
             let four = MyData(title: thirdViewController.newTitle.text!, content: thirdViewController.labelText.text!, dateString: thirdViewController.dateButton.text!)
             self.dataArray.append(four)
-        }
+          }
     }
 }
 

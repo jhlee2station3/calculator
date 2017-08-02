@@ -14,7 +14,7 @@
 		CE2F33611F20578E00F58534 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F33601F20578E00F58534 /* DrawingViewController.swift */; };
 		CE39F6F41F29833D009B4898 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39F6F31F29833D009B4898 /* EventsTableViewController.swift */; };
 		CE5AB6B91F16FF2100D7312B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6B81F16FF2100D7312B /* AppDelegate.swift */; };
-		CE5AB6BB1F16FF2100D7312B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6BA1F16FF2100D7312B /* FirstViewController.swift */; };
+		CE5AB6BB1F16FF2100D7312B /* MemoFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6BA1F16FF2100D7312B /* MemoFirstViewController.swift */; };
 		CE5AB6BE1F16FF2100D7312B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5AB6BC1F16FF2100D7312B /* Main.storyboard */; };
 		CE5AB6C01F16FF2100D7312B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5AB6BF1F16FF2100D7312B /* Assets.xcassets */; };
 		CE5AB6C31F16FF2100D7312B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5AB6C11F16FF2100D7312B /* LaunchScreen.storyboard */; };
@@ -26,7 +26,7 @@
 		CE9836AB1F2858B8008D37A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9836AA1F2858B8008D37A6 /* HomeViewController.swift */; };
 		CE9836B11F285D8A008D37A6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9836B01F285D8A008D37A6 /* TabBarViewController.swift */; };
 		CEC1F89F1F2584A300782CA6 /* PropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1F89E1F2584A300782CA6 /* PropertiesViewController.swift */; };
-		CEDABC771F185CDA001ABFE5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */; };
+		CEDABC771F185CDA001ABFE5 /* MemoThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDABC761F185CDA001ABFE5 /* MemoThirdViewController.swift */; };
 		CEEC23F81F2AE6A700BC5EA8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC23F71F2AE6A700BC5EA8 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,7 @@
 		CE39F6F31F29833D009B4898 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		CE5AB6B51F16FF2100D7312B /* test5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5AB6B81F16FF2100D7312B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE5AB6BA1F16FF2100D7312B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		CE5AB6BA1F16FF2100D7312B /* MemoFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFirstViewController.swift; sourceTree = "<group>"; };
 		CE5AB6BD1F16FF2100D7312B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE5AB6BF1F16FF2100D7312B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5AB6C21F16FF2100D7312B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		CE9836AA1F2858B8008D37A6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE9836B01F285D8A008D37A6 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CEC1F89E1F2584A300782CA6 /* PropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesViewController.swift; sourceTree = "<group>"; };
-		CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		CEDABC761F185CDA001ABFE5 /* MemoThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoThirdViewController.swift; sourceTree = "<group>"; };
 		CEEC23F71F2AE6A700BC5EA8 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		DD4FB7C59A57C9E38D61ED21 /* Pods-test5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test5.release.xcconfig"; path = "Pods/Target Support Files/Pods-test5/Pods-test5.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,19 +160,19 @@
 			isa = PBXGroup;
 			children = (
 				CE5AB6B81F16FF2100D7312B /* AppDelegate.swift */,
-				CE5AB6BA1F16FF2100D7312B /* FirstViewController.swift */,
+				CE9836AA1F2858B8008D37A6 /* HomeViewController.swift */,
+				CE5AB6BA1F16FF2100D7312B /* MemoFirstViewController.swift */,
+				CEDABC761F185CDA001ABFE5 /* MemoThirdViewController.swift */,
 				CEC1F89E1F2584A300782CA6 /* PropertiesViewController.swift */,
 				CE9836A41F26F1E4008D37A6 /* DiaryFirstViewController.swift */,
+				CE9836A61F26F1EC008D37A6 /* DiaryThirdViewController.swift */,
 				CE9836B01F285D8A008D37A6 /* TabBarViewController.swift */,
 				CE9836A81F28524B008D37A6 /* FirstScreenViewController.swift */,
-				CE9836AA1F2858B8008D37A6 /* HomeViewController.swift */,
-				CEDABC761F185CDA001ABFE5 /* ThirdViewController.swift */,
 				CEEC23F71F2AE6A700BC5EA8 /* WebViewController.swift */,
 				CE39F6F31F29833D009B4898 /* EventsTableViewController.swift */,
-				CE9836A61F26F1EC008D37A6 /* DiaryThirdViewController.swift */,
 				CE2F33601F20578E00F58534 /* DrawingViewController.swift */,
-				CE5AB6BC1F16FF2100D7312B /* Main.storyboard */,
 				CE2F335E1F204C1100F58534 /* CalculatorViewController.swift */,
+				CE5AB6BC1F16FF2100D7312B /* Main.storyboard */,
 				CE5AB6BF1F16FF2100D7312B /* Assets.xcassets */,
 				CE5AB6C11F16FF2100D7312B /* LaunchScreen.storyboard */,
 				CE5AB6C41F16FF2100D7312B /* Info.plist */,
@@ -484,9 +484,9 @@
 				CE9836A51F26F1E4008D37A6 /* DiaryFirstViewController.swift in Sources */,
 				CE9836A71F26F1EC008D37A6 /* DiaryThirdViewController.swift in Sources */,
 				CE2F33611F20578E00F58534 /* DrawingViewController.swift in Sources */,
-				CE5AB6BB1F16FF2100D7312B /* FirstViewController.swift in Sources */,
+				CE5AB6BB1F16FF2100D7312B /* MemoFirstViewController.swift in Sources */,
 				CEC1F89F1F2584A300782CA6 /* PropertiesViewController.swift in Sources */,
-				CEDABC771F185CDA001ABFE5 /* ThirdViewController.swift in Sources */,
+				CEDABC771F185CDA001ABFE5 /* MemoThirdViewController.swift in Sources */,
 				CE9836AB1F2858B8008D37A6 /* HomeViewController.swift in Sources */,
 				CE9836B11F285D8A008D37A6 /* TabBarViewController.swift in Sources */,
 				CE5AB6B91F16FF2100D7312B /* AppDelegate.swift in Sources */,

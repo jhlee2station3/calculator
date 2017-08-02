@@ -14,32 +14,31 @@ protocol DiarySentDelegate : class {
 
 class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewDelegate {
     
-    var diaryArray : [MyDiary] = []
-    var indexToPass1: IndexPath = []
-    var receivedTitleDiary: String = ""
-    var receivedContentDiary: String = ""
-    var receivedDateDiary: String = ""
-    var receivedPictureDiary: UIImage? = nil
-    var delegate: DiarySentDelegate? = nil
-    var receivedPictureDataDiary: Data?
-    
-    var red: CGFloat = 0
-    var green: CGFloat = 0
-    var blue: CGFloat = 0
-    var tool: UIImageView!
-    var isDrawing = false
-    var thickness: CGFloat = 5.0
-    var opacity: CGFloat = 1.0
-    var lastPoint = CGPoint.zero
-    var selectedImage: UIImage!
+    var diaryArray               : [MyDiary] = []
+    var indexToPass1             : IndexPath = []
+    var receivedTitleDiary       : String    = ""
+    var receivedContentDiary     : String    = ""
+    var receivedDateDiary        : String    = ""
+    var receivedPictureDataDiary : Data?
+    var selectedImage            : UIImage!
 
     
-    @IBOutlet weak var pictureView: UIImageView!
-    @IBOutlet weak var diaryContent: UITextView!
-    @IBOutlet weak var diaryTitle: UITextField!
-    @IBOutlet weak var dateText: UILabel!
+    var delegate : DiarySentDelegate? = nil
     
-    @IBOutlet weak var toolIcon: UIButton!
+    var red: CGFloat       = 0
+    var green: CGFloat     = 0
+    var blue: CGFloat      = 0
+    var isDrawing          = false
+    var thickness: CGFloat = 5.0
+    var opacity: CGFloat   = 1.0
+    var lastPoint          = CGPoint.zero
+    var tool: UIImageView!
+    
+    @IBOutlet weak var pictureView  : UIImageView!
+    @IBOutlet weak var diaryContent : UITextView!
+    @IBOutlet weak var diaryTitle   : UITextField!
+    @IBOutlet weak var dateText     : UILabel!
+    @IBOutlet weak var toolIcon     : UIButton!
     
     
     override func viewDidLoad() {
@@ -56,17 +55,14 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
             self.diaryContent.text = receivedContentDiary
             self.dateText.text = DateFormatter.localizedString(from: dateNew, dateStyle: .medium, timeStyle: .medium)
             self.pictureView.image = UIImage(data: receivedPictureDataDiary!)
-        }
-        else {
+        } else {
             diaryContent.text = "Enter text"
             diaryContent.textColor = UIColor.lightGray
             let dateNew = Date()
             dateText.text = DateFormatter.localizedString(from: dateNew, dateStyle: .medium, timeStyle: .medium)
             self.navigationItem.title = ""
-            diaryTitle.isHidden = false            
-            print("okey dokey")
-        
-        }
+            diaryTitle.isHidden = false
+          }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -147,13 +143,11 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
         self.opacity = propertiesviewcontroller.opacityLevel
     }
     
-    func goBack (_ sender: UIAlertAction)
-    {
+    func goBack (_ sender: UIAlertAction) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func save (_ sender: UIAlertAction)
-    {
+    func save (_ sender: UIAlertAction) {
         if delegate != nil {
                 delegate?.userDidEnterDiary(self)
                 self.navigationController?.popViewController(animated: true)
@@ -168,7 +162,6 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
-        
         if diaryTitle.text != nil && diaryContent.text != nil && dateText.text != nil && pictureView.image != nil {
         let alert2 = UIAlertController(title: "Warning", message: "Do you want to save ths memo?", preferredStyle: UIAlertControllerStyle.alert)
         alert2.addAction(UIAlertAction(title: "Yes", style: .default, handler: save))
@@ -178,7 +171,7 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
             let alert3 = UIAlertController(title: "Warning", message: "You must enter all three fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert3.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.present(alert3, animated: true, completion: nil)
-        }
+          }
     }
     
     @IBAction func eraseBtn(_ sender: Any) {
@@ -192,7 +185,7 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
             tool.image = #imageLiteral(resourceName: "eraser-hi")
             toolIcon.setTitle("Pen", for: .normal)
             print("Nay")
-        }
+          }
         isDrawing = !isDrawing
     }
     
@@ -205,7 +198,6 @@ class DiaryThirdViewController: UIViewController, SendColorDelegate, UITextViewD
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         imagePicker.delegate = self
-        
         self.present(imagePicker, animated: true, completion: nil)
     }
 }

@@ -12,8 +12,8 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     var currentNum = Double()
-    var currentAr = String()
-    var result = Double()
+    var currentAr  = String()
+    var result     = Double()
 
     @IBOutlet weak var calculatedValue: UILabel!
     
@@ -64,10 +64,8 @@ class CalculatorViewController: UIViewController {
         calculatedValue.text = ("\(result)")
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

@@ -16,7 +16,7 @@ class EventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         let parameters: Parameters = ["platform": "app_home"]
         
         Alamofire.request("https://dabang-prod-pr-884.herokuapp.com/api/3/events", parameters: parameters).responseJSON { response in
@@ -29,7 +29,6 @@ class EventsTableViewController: UITableViewController {
                 print(error)
             }
         }
-        
         tableView.separatorStyle = .none
     }
     
@@ -75,10 +74,10 @@ class EventsTableViewController: UITableViewController {
 
 class EventsTableCell : UITableViewCell {
     
-    @IBOutlet weak var titleEvents: UILabel!
-    @IBOutlet weak var dateRangeEvents: UILabel!
-    @IBOutlet weak var countdownEvents: UILabel!
-    @IBOutlet weak var imageEvents: UIImageView!
+    @IBOutlet weak var titleEvents     : UILabel!
+    @IBOutlet weak var dateRangeEvents : UILabel!
+    @IBOutlet weak var countdownEvents : UILabel!
+    @IBOutlet weak var imageEvents     : UIImageView!
     
     @IBOutlet var transparentView: UIView!
     
@@ -90,13 +89,12 @@ class EventsTableCell : UITableViewCell {
         
         self.titleEvents.text = data["title"].string
         
-        let date1 = data["period_from"].string!
-        
-        let endIndex1 = date1.index(date1.endIndex, offsetBy: -14)
+        let date1      = data["period_from"].string!
+        let endIndex1  = date1.index(date1.endIndex, offsetBy: -14)
         let truncated1 = date1.substring(to: endIndex1)
         
-        let date2 = data["period_to"].string!
-        let endIndex2 = date2.index(date1.endIndex, offsetBy: -14)
+        let date2      = data["period_to"].string!
+        let endIndex2  = date2.index(date1.endIndex, offsetBy: -14)
         let truncated2 = date2.substring(to: endIndex2)
 
         self.dateRangeEvents.text = truncated1.replacingOccurrences(of: "-", with: ".") + " ~ " + truncated2.replacingOccurrences(of: "-", with: ".")
@@ -105,19 +103,19 @@ class EventsTableCell : UITableViewCell {
         self.countdownEvents.text = "D - " + "\(data["remaining_days"].int ?? 0)"
         } else {
             self.countdownEvents.text = ""
-        }
+          }
         
         if data["remaining_days"].int == 0 {
             self.countdownEvents.isHidden = true
         } else {
             self.countdownEvents.isHidden = false
-        }
+          }
         
         if data["finished"].int == 0 {
             transparentView.isHidden = true
         } else {
             transparentView.isHidden = false
-        }
+          }
     }
 }
 

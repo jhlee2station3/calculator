@@ -14,24 +14,21 @@ protocol SendColorDelegate: class {
 
 class PropertiesViewController: UIViewController {
 
+    @IBOutlet weak var colorImageView : UIImageView!
+    @IBOutlet weak var opacityLabel   : UILabel!
+    @IBOutlet weak var thicknessLabel : UILabel!
+    @IBOutlet weak var redLabel       : UILabel!
+    @IBOutlet weak var greenLabel     : UILabel!
+    @IBOutlet weak var blueLabel      : UILabel!
+    @IBOutlet weak var redSlider      : UISlider!
+    @IBOutlet weak var greenSlider    : UISlider!
+    @IBOutlet weak var blueSlider     : UISlider!
     
-    @IBOutlet weak var colorImageView: UIImageView!
-    
-    @IBOutlet weak var opacityLabel: UILabel!
-    @IBOutlet weak var thicknessLabel: UILabel!
-    @IBOutlet weak var redLabel: UILabel!
-    @IBOutlet weak var greenLabel: UILabel!
-    @IBOutlet weak var blueLabel: UILabel!
-    
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
-    
-    var redColor: CGFloat = 0.0
-    var greenColor: CGFloat = 0.0
-    var blueColor: CGFloat = 0.0
-    var thicknessLevel: CGFloat = 5.0
-    var opacityLevel: CGFloat = 1.0
+    var redColor: CGFloat             = 0.0
+    var greenColor: CGFloat           = 0.0
+    var blueColor: CGFloat            = 0.0
+    var thicknessLevel: CGFloat       = 5.0
+    var opacityLevel: CGFloat         = 1.0
     var delegate1: SendColorDelegate? = nil
     
     @IBAction func redSliderChanged(_ sender: Any) {
@@ -70,13 +67,9 @@ class PropertiesViewController: UIViewController {
     @IBAction func saveBtn(_ sender: Any) {
         print("touch")
         if delegate1 != nil {
-            print("nil????")
             delegate1?.EnterColor(self)
         }
-        print("Completed1")
-        //dismiss(animated: true, completion: nil)
-        _ = self.navigationController?.popViewController(animated: true)
-        print("Completed2")
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
@@ -89,11 +82,9 @@ class PropertiesViewController: UIViewController {
         context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: opacityLevel).cgColor)
         context?.setLineWidth(thicknessLevel)
         context?.setLineCap(CGLineCap.round)
-        
         context?.move(to:CGPoint(x:200, y: 100))
         context?.addLine(to: CGPoint(x: 200, y: 60))
         context?.strokePath()
-        
         colorImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }

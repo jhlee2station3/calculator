@@ -10,33 +10,20 @@ import UIKit
 
 class DrawingViewController: UIViewController, SendColorDelegate {
     
-    var red: CGFloat = 0
-    var green: CGFloat = 0
-    var blue: CGFloat = 0
-    
-    var tool: UIImageView!
-    var isDrawing = false
-    
-    var thickness: CGFloat = 5.0
-    var opacity: CGFloat = 1.0
-    
-    @IBOutlet weak var redOption: UIButton!
-    @IBOutlet weak var orangeOption: UIButton!
-    @IBOutlet weak var yellowOption: UIButton!
-    @IBOutlet weak var greenOption: UIButton!
-    @IBOutlet weak var blueOption: UIButton!
-    @IBOutlet weak var purpleOption: UIButton!
-    @IBOutlet weak var brownOption: UIButton!
-    @IBOutlet weak var blackOption: UIButton!
-    
+    var red           : CGFloat = 0
+    var green         : CGFloat = 0
+    var blue          : CGFloat = 0
+    var tool          : UIImageView!
+    var thickness     : CGFloat = 5.0
+    var opacity       : CGFloat = 1.0
+    var selectedImage : UIImage!
 
-    @IBOutlet weak var toolIcon: UIButton!
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
+    var isDrawing = false
     var lastPoint = CGPoint.zero
-    var selectedImage: UIImage!
     
+    @IBOutlet weak var toolIcon  : UIButton!
+    @IBOutlet weak var imageView : UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tool = UIImageView()
@@ -112,21 +99,21 @@ class DrawingViewController: UIViewController, SendColorDelegate {
     @IBAction func colorsPicked(_ sender: AnyObject) {
         if sender.tag == 0 { //red
             (red,green,blue) = (255/255,0/255,0/255)
-            } else if sender.tag == 1 { //orange
+        } else if sender.tag == 1 { //orange
                 (red,green,blue) = (255/255,153/255,0/255)
-            } else if sender.tag == 2 { //yellow
+          } else if sender.tag == 2 { //yellow
                 (red,green,blue) = (255/255,255/255,0/255)
-            } else if sender.tag == 3 { //green
+          } else if sender.tag == 3 { //green
                 (red,green,blue) = (128/255,255/255,0/255)
-            } else if sender.tag == 4 { //blue
+          } else if sender.tag == 4 { //blue
                 (red,green,blue) = (0/255,0/255,255/255)
-            } else if sender.tag == 5 { //purple
+          } else if sender.tag == 5 { //purple
                 (red,green,blue) = (127/255,0/255,255/255)
-            } else if sender.tag == 6 { //brown
+          } else if sender.tag == 6 { //brown
                 (red,green,blue) = (204/255,102/255,0/255)
-            } else if sender.tag == 7 { //black
+          } else if sender.tag == 7 { //black
                 (red,green,blue) = (0/255,0/255,0/255)
-            }
+          }
     }
     
     @IBAction func clearButton(_ sender: Any) {
@@ -143,14 +130,13 @@ class DrawingViewController: UIViewController, SendColorDelegate {
             }
             }))
             actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-            
             present(actionSheet, animated: true, completion: nil)
 
         } else {
-                let alert1 = UIAlertController (title: "Warning", message: "You have not drawn anything", preferredStyle: UIAlertControllerStyle.alert)
+            let alert1 = UIAlertController (title: "Warning", message: "You have not drawn anything", preferredStyle: UIAlertControllerStyle.alert)
             alert1.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.present(alert1, animated: true, completion: nil)
-        }
+          }
     }
 
     @IBAction func uploadBtn(_ sender: Any) {
@@ -158,9 +144,7 @@ class DrawingViewController: UIViewController, SendColorDelegate {
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         imagePicker.delegate = self
-        
         self.present(imagePicker, animated: true, completion: nil)
-
     }
     
     @IBAction func eraseBtn(_ sender: Any) {
@@ -174,7 +158,7 @@ class DrawingViewController: UIViewController, SendColorDelegate {
             tool.image = #imageLiteral(resourceName: "eraser-hi")
             toolIcon.setTitle("Pen", for: .normal)
             print("Nay")
-        }
+          }
         isDrawing = !isDrawing
     }    
 }

@@ -21,6 +21,7 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
         currentAr = "="
         calculatedValue.text = ("\(result)")
+        tabBarItem.badgeColor = UIColor.black
     }
     
     @IBAction func btnInput(_ sender: UIButton){

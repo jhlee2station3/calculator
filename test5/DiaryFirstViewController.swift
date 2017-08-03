@@ -40,7 +40,6 @@ class DiaryFirstViewController: UITableViewController, DiarySentDelegate {
         super.viewDidLoad()
         self.diaryTableView.dataSource = self
         self.diaryTableView.delegate = self
-        self.navigationController?.navigationBar.backgroundColor = UIColor.blue
     }
     
     override func didReceiveMemoryWarning() {

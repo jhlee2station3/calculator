@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    var selectedImage : UIImage!
+    
     @IBAction func memoBtn(_ sender: Any) {
         tabBarController?.selectedIndex = 2
     }
@@ -31,7 +33,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func photosBtn(_ sender: Any) {
-        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func clockBtn(_ sender: Any) {
@@ -44,5 +50,17 @@ class HomeViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension HomeViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let imagePicked = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.selectedImage = imagePicked
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }

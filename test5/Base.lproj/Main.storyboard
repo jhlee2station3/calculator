@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk3-FY-V8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997.5999999999999" y="-233.43328335832086"/>
+            <point key="canvasLocation" x="1036" y="-316"/>
         </scene>
         <!--FirstViewController-->
         <scene sceneID="xhk-ZT-4vk">
@@ -149,9 +149,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Memo" image="icons8-Note-50" id="5Sf-aa-9Gp" customClass="TabBarItem" customModule="test5" customModuleProvider="target">
-                        <inset key="imageInsets" minX="3" minY="6" maxX="3" maxY="3"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                    <tabBarItem key="tabBarItem" title="Memo" image="icons8-Note-25" selectedImage="icons8-Note-25" id="5Sf-aa-9Gp" customClass="TabBarItem" customModule="test5" customModuleProvider="target">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="My Memos" id="Kga-H8-vkk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Eo-RG-gsc">
@@ -168,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsu-ag-qha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.79999999999995" y="-221.73913043478262"/>
+            <point key="canvasLocation" x="198" y="-316"/>
         </scene>
         <!--DiaryFirstViewController-->
         <scene sceneID="gNb-hv-OO1">
@@ -236,7 +235,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8v7-xP-m7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103.2" y="1206.7466266866568"/>
+            <point key="canvasLocation" x="198" y="1126"/>
         </scene>
         <!--Events-->
         <scene sceneID="wu6-Zj-dad">
@@ -379,9 +378,8 @@
         <scene sceneID="u2C-Sn-CVD">
             <objects>
                 <navigationController id="W8Y-IM-mio" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="icons8-Calendar-50" id="2s8-T3-JfC">
-                        <inset key="imageInsets" minX="3" minY="6" maxX="3" maxY="3"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="icons8-Calendar-25" selectedImage="icons8-Calendar-25" id="2s8-T3-JfC">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="33D-j6-SyS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -393,15 +391,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaH-KU-dos" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-830" y="2176"/>
+            <point key="canvasLocation" x="-778" y="1905"/>
         </scene>
         <!--Diary-->
         <scene sceneID="mbR-Rq-aaU">
             <objects>
                 <navigationController id="HN2-0W-EiC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Diary" image="icons8-Invitation-50" id="KXS-1i-Ytr" customClass="TabBarItem" customModule="test5" customModuleProvider="target">
-                        <inset key="imageInsets" minX="3" minY="6" maxX="3" maxY="3"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                    <tabBarItem key="tabBarItem" title="Diary" image="icons8-Invitation-25" selectedImage="icons8-Invitation-25" id="KXS-1i-Ytr" customClass="TabBarItem" customModule="test5" customModuleProvider="target">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="590-fN-ucW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -413,7 +410,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Epe-a2-cd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="464.80000000000001" y="1206.7466266866568"/>
+            <point key="canvasLocation" x="-727" y="1126"/>
         </scene>
         <!--DiaryThirdViewController-->
         <scene sceneID="FTC-zM-XFu">
@@ -533,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pz8-oi-ju4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1972" y="1206.7466266866568"/>
+            <point key="canvasLocation" x="1102" y="1126"/>
         </scene>
         <!--Calculator-->
         <scene sceneID="7m4-xn-YsA">
@@ -780,9 +777,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calculator" image="icons8-Calculator-50" id="9N0-JX-ZUv">
-                        <inset key="imageInsets" minX="3" minY="6" maxX="3" maxY="3"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="icons8-Calculator-25" selectedImage="icons8-Calculator-25" id="9N0-JX-ZUv">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="calculatedValue" destination="nI6-yc-Fu9" id="vVg-Kk-YVE"/>
@@ -790,7 +786,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9w-zi-Rfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1500" y="-222.63868065967017"/>
+            <point key="canvasLocation" x="-1500" y="-316"/>
         </scene>
         <!--Drawing View Controller-->
         <scene sceneID="6eK-q4-HIH">
@@ -827,7 +823,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZF-1E-5la">
-                                <rect key="frame" x="9" y="145" width="359" height="326"/>
+                                <rect key="frame" x="9" y="145" width="359" height="396"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -947,7 +943,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8C-yA-o9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5999999999999" y="494.30284857571218"/>
+            <point key="canvasLocation" x="-727" y="397"/>
         </scene>
         <!--Properties View Controller-->
         <scene sceneID="odu-0U-Cjp">
@@ -1087,7 +1083,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqV-X2-VYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2549.5999999999999" y="492.50374812593708"/>
+            <point key="canvasLocation" x="1103" y="396"/>
+        </scene>
+        <!--Clock-->
+        <scene sceneID="Lcr-Rz-JA6">
+            <objects>
+                <viewController id="Hfi-W8-Wkf" customClass="ClockViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bmn-4F-Pzt"/>
+                        <viewControllerLayoutGuide type="bottom" id="G3j-nG-naH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cS3-9w-7lM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Time Right Now Is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lp-dz-G1G">
+                                <rect key="frame" x="-17" y="218" width="408" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
+                                <color key="textColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s40-cv-g9D">
+                                <rect key="frame" x="0.0" y="251" width="375" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hey, Mika!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lO-rF-XU9">
+                                <rect key="frame" x="16" y="121" width="343" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.88941132919999999" blue="0.57833330120000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Clock" image="icons8-Clock-25" selectedImage="icons8-Clock-25" id="MKk-11-Etq"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="s40-cv-g9D" id="wov-qM-7Qo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0AB-IW-atU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727.20000000000005" y="-1748.2758620689656"/>
+        </scene>
+        <!--Pictures View Controller-->
+        <scene sceneID="n6K-cx-U9V">
+            <objects>
+                <viewController id="6ln-tG-72T" customClass="PicturesViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="08Y-Br-7Cm"/>
+                        <viewControllerLayoutGuide type="bottom" id="yW5-cR-Dzq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wpQ-j2-z6v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uJ-KH-GSv">
+                                <rect key="frame" x="16" y="28" width="343" height="619"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="selectedImageView" destination="8uJ-KH-GSv" id="UuH-E8-GAB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOT-M0-GrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="-1748"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="mU9-Sv-ggu">
@@ -1105,20 +1173,19 @@
                         <segue destination="HN2-0W-EiC" kind="relationship" relationship="viewControllers" id="ucb-US-Ceg"/>
                         <segue destination="rGT-9e-FFo" kind="relationship" relationship="viewControllers" id="T1D-uc-0YA"/>
                         <segue destination="W8Y-IM-mio" kind="relationship" relationship="viewControllers" id="F53-Yo-BOL"/>
-                        <segue destination="0VC-Ii-1hh" kind="relationship" relationship="viewControllers" id="3zm-pv-w0g"/>
+                        <segue destination="Hfi-W8-Wkf" kind="relationship" relationship="viewControllers" id="ugM-0A-xbE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HOW-oh-DPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-662" y="-222"/>
+            <point key="canvasLocation" x="199" y="-1048"/>
         </scene>
         <!--Memo-->
         <scene sceneID="OJz-oQ-hOa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="chM-DO-Ksa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Memo" image="icons8-Note-50" id="rbP-Yn-Qf0" customClass="TabBarItem" customModule="test5" customModuleProvider="target">
-                        <inset key="imageInsets" minX="3" minY="6" maxX="3" maxY="3"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                    <tabBarItem key="tabBarItem" title="Memo" image="icons8-Note-25" selectedImage="icons8-Note-25" id="rbP-Yn-Qf0" customClass="TabBarItem" customModule="test5" customModuleProvider="target">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QME-xR-5HE">
@@ -1132,7 +1199,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6n-kb-d0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="-233.43328335832086"/>
+            <point key="canvasLocation" x="-727" y="-316"/>
         </scene>
         <!--First Screen View Controller-->
         <scene sceneID="bsk-cO-2vK">
@@ -1170,29 +1237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnM-F8-Vtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1362.4000000000001" y="493.40329835082463"/>
-        </scene>
-        <!--Clock-->
-        <scene sceneID="DGy-Ma-yli">
-            <objects>
-                <viewController id="0VC-Ii-1hh" customClass="ClockViewController" customModule="test5" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="g8M-If-yx1"/>
-                        <viewControllerLayoutGuide type="bottom" id="lQs-5Y-uMH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mcb-7s-buz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Clock" image="icons8-Clock-50" id="T14-99-Dw0">
-                        <inset key="imageInsets" minX="3" minY="6" maxX="3" maxY="3"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AzG-dF-QgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1364" y="1206.7466266866568"/>
+            <point key="canvasLocation" x="-1500" y="-1048"/>
         </scene>
         <!--Home-->
         <scene sceneID="Jm0-ed-k29">
@@ -1361,22 +1406,23 @@
                             <constraint firstItem="MV3-vB-WQ3" firstAttribute="top" secondItem="qn3-cw-F6u" secondAttribute="bottom" id="Qzc-U7-WAW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="icons8-Home-50" id="a0V-yY-01c">
-                        <inset key="imageInsets" minX="3" minY="6" maxX="3" maxY="3"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="icons8-Home-25" id="a0V-yY-01c">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="2"/>
                     </tabBarItem>
+                    <connections>
+                        <segue destination="6ln-tG-72T" kind="show" identifier="sendPicture" id="2Ey-e5-9Uf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3t-7S-HGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-560.79999999999995" y="1217.5412293853074"/>
+            <point key="canvasLocation" x="-726" y="-1048"/>
         </scene>
         <!--Paint-->
         <scene sceneID="IYm-rE-S4T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rGT-9e-FFo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Paint" image="icons8-Paint Palette-50" id="8o9-Rn-Nb5" customClass="TabBarItem" customModule="test5" customModuleProvider="target">
-                        <inset key="imageInsets" minX="3" minY="6" maxX="3" maxY="3"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
+                    <tabBarItem key="tabBarItem" title="Paint" image="icons8-Paint Palette-25" selectedImage="icons8-Paint Palette-25" id="8o9-Rn-Nb5" customClass="TabBarItem" customModule="test5" customModuleProvider="target">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GKy-df-fDV">
@@ -1390,7 +1436,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RVN-m1-mhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199.19999999999999" y="495.20239880059972"/>
+            <point key="canvasLocation" x="-1500" y="398"/>
         </scene>
     </scenes>
     <resources>
@@ -1398,13 +1444,13 @@
         <image name="calendar" width="64" height="64"/>
         <image name="diary" width="64" height="64"/>
         <image name="diary-2" width="64" height="64"/>
-        <image name="icons8-Calculator-50" width="50" height="50"/>
-        <image name="icons8-Calendar-50" width="50" height="50"/>
-        <image name="icons8-Clock-50" width="50" height="50"/>
-        <image name="icons8-Home-50" width="50" height="50"/>
-        <image name="icons8-Invitation-50" width="50" height="50"/>
-        <image name="icons8-Note-50" width="50" height="50"/>
-        <image name="icons8-Paint Palette-50" width="50" height="50"/>
+        <image name="icons8-Calculator-25" width="25" height="25"/>
+        <image name="icons8-Calendar-25" width="25" height="25"/>
+        <image name="icons8-Clock-25" width="25" height="25"/>
+        <image name="icons8-Home-25" width="25" height="25"/>
+        <image name="icons8-Invitation-25" width="25" height="25"/>
+        <image name="icons8-Note-25" width="25" height="25"/>
+        <image name="icons8-Paint Palette-25" width="25" height="25"/>
         <image name="palette" width="64" height="64"/>
         <image name="photos" width="64" height="64"/>
         <image name="time" width="64" height="64"/>
@@ -1412,8 +1458,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wLX-g7-2Sz"/>
-        <segue reference="dz0-hV-AyV"/>
         <segue reference="Xab-0A-oD3"/>
+        <segue reference="Gxu-zr-NAR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

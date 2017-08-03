@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func clockBtn(_ sender: Any) {
-        
+        tabBarController?.selectedIndex = 6
     }
     
     override func viewDidLoad() {

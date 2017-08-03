@@ -14,6 +14,7 @@
 		CE2F335F1F204C1100F58534 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F335E1F204C1100F58534 /* CalculatorViewController.swift */; };
 		CE2F33611F20578E00F58534 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F33601F20578E00F58534 /* DrawingViewController.swift */; };
 		CE39F6F41F29833D009B4898 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39F6F31F29833D009B4898 /* EventsTableViewController.swift */; };
+		CE59948E1F32E5BD00D7378E /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59948D1F32E5BD00D7378E /* PicturesViewController.swift */; };
 		CE5AB6B91F16FF2100D7312B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6B81F16FF2100D7312B /* AppDelegate.swift */; };
 		CE5AB6BB1F16FF2100D7312B /* MemoFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AB6BA1F16FF2100D7312B /* MemoFirstViewController.swift */; };
 		CE5AB6BE1F16FF2100D7312B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5AB6BC1F16FF2100D7312B /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		CE2F335E1F204C1100F58534 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		CE2F33601F20578E00F58534 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		CE39F6F31F29833D009B4898 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		CE59948D1F32E5BD00D7378E /* PicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
 		CE5AB6B51F16FF2100D7312B /* test5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5AB6B81F16FF2100D7312B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5AB6BA1F16FF2100D7312B /* MemoFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFirstViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				CEEC23F71F2AE6A700BC5EA8 /* WebViewController.swift */,
 				CE39F6F31F29833D009B4898 /* EventsTableViewController.swift */,
 				CE2F33601F20578E00F58534 /* DrawingViewController.swift */,
+				CE59948D1F32E5BD00D7378E /* PicturesViewController.swift */,
 				CE2F335E1F204C1100F58534 /* CalculatorViewController.swift */,
 				CE142C491F3193B0008E21A1 /* ClockViewController.swift */,
 				CE5AB6BC1F16FF2100D7312B /* Main.storyboard */,
@@ -485,6 +488,7 @@
 			files = (
 				CE2F335F1F204C1100F58534 /* CalculatorViewController.swift in Sources */,
 				CE39F6F41F29833D009B4898 /* EventsTableViewController.swift in Sources */,
+				CE59948E1F32E5BD00D7378E /* PicturesViewController.swift in Sources */,
 				CE9836A51F26F1E4008D37A6 /* DiaryFirstViewController.swift in Sources */,
 				CE142C4A1F3193B0008E21A1 /* ClockViewController.swift in Sources */,
 				CE9836A71F26F1EC008D37A6 /* DiaryThirdViewController.swift in Sources */,

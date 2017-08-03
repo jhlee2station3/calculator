@@ -24,6 +24,9 @@ class DrawingViewController: UIViewController, SendColorDelegate {
     @IBOutlet weak var toolIcon  : UIButton!
     @IBOutlet weak var imageView : UIImageView!
 
+    override func viewDidDisappear(_ animated: Bool) {
+        self.imageView.image = nil
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tool = UIImageView()
